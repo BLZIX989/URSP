@@ -1,0 +1,42 @@
+{
+  "task": "C-004D -- Thermodynamic Generator Reconciliation",
+  "theorem_C004D_1": {
+    "statement": "For a connected undirected unweighted graph with L=D-A: the symmetric heat generator -L has uniform stationary distribution P_uniform=1/N (since ker(L)=span{1}). The continuous-time random-walk generator Q=-D^{-1}L, uniquely determined (up to overall rate) as the reversible chain supported on the graph's own edges and detail-balanced w.r.t. P_ss=d/(2|E|) -- the condition BRIDGE B-005 itself invokes -- has degree-weighted stationary distribution P_ss=d/(2|E|). Its adjoint is Q*=Q^T=-LD^{-1}. Furthermore L_norm=D^{-1/2}LD^{-1/2} is similar to -Q via L_norm=D^{1/2}(-Q)D^{-1/2}, so Spec(-Q)=Spec(L_norm). For irregular graphs (not all degrees equal), Spec(L) != Spec(L_norm) in general, and Q != -L, Q* != -L.",
+    "status": "PROVEN (algebraically, and independently verified numerically for G0-G4)"
+  },
+  "textual_inconsistency_found": {
+    "claim_A": "'The generator is -L for the continuous-time random walk.' (54_SOURCE_TEXT_CORPUS row 2024, Markov Semigroup entry, uncertified descriptive text)",
+    "claim_B": "BRIDGE B-005 (CERTIFIED): stationary measure of the Fokker-Planck operator L* associated to the graph Laplacian is P_ss(i)=d_i/(2|E|), proved via Perron-Frobenius on 'the transition matrix' and 'the detailed balance condition'. (rows 1954-1957, confirmed again row 2137)",
+    "resolution": "Claims A and B coincide only for regular graphs (D=dI, a scalar multiple of I). For irregular graphs they are mathematically incompatible under a single operator -L: ker(L)=span{1} forces -L's stationary state to be uniform, contradicting B-005's own certified degree-weighted P_ss. B-005's own proof cites 'the transition matrix' and 'detailed balance' -- concepts that only pin down a unique operator (Q=-D^{-1}L, Q*=-LD^{-1}) once worked through explicitly, which this run does (Section 5 derivation). Recorded as GAP-GENERATOR-001, now resolved at the discrete level."
+  },
+  "per_shell_verification": "see c004d_generator_results.json for full numeric detail (L, D, Q, Q*, L_norm matrices exported to reconstruction/generator/); summary: G0 is regular (all identities collapse to exact equality); G1-G4 are irregular (Q != -L, Q* != -L, Spec(L) != Spec(L_norm), P_uniform != P_degree, all confirmed to double-precision residuals <1e-15 for the identities that SHOULD hold, and genuine nonzero Frobenius-norm differences for the identities that should NOT hold).",
+  "random_walk_generator_derivation": {
+    "input": "Graph edges A_ij in {0,1}; degree matrix D; detailed-balance condition (source: BRIDGE B-005's own proof sketch); target stationary measure P_ss=d/(2|E|) (source: BRIDGE B-005 CERTIFIED statement)",
+    "derivation": "Detailed balance: pi_i*Lambda_ij = pi_j*Lambda_ji. Impose pi=P_ss=d/(2|E|). The unique rate law supported on the graph's own edges with no extra free parameters is Lambda_ij=A_ij/d_i (verified: (d_i/2E)(A_ij/d_i)=A_ij/2E=A_ji/2E=(d_j/2E)(A_ji/d_j) since A is symmetric). This gives Lambda=D^{-1}A-I=-D^{-1}(D-A)=-D^{-1}L=Q. Forward/adjoint operator on probability vectors: Q*=Q^T=-LD^{-1}.",
+    "status": "DERIVED -- not imported from an external framework; built entirely from A, D, L, and B-005's own invoked detailed-balance condition."
+  },
+  "continuum_correspondence": {
+    "question": "Is Q*=-LD^{-1} the discrete realization of the registered continuum expression L*P=-div(P*grad(log P_ss))?",
+    "finding": "Q* is the master-equation generator of the unique detailed-balanced reversible chain compatible with the graph's edges and P_ss -- the standard discrete form associated with reversible master equations. Literal convergence of this discrete operator to the specific continuum differential expression under mesh refinement is a separate discrete-to-continuum limit statement, not proved here and not resolved anywhere in the corpus (the analogous heat-kernel-to-geometry limit, BRIDGE B-004, is itself independently registered OPEN in source).",
+    "status": "OPEN -- explicitly not invented around, per governing instructions Section 11"
+  },
+  "critical_question_pi0_mixed_generators": {
+    "finding": "Pi_0=(delta_spec-lambda_c)/sigma mixes delta_spec and lambda_c (from the spectral generator L) with sigma (from the thermodynamic generator L*_therm=-LD^{-1}).",
+    "classification": "C -- dimensionally/structurally admissible (C-004C's dimensional audit already passed) but NOT proved equivalent/compatible as a meaningful ratio; no source theorem addresses this directly.",
+    "status": "OPEN"
+  },
+  "final_status": {
+    "L_spectral": "-L (CERTIFIED, unchanged)",
+    "L_therm": "-D^{-1}L = Q (DERIVED this run)",
+    "L_therm_star": "-LD^{-1} = Q* (DERIVED this run); verified Q*d=0 so P_ss=d/(2|E|) recovered exactly",
+    "L_norm": "D^{-1/2}LD^{-1/2} (constructed, standard object); verified similar to -Q",
+    "L_therm_equals_L_spectral_as_matrices": "FALSIFIED for G1-G4 (irregular); holds exactly for G0 (regular)",
+    "generator_reconciliation": "GENERATOR RECONCILED BY DEGREE NORMALIZATION",
+    "discrete_to_continuum_correspondence": "OPEN",
+    "C004C_reopened": false,
+    "new_sigma_k_computed": false,
+    "new_Pi0_ranking_computed": false,
+    "G_star": "UNRESOLVED (unchanged)",
+    "C004D_overall": "PARTIALLY CLOSED"
+  }
+}
