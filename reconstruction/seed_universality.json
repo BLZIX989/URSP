@@ -1,0 +1,24 @@
+{
+  "task": "Section 12: universality test -- can the same seed architecture compile distinct mathematical systems without changing the primitive basis? Abstract tests first; physical equations only after; this run's own canonicality result (PROVEN NON-UNIQUE, see seed_isomorphism_classes.json) gates how far the physical tests are taken -- see stop-condition note below.",
+  "abstract_mathematical_tests_performed": {
+    "finite_deterministic_dynamical_systems_single_symbol_automata": {
+      "correspondence": "A functional relation R (every row of the adjacency matrix has exactly one 1) IS, with no reinterpretation or added structure, the transition graph of a deterministic map tau: X->X, i.e. a finite discrete dynamical system / single-input-symbol automaton. This is a direct, exact identification, not an analogy: R functional <=> R encodes tau(x):=the unique y with R(x,y).",
+      "quantitative_check": "Exactly N^N of the 2^(N^2) relations on N elements are functional (verified exactly for N=1..4: 1/2, 4/16, 27/512, 256/65536 -- see seed_relation_iso.json, functional_count_matches_formula=True at every N).",
+      "new_primitive_required": "NONE -- this system class is already a subclass of Candidate C with no extension."
+    },
+    "multi_symbol_finite_automata": {
+      "correspondence": "A deterministic finite automaton with input alphabet Sigma corresponds to a Sigma-indexed FAMILY of functional relations {R_a subset X*X}_{a in Sigma}, one per input symbol.",
+      "new_primitive_required": "A finite TUPLE of Candidate-C objects, not a new primitive type. See seed_candidate_registry.json Candidate E: this was tested and found to add no irreducible information beyond replicating R once per symbol -- typed/multi-relational structure is informationally equivalent to an indexed family of ordinary relations."
+    },
+    "graph_dynamics_iterated_relations": {
+      "correspondence": "The Gamma operator itself (iterated color-refinement quotienting, R_{n+1}:=Gamma(R_n)) IS a graph-dynamical system on the space of finite relations -- already fully covered by this run's own core construction (see seed_self_compilation.json).",
+      "new_primitive_required": "NONE."
+    }
+  },
+  "physical_target_systems_NOT_tested": {
+    "list": ["Navier-Stokes", "Maxwell", "Schrodinger", "reaction-diffusion", "Lotka-Volterra"],
+    "reason_not_tested": "Section 15 of the governing task gates continuum-limit investigation behind a precondition: 'ONLY if a discrete self-relating seed closes' (implying closure with a resolved canonical/unique object, not merely existence). This run's own result is EXISTENCE PROVEN but UNIQUENESS PROVEN FALSE (Outcome G: canonicality remains OPEN, no source-derived selector was found -- see seed_isomorphism_classes.json). Taking a continuum limit, or testing specific continuous PDEs, of an object that is not even uniquely identified would silently smuggle in an arbitrary choice among 2462+ nonisomorphic N=4 candidates (or the analogous larger set at any N tested), which is exactly the kind of hidden assumption section 26 (representation != ontology) and the general no-target-conditioning mandate (section 16/27) prohibit. Per the explicit stop condition (section 27: stop before geometry/thermodynamics/gauge theory/quantum theory/matter/cosmology 'unless required solely as a previously established mathematical consistency check'), and since canonicality is OPEN rather than resolved, this run does not proceed to continuum or physical-equation testing.",
+    "status": "NOT ATTEMPTED, by design, pending resolution of the canonicality question -- not a negative result, an explicit scope boundary."
+  },
+  "universality_conclusion": "PARTIALLY SUPPORTED at the abstract/discrete level (finite automata, single- and multi-symbol, and discrete graph dynamics all fall out of Candidate C with no new primitive). NOT TESTED against continuous physical systems, by design, because this run's own canonicality result does not meet the stated precondition for that test."
+}

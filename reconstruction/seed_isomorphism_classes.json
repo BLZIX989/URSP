@@ -1,0 +1,20 @@
+{
+  "task": "Section 9 canonicality test: representation equivalence R~R' iff exists bijection phi:X->X' with (x,y) in R iff (phi(x),phi(y)) in R'. Isomorphism classes computed by canonical-form minimization over all N! relabelings (orbit-stabilizer identity |class|*|Aut(R)|=N! verified exactly for every one of the 2+10+104+3044=3160 isomorphism classes found across N=1..4).",
+  "delta_candidate_isomorphism_classes": {
+    "note": "For Delta=(X,~), isomorphism classes correspond exactly to integer partitions of N (block-size multiset is a complete isomorphism invariant).",
+    "counts_by_N": {"1": 1, "2": 2, "3": 3, "4": 5, "5": 7, "6": 11},
+    "source": "Standard integer partition function p(N); reproduced by direct set-partition enumeration in seed_delta_endaut.json."
+  },
+  "relation_candidate_isomorphism_classes": {
+    "counts_by_N": {"1": 2, "2": 10, "3": 104, "4": 3044},
+    "orbit_stabilizer_check": "class_size * |Aut(R)| == N! verified for EVERY isomorphism class at every N in {1,2,3,4} -- exact combinatorial identity, zero exceptions.",
+    "rigid_classes_Aut_eq_1": {"1": 2, "2": 6, "3": 70, "4": 2464},
+    "source": "seed_relation_iso.json"
+  },
+  "gamma_fixed_point_isomorphism_classes": {
+    "counts_by_N": {"1": 2, "2": 6, "3": 70, "4": 2462},
+    "canonicality_result": "PROVEN NON-UNIQUE at every N>=2 tested. Multiple (6, 70, and 2462 respectively) pairwise-nonisomorphic Gamma-fixed relations exist at N=2,3,4. No isomorphism-invariant selection rule distinguishing a single canonical representative was found or attempted without smuggling in an arbitrary preference (e.g. lexicographically-first adjacency matrix would be a REPRESENTATION-dependent, non-canonical choice, explicitly excluded per section 26 representation != ontology).",
+    "note_on_N2_vs_N4_rigid_classes": "At N=4, 2464 of the 3044 total isomorphism classes are rigid (Aut=1), and 2462 of those 2464 are also Gamma-fixed -- i.e. essentially all rigid relations are also Gamma-fixed at this size (rigidity and 1-WL-discreteness nearly coincide for N=4, though the two notions are logically distinct in general: 1-WL/color-refinement is a strictly weaker distinguishing power than full graph isomorphism testing for larger, more structured graphs -- this near-coincidence is a small-N phenomenon, not a proven general equivalence, and is flagged OPEN for N>4)."
+  },
+  "conclusion": "Existence of self-relating fixed points: PROVEN (nonempty at every N>=2 tested). Uniqueness: PROVEN NON-UNIQUE (multiple nonisomorphic fixed points at every N>=2 tested, count strictly increasing with N). This is exactly the 'canonicality remains OPEN' condition of Outcome G, established here by direct computation rather than assumption."
+}

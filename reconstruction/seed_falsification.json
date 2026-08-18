@@ -1,0 +1,49 @@
+{
+  "task": "Section 17 falsification tests (structural elimination, representation invariance, mathematical invariance) plus sections 24-26 critical distinctions, verified explicitly rather than merely asserted.",
+  "structural_elimination": [
+    {
+      "removed": "Delta (bare distinction, as an independent primitive)",
+      "does_closure_survive": "YES, closure survives -- Candidate C's Gamma-fixed points exist and were enumerated without ever independently specifying a Delta object; D_R is derived from R, not supplied separately.",
+      "conclusion": "Delta as an independent primitive is NOT required for closure."
+    },
+    {
+      "removed": "R (the relation itself)",
+      "does_closure_survive": "NO -- with no relation at all, there is nothing for D_R, T_R, C_R, or Gamma to act on; the entire construction is vacuous.",
+      "conclusion": "R is REQUIRED; it is not eliminable."
+    },
+    {
+      "removed": "self-reference (i.e. drop the fixed-point requirement R*=Gamma(R*), accept any R)",
+      "does_closure_survive": "Trivially 'survives' in the sense that any R is still an R, but the SPECIFIC property being sought (a seed that generates its own D,T,C,Gamma and returns to itself) is exactly what is lost. Most relations are NOT fixed (e.g. only 2462 of 3044 iso-classes at N=4, or 59088/65536=90.2% of raw labeled relations, are Gamma_1-fixed) -- so self-reference is a genuine, non-vacuous, restrictive condition.",
+      "conclusion": "Self-reference is REQUIRED for the specific closure property under investigation; it is not automatically satisfied."
+    },
+    {
+      "removed": "constraint C_R (drop the R-preservation requirement, allow any transformation)",
+      "does_closure_survive": "The generative chain D_R -> T_R -> Gamma_R still runs mechanically, but without C_R restricting which transformations count, T_R is not narrowed to R-preserving maps and the resulting 'Gamma' is not obviously the isomorphism-invariant quotient construction used throughout -- the specific operator tested in this run relies on C_R implicitly (only R-structure-derived colorings are used to build the quotient).",
+      "conclusion": "As implemented, constraint is load-bearing for the SPECIFIC canonical Gamma operator used in this run; removing it changes which operator is being tested, not merely weakens it."
+    },
+    {
+      "removed": "transformation T_R (drop successor/automorphism structure entirely)",
+      "does_closure_survive": "NO in the strong (Type VII) sense -- without any transformation, C_R (a predicate ON transformations) has nothing to constrain and Gamma_R cannot be built as C_R o T_R o D_R.",
+      "conclusion": "T_R is REQUIRED for the full DTC-style chain, though the SPECIFIC quotient-based Gamma actually used in this run's fixed-point search only explicitly needs D_R (see complexity note in seed_complexity_comparison.json) -- flagged as a scope note, not glossed over."
+    }
+  ],
+  "representation_invariance_tests": {
+    "relabeling_X": "PASSED by construction -- all counts in this run (isomorphism classes, fixed-point classes, Aut sizes) are computed as isomorphism-class invariants via canonical-form minimization over all N! relabelings, verified via the orbit-stabilizer identity (class_size * |Aut(R)| = N!) holding exactly for all 3160 classes tested (N=1..4).",
+    "adjacency_vs_other_matrix_representation": "Only the adjacency-matrix representation was implemented computationally this run; alternative representations (e.g. incidence structure, edge list) were not separately coded, but since canonicalization operates on the abstract combinatorial structure (which pairs are related), the result is representation-independent by the definition of isomorphism used -- not separately re-verified in a second encoding this run.",
+    "encoding_change": "See seed_complexity_comparison.json's 'minimality under encoding' section -- the ordering K(R)<K(D,T,C)-independent is shown to be encoding-SENSITIVE in the adversarial case (flagged OPEN), while K(D_R,T_R,C_R)=K(R) under the canonical/derived reading is shown to be encoding-INVARIANT (a functional-dependency fact, not a bit-count)."
+  },
+  "mathematical_invariance_tests": {
+    "isomorphic_relations": "Verified throughout -- every count reported is per isomorphism class, not per raw labeled relation (both are reported side by side in seed_relation_iso.json so neither is silently substituted for the other).",
+    "conjugate_representations_of_Gamma": "Gamma_1 (one-shot color refinement) and Gamma_infty (iterated color refinement) were explicitly tested against each other and found to be DIFFERENT operators (Gamma_1 not idempotent; Gamma_infty idempotent) that nonetheless SHARE THE SAME FIXED POINT SET exactly -- a genuine invariance result, not assumed."
+  },
+  "critical_distinction_self_relation_vs_self_generation_section_24": {
+    "test": "R(x,x) (Type I, a literal self-loop) vs Gamma(R)~=R (Type III/IV, self-generation).",
+    "result": "PROVEN INDEPENDENT by direct exhibition of all four combinations at N=2 (verified computationally): self-loop present AND fixed (e.g. adjacency [[0,0],[0,1]]); self-loop absent AND fixed (e.g. [[0,0],[1,0]]); self-loop absent AND NOT fixed (e.g. the empty relation [[0,0],[0,0]]); self-loop present AND NOT fixed (e.g. [[1,0],[0,1]], the identity relation, which has maximal symmetry Aut=S_2 and collapses under color refinement). A self-loop neither implies nor is implied by self-generation."
+  },
+  "critical_distinction_existence_uniqueness_minimality_section_25": {
+    "result": "Kept explicitly separate throughout this run -- see seed_minimality_audit.json for the three-way breakdown (existence PROVEN, uniqueness PROVEN FALSE, minimality SUPPORTED-but-scope-limited)."
+  },
+  "critical_distinction_representation_vs_ontology_section_26": {
+    "result": "Applied by using ISOMORPHISM CLASSES (not raw bit-strings, not a chosen canonical-form integer) as the unit of report throughout. The one place a specific bit-string appears (e.g. picking one representative per class to print) is explicitly labeled 'a representative', never 'the' object, and no claim in this run treats a shorter encoding as evidence of a smaller ontology (the K(R)<K(D,T,C) result is stated as a description-length fact about the DECLARED encoding scheme S1, with the adversarial-encoding caveat recorded in seed_complexity_comparison.json, not oversold as an ontological claim)."
+  }
+}

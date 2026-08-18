@@ -1,0 +1,17 @@
+{
+  "task": "Section 25 required distinction: existence != uniqueness != minimality, applied explicitly to this run's results.",
+  "existence": {
+    "claim": "There exists R* with R* = Gamma(R*) (up to isomorphism).",
+    "status": "PROVEN. Verified by direct exhaustive construction: 6 nonisomorphic examples at N=2, 70 at N=3, 2462 at N=4 (see seed_fixed_point_catalog.json)."
+  },
+  "uniqueness": {
+    "claim": "There exists a unique (up to isomorphism) R* with R* = Gamma(R*).",
+    "status": "PROVEN FALSE (non-unique) at every N in {2,3,4} tested. Multiple, structurally distinct (differing in symmetry, cyclicity, self-loop presence, connectivity -- see label_counts in seed_fixed_point_catalog.json) nonisomorphic fixed points coexist at every tested size."
+  },
+  "minimality": {
+    "claim": "Among all admissible candidates (Delta, (Delta,R), R, R*, typed R, hypergraph, DTC), R (Candidate C) has the least description length K(*) over the full admissible candidate space.",
+    "status": "SUPPORTED for the comparisons actually computed: K(R)=16 < K(Delta,R)_independent=24 < K(D,T,C)_independent-worst-case=272 bits at N=4 (see seed_complexity_comparison.json). K(Delta)=8 < K(R)=16 in isolation, BUT bare Delta was separately PROVEN insufficient to close (THM-SEED-DELTA-001) -- so Delta's smaller encoding does not make it an admissible seed at all; minimality is only a meaningful comparison among candidates that actually satisfy existence, and Delta does not.",
+    "caveat": "Minimality was NOT tested against Candidate F (hypergraph) or Candidate E (typed relation) numerically, since neither was shown necessary (see seed_candidate_registry.json) -- their K() was not separately computed because no admissible instance of either was constructed that isn't already reducible to (a tuple of) R."
+  },
+  "conflation_check": "This run explicitly keeps these three properties separate throughout: R being minimal in encoding length (4 bits at N=2) does NOT by itself establish which of the 6 nonisomorphic 4-bit fixed points is 'the' seed -- minimality identifies a SIZE CLASS, not a unique OBJECT. Existence, uniqueness, and minimality are reported as three separate rows in the closure matrix, never merged into a single verdict."
+}

@@ -1,0 +1,42 @@
+{
+  "task": "Section 20 required fixed-point catalog. Full underlying data in seed_relation_iso.json (per-N summary) and seed_fixed_point_full_catalog.json (full classified list of every fixed-point representative, N=1..4).",
+  "enumeration_boundary": {
+    "exhaustive_up_to_N": 4,
+    "reason": "Total relations on N elements = 2^(N^2). N=4 gives 65536 -- fully exhaustive with isomorphism reduction via all 4!=24 relabelings, completed in ~15s. N=5 gives 2^25=33,554,432 raw relations; exhaustive isomorphism classification would require ~33.5M x 5!=120 = ~4 billion permutation-applications, judged infeasible within this run's practical compute. No sampling is substituted -- per the governing instruction, sampling is never labeled exhaustive, and no principled probability measure on 'the' relations of interest was available to justify a non-exhaustive claim of completeness. N=5+ is left OPEN for enumeration, not estimated."
+  },
+  "catalog": [
+    {
+      "N": 1, "total_relations_raw": 2, "total_isomorphism_classes": 2,
+      "trivial_fixed_points": 2, "nontrivial_fixed_points": 0,
+      "fixed_point_isomorphism_classes": 2,
+      "canonical_candidates": "None -- both fixed points are degenerate (single-vertex empty and single-vertex self-looped/universal/identity relation, coincide at N=1).",
+      "stability_class": "Not tested (no nontrivial perturbation exists on a 1x1 matrix beyond the two states themselves, which are the full state space)."
+    },
+    {
+      "N": 2, "total_relations_raw": 16, "total_isomorphism_classes": 10,
+      "trivial_fixed_points": 0, "nontrivial_fixed_points": 6,
+      "fixed_point_isomorphism_classes": 6,
+      "label_counts": {"nontrivial": 6, "symmetric": 2, "asymmetric_strict": 5, "self_looped": 5, "cyclic": 5, "connected": 5, "functional": 1},
+      "canonical_candidates": "All 6 have Aut(R)=1 (rigid). No single one is picked out by any isomorphism-invariant criterion found in this run -- see seed_isomorphism_classes.json.",
+      "stability_class": "See seed_stability.json for exact per-representative 1-edge-flip robustness at N=4 (N=2 representatives are too small for a meaningful perturbation study beyond their 4 edge-slots, included in the N=2 raw data but not separately tabulated)."
+    },
+    {
+      "N": 3, "total_relations_raw": 512, "total_isomorphism_classes": 104,
+      "trivial_fixed_points": 0, "nontrivial_fixed_points": 70,
+      "fixed_point_isomorphism_classes": 70,
+      "label_counts": {"nontrivial": 70, "asymmetric_strict": 30, "self_looped": 63, "cyclic": 67, "symmetric": 4, "connected": 60, "functional": 3},
+      "canonical_candidates": "None uniquely selected.",
+      "stability_class": "Not separately tabulated; see N=4 for the full stability study."
+    },
+    {
+      "N": 4, "total_relations_raw": 65536, "total_isomorphism_classes": 3044,
+      "trivial_fixed_points": 0, "nontrivial_fixed_points": 2462,
+      "fixed_point_isomorphism_classes": 2462,
+      "label_counts": {"nontrivial": 2462, "asymmetric_strict": 430, "self_looped": 2326, "cyclic": 2445, "connected": 2327, "symmetric": 16, "functional": 6},
+      "canonical_candidates": "None uniquely selected -- 2462 nonisomorphic fixed points at this size alone.",
+      "stability_class": "Full 1-edge-flip perturbation study performed on all 2462 representatives (see seed_stability.json): average 91.96% of single-edge perturbations remain fixed; 1126 of 2462 (45.8%) are locally maximally stable (survive EVERY single-edge flip); 0 are maximally unstable (every fixed point survives at least one perturbation)."
+    }
+  ],
+  "growth_pattern": "Fixed-point iso-class count grows 0 (trivial only) -> 6 -> 70 -> 2462 for N=1,2,3,4 -- strictly increasing and not converging to a bounded or unique value across the tested range. This growth pattern is itself evidence against eventual uniqueness (Outcome G), though N<=4 cannot prove non-convergence for all N.",
+  "gamma_operator_note": "Two versions of the color-refinement quotient operator were tested: Gamma_1 (single pass) and Gamma_infty (iterate quotient-then-refine to convergence). Gamma_1 was found NOT to be idempotent in general (4 of 104 iso-classes at N=3, 59 of 3044 at N=4 exhibit further collapse when their one-shot quotient is independently re-refined from a blank coloring -- because the quotient graph can itself carry a nontrivial automorphism that a fresh 1-WL run cannot break). Gamma_infty is provably and numerically-verified idempotent (0 failures at every tested N). Critically, the FIXED-POINT SET itself is IDENTICAL for both operators (verified: Gamma_infty's 'no collapse at all' class count equals Gamma_1's fixed count exactly at every N: 2=2, 6=6, 70=70, 2462=2462) -- because no collapse operator can ever increase vertex count, so a relation with zero first-round collapse is automatically a true fixed point of either operator. The distinction only matters for the INTERMEDIATE trajectory of relations that do collapse, not for the seed-closure question itself."
+}

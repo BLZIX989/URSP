@@ -1,0 +1,33 @@
+{
+  "task": "Sections 10-11: explicit complexity functional, declared encoding, syntactic vs semantic compression.",
+  "declared_encoding_family": {
+    "name": "Encoding scheme S1 (fixed-N adjacency/RGS encoding, applied identically to every candidate)",
+    "Delta": "Restricted-growth string of length N over alphabet {0,...,N-1}: N*ceil(log2 N) bits.",
+    "R": "Row-major adjacency matrix: N^2 bits.",
+    "Delta_and_R_independent": "K(Delta) + K(R) bits (no assumed compression between the two).",
+    "D_T_C_independent_worst_case": "D: N*ceil(log2 N) bits (a partition). T: N*ceil(log2 N) bits (an arbitrary function X->X). C: taken at face value as an arbitrary predicate over the space of candidate transformations End(X) (size N^N) -- up to N^N bits in the worst case (one bit per candidate transformation, saying whether it satisfies the constraint).",
+    "D_R_T_R_C_R_derived": "0 additional bits beyond K(R): D_R, T_R, C_R are computed FROM R (color-refinement classes, functional-successor-or-Aut(R), R-preservation predicate respectively) with no independently stored information."
+  },
+  "numeric_comparison_at_N_equals_4": {
+    "K_R": 16,
+    "K_Delta": 8,
+    "K_Delta_R_independent": 24,
+    "K_D_T_C_independent_worst_case": 272,
+    "K_D_R_T_R_C_R_derived_effective": 16,
+    "units": "bits"
+  },
+  "minimal_nontrivial_fixed_point": {
+    "N": 2,
+    "K_R_star_min_bits": 4,
+    "note": "6 pairwise-nonisomorphic relations achieve this minimum simultaneously -- minimality of DESCRIPTION LENGTH is achieved, but minimality does NOT pick out a unique object (existence and minimality both hold; canonicality/uniqueness does not -- see section 25's required distinction)."
+  },
+  "syntactic_vs_semantic_compression": {
+    "definition_used": "Syntactic compression = a shorter string under some encoding that requires an external codebook/decoder not itself charged to the object. Semantic compression = a reduction in the number of INDEPENDENTLY SPECIFIED primitives, invariant under any admissible relabeling/encoding in the declared family S1.",
+    "result": "K(R) < K(D,T,C)-independent is a SEMANTIC result under encoding S1: it does not depend on an arbitrary choice of bit-packing, only on the literal type signatures of the objects being compared (an N^2-entry matrix vs. three separately-typed objects, one of which has domain size N^N). This ordering is INVARIANT across any encoding scheme that charges each independent boolean degree of freedom at least 1 bit (any reasonable admissible encoding). K(D_R,T_R,C_R | R) = K(R) is a stronger, encoding-independent SEMANTIC statement: it says (D,T,C) is REDUNDANT given R, under the canonical (derived) reading -- true for any encoding, since it is a statement about determinism/functional dependency, not bit-counting."
+  },
+  "minimality_invariance_under_encoding": {
+    "tested": "Whether K(R) < K(D,T,C) survives re-encoding choices (e.g. compressing the sparse End(X)-predicate C via run-length or other schemes rather than raw bits).",
+    "finding": "For the INDEPENDENT-primitive reading of (D,T,C), the ordering K(R) < K(D,T,C) is ENCODING-SENSITIVE in principle -- an adversarial encoding could special-case a compact description for some particular constraint C, narrowing or reversing the numeric gap for that specific instance. This is exactly the syntactic-compression pitfall the task warns against. For the CANONICAL/DERIVED reading (D_R,T_R,C_R computed from R), the result K(D_R,T_R,C_R)=K(R) is a functional-dependency statement, NOT a bit-count comparison, and is therefore encoding-INVARIANT: no relabeling or re-encoding can make a quantity that is a deterministic function of R require independent storage beyond R.",
+    "status": "K(R) < K(D,T,C)-independent: MARKED OPEN under adversarial/special-purpose encodings (real but narrow caveat). K(D_R,T_R,C_R)=K(R) under the canonical/derived reading: CONFIRMED, encoding-invariant."
+  }
+}

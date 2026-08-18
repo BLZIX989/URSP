@@ -1,0 +1,46 @@
+{
+  "task": "UOC-C0-MINIMAL-SEED-CLOSURE-001 -- candidate definitions",
+  "target_independence_declaration": "No downstream physics target (32, G_star, N_H, P_H, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, CKM, PMNS, observed masses/couplings, DESI, CMB, cosmological parameters) is referenced anywhere in this run's definitions, computations, or selection criteria. Every selection in this run is either (a) an exhaustive/brute-force finite computation, or (b) an explicit isomorphism-invariance argument stated before any computation was run.",
+  "candidates": {
+    "A_bare_distinction": {
+      "definition": "Delta = (X, ~), X a finite set, ~ an equivalence relation (a set partition of X).",
+      "primitive_data": "One partition of X (block-size multiset determines End/Aut sizes exactly).",
+      "End_definition": "End(Delta) = {f: X->X : x~y => f(x)~f(y)}",
+      "Aut_definition": "Aut(Delta) = bijective f in End(Delta) whose inverse is also in End(Delta)",
+      "closed_form_derived_this_run": {
+        "End_size": "sum over functions sigma:[k]->[k] of prod_i (n_{sigma(i)})^{n_i}, where n_1..n_k are block sizes",
+        "Aut_size": "sum over permutations sigma in S_k with n_{sigma(i)}=n_i for all i, of prod_i (n_i)!"
+      },
+      "verification": "Brute-forced against direct enumeration of ALL N^N functions X->X for N<=4; 100% agreement (see seed_delta_endaut.json, formula_matches_bruteforce field)."
+    },
+    "B_enriched_distinction": {
+      "definition": "Delta_hat = (X, ~, R), R subset X*X.",
+      "primitive_data": "A partition PLUS a relation.",
+      "finding": "If ~ is taken as an INDEPENDENT, arbitrary partition (not derived from R), (Delta,R) carries strictly more information than R alone: K(Delta,R)=K(Delta)+K(R) with no compression (24 bits vs 16 bits at N=4 under the declared encoding, see seed_complexity_comparison.json). If instead ~ is CANONICALLY DEFINED from R (e.g. via the color-refinement classes used throughout this run as D_R), then (Delta,R) carries NO more information than R alone -- Delta is redundant, fully recoverable from R. Candidate B therefore reduces to Candidate C whenever the enrichment is principled (source-derived, not independently chosen), and is strictly more expensive than Candidate C whenever it is not."
+    },
+    "C_pure_relation": {
+      "definition": "R subset X*X, the primitive object (no separately given partition).",
+      "primitive_data": "One relation on X.",
+      "induced_distinction_D_R": "The coarsest equitable (1-WL / color-refinement stable) partition of X under R. Canonical: isomorphism-invariant by construction, requires no externally chosen equivalence.",
+      "induced_transformation_T_R": "When R is functional (every row of the adjacency matrix has exactly one 1), T_R(x) := the unique y with R(x,y) -- a genuine, canonical, deterministic successor map read directly off R. When R is not functional, the canonically available transformations are Aut(R) (always well-defined, but generally non-unique -- see THM-SEED-RELATION-001).",
+      "induced_constraint_C_R": "C_R(T) := 1[T(R) = R] (T is R-preserving), tested against the alternative T(R) subset R (weaker) -- see seed_falsification.json for which of these is used and why.",
+      "generative_operator_Gamma_R": "Gamma(R) := the quotient relation on the color-refinement classes of R (see THM-SEED-COMPRESSION-001 in the report for exact construction). Computed exhaustively for ALL relations on N<=4 elements."
+    },
+    "D_self_relating_relation": {
+      "definition": "Seek R* with R* = F(R*) for F derived from R's own structure (not selected from a target theory).",
+      "identification_with_C": "This run identifies F := Gamma (the Candidate C generative operator) as the only structure-derived candidate transformation tested, since it is built purely from R's own color-refinement structure with no external input. Fixed points of Gamma ARE the Candidate D seeds; Candidate D is therefore not a separate primitive type from Candidate C, only its self-consistent subclass."
+    },
+    "E_typed_relation": {
+      "definition": "R = (X, R, tau), tau a typing function, extending R only if mathematically necessary.",
+      "finding": "A typed/multi-relational structure needed to represent e.g. a multi-symbol automaton (one relation per input symbol) is informationally equivalent to a finite Sigma-indexed FAMILY of ordinary Candidate-C relations {R_a subset X*X}_{a in Sigma}. No irreducible information is added by the type label itself beyond enumerating which member of the family is which -- a typed relation and an indexed tuple of ordinary relations have the same content. Typing is therefore NOT shown to be independently necessary by this run; it is encodable into (a finite tuple of) R itself."
+    },
+    "F_relational_hypergraph": {
+      "definition": "H = (V,E), E subset P(V), allowing arity>=3 hyperedges.",
+      "finding": "Since Candidate C (ordinary binary R) already achieves nonempty, nontrivial, provably-existing self-closure (Gamma-fixed points exist and were enumerated starting at N=2), no forcing argument for hyperedges was found or required by this run's analysis. Hyperedges are NOT promoted -- consistent with the governing instruction not to promote them unless ordinary relations provably fail, which they did not."
+    },
+    "G_dtc": {
+      "definition": "(D,T,C) as independently specified primitives, Gamma = C o T o D.",
+      "finding": "As INDEPENDENT, unconstrained primitives (D an arbitrary partition, T an arbitrary function, C an arbitrary predicate over the N^N-sized space of candidate transformations End(X)), (D,T,C) requires strictly more description length than R at every tested N (272 bits vs 16 bits at N=4, see seed_complexity_comparison.json) -- C's naive type signature is exponentially large. When D,T,C are instead taken as CANONICALLY DERIVED from R (D_R, T_R, C_R as defined under Candidate C), they add ZERO bits beyond R itself -- they are functions of R, not independent data. (D,T,C) is therefore REDUCIBLE to R under the canonical (derived) reading, and is a strictly less economical representation under the independent-primitive reading. DTC is not shown to be irreducible by this analysis."
+    }
+  }
+}

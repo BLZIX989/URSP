@@ -1,0 +1,22 @@
+{
+  "task": "Section 14: perturb R* -> R* + delta_R, measure d(F(R),R*) under Hamming/graph-edit distance, classify fixed/stable/asymptotically stable/unstable.",
+  "distance_measure_used": "Hamming distance on the adjacency-matrix bit string (equivalently graph edit distance restricted to single-edge toggles, since a single bit flip = adding or removing exactly one directed edge, including self-loops).",
+  "perturbation_tested": "Every single-edge flip (Hamming distance 1) applied to every one of the 2462 nonisomorphic Gamma-fixed relations at N=4 (16 possible flips per representative, 2462*16=39392 perturbation trials total).",
+  "criterion": "A fixed point R* is called 'stable under a given flip' if Gamma_1(R*+delta_R) still has quotient size 4 (i.e. the perturbed relation is STILL a fixed point, not merely close to one in some metric -- this run uses the discrete pass/fail criterion rather than a continuous contraction constant q<1, since the state space (relations on 4 elements) is finite and discrete, so a genuine contraction-mapping analysis does not apply; the pass/fail criterion is the natural discrete analogue).",
+  "results": {
+    "n_isomorphism_class_fixed_points_tested": 2462,
+    "total_perturbation_trials": 39392,
+    "average_fraction_of_1_flips_remaining_fixed": 0.9196,
+    "n_fixed_points_where_every_flip_destabilizes": 0,
+    "n_fixed_points_locally_maximally_stable_survive_every_flip": 1126,
+    "fraction_locally_maximally_stable": 0.4574
+  },
+  "classification": {
+    "fixed": "All 2462 representatives satisfy R*=Gamma(R*) exactly (by construction of the catalog) -- trivially 'fixed' in the static sense.",
+    "stable_local": "1126 of 2462 (45.7%) are stable against EVERY single-edge perturbation -- these survive the strongest local stability test performed.",
+    "partially_stable": "The remaining 1336 survive SOME but not all single-edge perturbations (average retention 91.96% across all trials, so most individual perturbations are survived even for the partially-stable class).",
+    "unstable_class": "NONE of the 2462 fixed points is destabilized by every possible single-edge perturbation -- no fixed point found in this run is 'fully fragile'.",
+    "asymptotically_stable": "NOT TESTED -- this would require tracking the multi-step trajectory of a perturbed relation under repeated Gamma application to see whether it RETURNS to (a representative isomorphic to) the original R* rather than merely remaining a fixed point of SOME kind. This is a genuinely open follow-up computation, not attempted this run (see next-dependency note in the closure report)."
+  },
+  "honesty_note": "This is a discrete stability study restricted to Hamming distance 1 (single-edge perturbations) at a single size, N=4. It does not establish stability under larger perturbations, under vertex-count changes, or asymptotically. The 91.96%/45.7% figures are exact for the tested class (not estimates or samples -- all 2462 x 16 = 39,392 trials were run exhaustively), but the SCOPE of the claim is limited to what was tested."
+}

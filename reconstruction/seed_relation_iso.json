@@ -1,0 +1,276 @@
+{
+  "1": {
+    "N": 1,
+    "total_relations_raw": 2,
+    "total_isomorphism_classes": 2,
+    "orbit_stabilizer_identity_verified_for_all_classes": true,
+    "functional_relations_raw_count": 1,
+    "functional_relations_raw_count_formula_N_pow_N": 1,
+    "functional_count_matches_formula": true,
+    "rigid_isomorphism_classes_Aut_eq_1": 2,
+    "rigid_functional_isomorphism_classes": 1,
+    "color_refinement_equitability_failures": 0,
+    "gamma1_onestep_idempotence_failures": 0,
+    "gamma1_fixed_relations_raw_count": 2,
+    "gamma1_fixed_isomorphism_classes": 2,
+    "quotient_size_histogram_raw_count": {
+      "1": 2
+    },
+    "fixed_reps_sample": [
+      {
+        "canon_int": 0,
+        "aut": 1,
+        "class_size": 1,
+        "is_functional": false
+      },
+      {
+        "canon_int": 1,
+        "aut": 1,
+        "class_size": 1,
+        "is_functional": true
+      }
+    ],
+    "gamma_infty_final_size_histogram_raw_count": {
+      "1": 2
+    },
+    "gamma_infty_steps_histogram_raw_count": {
+      "1": 2
+    },
+    "gamma_infty_idempotence_failures": 0,
+    "gamma_infty_primitively_fixed_isomorphism_classes": 2
+  },
+  "2": {
+    "N": 2,
+    "total_relations_raw": 16,
+    "total_isomorphism_classes": 10,
+    "orbit_stabilizer_identity_verified_for_all_classes": true,
+    "functional_relations_raw_count": 4,
+    "functional_relations_raw_count_formula_N_pow_N": 4,
+    "functional_count_matches_formula": true,
+    "rigid_isomorphism_classes_Aut_eq_1": 6,
+    "rigid_functional_isomorphism_classes": 1,
+    "color_refinement_equitability_failures": 0,
+    "gamma1_onestep_idempotence_failures": 0,
+    "gamma1_fixed_relations_raw_count": 12,
+    "gamma1_fixed_isomorphism_classes": 6,
+    "quotient_size_histogram_raw_count": {
+      "1": 4,
+      "2": 12
+    },
+    "fixed_reps_sample": [
+      {
+        "canon_int": 1,
+        "aut": 1,
+        "class_size": 2,
+        "is_functional": false
+      },
+      {
+        "canon_int": 2,
+        "aut": 1,
+        "class_size": 2,
+        "is_functional": false
+      },
+      {
+        "canon_int": 3,
+        "aut": 1,
+        "class_size": 2,
+        "is_functional": false
+      },
+      {
+        "canon_int": 5,
+        "aut": 1,
+        "class_size": 2,
+        "is_functional": true
+      },
+      {
+        "canon_int": 7,
+        "aut": 1,
+        "class_size": 2,
+        "is_functional": false
+      },
+      {
+        "canon_int": 11,
+        "aut": 1,
+        "class_size": 2,
+        "is_functional": false
+      }
+    ],
+    "gamma_infty_final_size_histogram_raw_count": {
+      "1": 4,
+      "2": 12
+    },
+    "gamma_infty_steps_histogram_raw_count": {
+      "2": 4,
+      "1": 12
+    },
+    "gamma_infty_idempotence_failures": 0,
+    "gamma_infty_primitively_fixed_isomorphism_classes": 6
+  },
+  "3": {
+    "N": 3,
+    "total_relations_raw": 512,
+    "total_isomorphism_classes": 104,
+    "orbit_stabilizer_identity_verified_for_all_classes": true,
+    "functional_relations_raw_count": 27,
+    "functional_relations_raw_count_formula_N_pow_N": 27,
+    "functional_count_matches_formula": true,
+    "rigid_isomorphism_classes_Aut_eq_1": 70,
+    "rigid_functional_isomorphism_classes": 3,
+    "color_refinement_equitability_failures": 0,
+    "gamma1_onestep_idempotence_failures": 4,
+    "gamma1_fixed_relations_raw_count": 420,
+    "gamma1_fixed_isomorphism_classes": 70,
+    "quotient_size_histogram_raw_count": {
+      "1": 14,
+      "2": 78,
+      "3": 420
+    },
+    "fixed_reps_sample": [
+      {
+        "canon_int": 2,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 3,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 9,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 11,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 12,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 13,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 14,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      },
+      {
+        "canon_int": 15,
+        "aut": 1,
+        "class_size": 6,
+        "is_functional": false
+      }
+    ],
+    "gamma_infty_final_size_histogram_raw_count": {
+      "1": 26,
+      "2": 66,
+      "3": 420
+    },
+    "gamma_infty_steps_histogram_raw_count": {
+      "2": 80,
+      "1": 420,
+      "3": 12
+    },
+    "gamma_infty_idempotence_failures": 0,
+    "gamma_infty_primitively_fixed_isomorphism_classes": 70
+  },
+  "4": {
+    "N": 4,
+    "total_relations_raw": 65536,
+    "total_isomorphism_classes": 3044,
+    "orbit_stabilizer_identity_verified_for_all_classes": true,
+    "functional_relations_raw_count": 256,
+    "functional_relations_raw_count_formula_N_pow_N": 256,
+    "functional_count_matches_formula": true,
+    "rigid_isomorphism_classes_Aut_eq_1": 2464,
+    "rigid_functional_isomorphism_classes": 6,
+    "color_refinement_equitability_failures": 0,
+    "gamma1_onestep_idempotence_failures": 59,
+    "gamma1_fixed_relations_raw_count": 59088,
+    "gamma1_fixed_isomorphism_classes": 2462,
+    "quotient_size_histogram_raw_count": {
+      "1": 140,
+      "2": 1052,
+      "3": 5256,
+      "4": 59088
+    },
+    "fixed_reps_sample": [
+      {
+        "canon_int": 20,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 21,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 22,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 23,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 36,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 37,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 38,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      },
+      {
+        "canon_int": 39,
+        "aut": 1,
+        "class_size": 24,
+        "is_functional": false
+      }
+    ],
+    "gamma_infty_final_size_histogram_raw_count": {
+      "1": 532,
+      "2": 1020,
+      "3": 4896,
+      "4": 59088
+    },
+    "gamma_infty_steps_histogram_raw_count": {
+      "2": 5816,
+      "1": 59088,
+      "3": 584,
+      "4": 48
+    },
+    "gamma_infty_idempotence_failures": 0,
+    "gamma_infty_primitively_fixed_isomorphism_classes": 2462
+  }
+}
