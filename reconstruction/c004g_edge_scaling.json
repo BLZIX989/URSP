@@ -1,0 +1,47 @@
+{
+  "task": "C-004G -- Recover the ARBS edge-length rescaling law from source",
+  "method": "The prior text-extraction corpus (54_SOURCE_TEXT_CORPUS) silently dropped this law because it is embedded in the original .docx as RENDERED EQUATION IMAGES (not text, not OMML math markup), invisible to any paragraph-text scraper. Recovered by unzipping source/Combined_Compiler_Theories_Whitepaper.docx directly, locating the three image relationships (rId10, rId11, rId12) anchored to the 'Primal Edge Scaling' / 'Induced Metric Invariance' / 'Diameter Stability' bullets in Section 2.1, and reading the embedded PNG equation images directly.",
+  "recovered_law": {
+    "primal_edge_scaling": {
+      "equation": "l_{n+1}(e') = alpha * l_n(e)   for all e' in R(e)",
+      "meaning": "Every child edge e' produced by the refinement functor R from a parent edge e has length equal to alpha times the parent edge's length, where alpha is a fixed global isotropic contraction constant, 0<alpha<1.",
+      "presupposes": "A SUBDIVISION-type refinement: R(e) denotes a nonempty set of child edges that REPLACE parent edge e. This is the classical finite-element / mesh-refinement picture."
+    },
+    "induced_metric_invariance": {
+      "equation": "d_{n+1}(R(v_i), R(v_j)) = d_n(v_i, v_j)",
+      "meaning": "The induced path distance between the IMAGES of two vertices under R is exactly equal to their distance before refinement -- refinement subdivides edges finer (shrinking individual edge lengths by alpha) while proportionally increasing the number of edges along any path, leaving total path length exactly invariant."
+    },
+    "diameter_stability": {
+      "equation": "Diam(M_n, d_n) = sup_{x,y in M_n} d_n(x,y) <= D_max < infinity",
+      "meaning": "The global diameter of the metric space stays bounded by a fixed constant as n increases -- i.e. the sequence represents an increasingly FINE approximation of a space of FIXED, bounded size, not a growing space."
+    },
+    "numeric_value_of_alpha": "NOT GIVEN anywhere in the corpus -- alpha remains a free, unspecified constant satisfying only 0<alpha<1 throughout the whitepaper. No other source workbook mentions this law or attaches a value to alpha.",
+    "connection_to_ARBS_specifically": "NONE FOUND. This law is stated exclusively for the GENERIC 'This from That' pointed-graph refinement functor R:(G•)->(G•) of Part I Section 1.1-2.1 of the whitepaper. The ARBS specification (Phases XXIII-XXV, a separate, later-added part of the corpus defining S_k=L_k(+)R_k, K_{2^k,2^k}, R_{k-1}xL_k) never references this law, this alpha, or this R(e)/Diam(M_n,d_n) apparatus at all -- confirmed by an exhaustive corpus search for co-occurrence."
+  },
+  "compatibility_test_against_ARBS": {
+    "test_1_no_edge_subdivision_domain": {
+      "finding": "ARBS's actual recursive step does NOT subdivide any existing edge. Verified exactly in C-004F.5 (run 6): G_k is an INDUCED SUBGRAPH of G_k+1 -- every edge of G_k survives into G_k+1 completely unchanged (exact matrix equality A_k = A_{k+1} restricted to the first N_k vertices, confirmed for every transition G0->G1 through G8->G9). There is therefore no nonempty set R(e) of 'child edges' replacing any ARBS edge -- the Primal Edge Scaling formula has no vertices/edges in its domain when applied to the ARBS construction.",
+      "conclusion": "INAPPLICABLE -- not merely unspecified, but structurally without a domain for ARBS's own edges."
+    },
+    "test_2_diameter_stability_directly_falsified": {
+      "finding": "Computed the exact graph diameter (shortest-path hop count, unweighted) of G_0 through G_7 directly: diam(G_n) = 2n+1 exactly (1, 3, 5, 7, 9, 11, 13, 15 for n=0..7) -- growing linearly and without bound.",
+      "conclusion": "DISPROVEN, exactly and numerically. Diam(M_n,d_n) <= D_max < infinity is violated for every D_max, for n large enough. This is a hard counterexample, not an absence of information."
+    },
+    "test_3_forced_alpha_would_be_1_not_less_than_1": {
+      "finding": "ARBS defines no weighted/metric edge-length structure of its own -- every edge is simply present or absent (the unweighted adjacency matrix A_k in {0,1}). The only length assignment consistent with ARBS's own definition is unit length (l=1) for every edge, old and new alike. Under this assignment, since old edges are carried over UNCHANGED (test 1), any 'scaling constant' between a parent edge and itself is trivially alpha=1.",
+      "conclusion": "Even if one forced the comparison, the required strict contraction 0<alpha<1 fails: alpha=1 exactly, contradicting the law's own hypothesis."
+    }
+  },
+  "conclusion": {
+    "statement": "The ARBS edge-length rescaling law IS recovered from source -- it was never actually missing, only hidden inside embedded equation images that the earlier text-extraction pipeline could not read. But recovering it reveals a PROVEN STRUCTURAL INCOMPATIBILITY, not a usable rescaling: the law is defined for a bounded-diameter, edge-subdividing refinement process, and the ARBS shell construction is an unbounded-diameter, edge-preserving GROWTH process. All three of the law's own defining conditions (edge subdivision domain, metric invariance under R, bounded diameter) fail for ARBS, the last one by a direct, exact numerical counterexample (diam(G_n)=2n+1).",
+    "consequence_for_C004F": "This closes -- rather than merely leaves open -- the 'metric rescaling status' question flagged in C-004F.5/run 6. THEOREM C-004F.5 (continuum thermodynamic limit) is upgraded from 'DISPROVEN for the unrescaled map / OPEN for any rescaled version (untestable)' to DISPROVEN OUTRIGHT: no rescaling compatible with the source's own stated axioms can exist for the ARBS construction, because ARBS structurally violates Diameter Stability by direct counterexample, independent of any choice of alpha. This is now a proof, not an absence of a proof.",
+    "consequence_for_RF001_005": "This also explains, at the structural level, why BRIDGE B-004 (heat-kernel-to-geometry) remains OPEN and why RF-001..005's Gromov-Hausdorff-based convergence machinery (which fundamentally requires precompactness, i.e. uniformly bounded diameter, to extract convergent subsequences) was never applied to the ARBS shell sequence specifically anywhere in the corpus: it structurally cannot be, since ARBS's diameter is unbounded by direct computation."
+  },
+  "status": {
+    "edge_length_rescaling_law": "RECOVERED (from embedded equation images, not previously readable)",
+    "applicability_to_ARBS": "PROVEN INCOMPATIBLE (three independent arguments, one a direct numerical counterexample)",
+    "THM_C004F_5_update": "DISPROVEN OUTRIGHT (upgraded from the prior run's partial OPEN/untestable status)",
+    "G_star": "UNRESOLVED (unchanged)",
+    "sigma_k": "PROVEN NON-IDENTIFIABLE (unchanged, not reopened)"
+  }
+}

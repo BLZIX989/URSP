@@ -1,0 +1,50 @@
+{
+  "G0": {
+    "N": 2,
+    "diameter_hops": 1,
+    "predicted_2n+1": 1,
+    "matches_prediction": true
+  },
+  "G1": {
+    "N": 6,
+    "diameter_hops": 3,
+    "predicted_2n+1": 3,
+    "matches_prediction": true
+  },
+  "G2": {
+    "N": 14,
+    "diameter_hops": 5,
+    "predicted_2n+1": 5,
+    "matches_prediction": true
+  },
+  "G3": {
+    "N": 30,
+    "diameter_hops": 7,
+    "predicted_2n+1": 7,
+    "matches_prediction": true
+  },
+  "G4": {
+    "N": 62,
+    "diameter_hops": 9,
+    "predicted_2n+1": 9,
+    "matches_prediction": true
+  },
+  "G5": {
+    "N": 126,
+    "diameter_hops": 11,
+    "predicted_2n+1": 11,
+    "matches_prediction": true
+  },
+  "G6": {
+    "N": 254,
+    "diameter_hops": 13,
+    "predicted_2n+1": 13,
+    "matches_prediction": true
+  },
+  "G7": {
+    "N": 510,
+    "diameter_hops": 15,
+    "predicted_2n+1": 15,
+    "matches_prediction": true
+  }
+}
