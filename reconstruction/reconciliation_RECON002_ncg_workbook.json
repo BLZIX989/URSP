@@ -1,0 +1,36 @@
+{
+  "task": "RECON-002: correction to RECON-001 (reconciliation_registry.json) and to all prior runs' gauge-group classification, following discovery of a previously-unexamined dedicated source workbook.",
+  "discovery": "source/UOC_NCG_First_Principles_Unified_ToE_Rebuild_v2.25_KO0_Explicit_First_Order_Closure.xlsx -- 156 sheets, present in the source/ directory and listed in every prior run's file inventory, but never actually OPENED and read in any of the 16 runs performed so far (runs 1-16 searched '54_SOURCE_TEXT_CORPUS', a paragraph-text extraction sheet inside a DIFFERENT workbook, for gauge-group content, and concluded 'no route found' based on that search alone). This is a real gap in this project's own prior audits, not a fabrication by the user -- the file was correctly named in every source inventory but its contents were never examined.",
+  "what_the_workbook_actually_contains": {
+    "summary": "A genuine, carefully executed, iteratively self-corrected (V2-CALC-001 through V2-CALC-024A) derivation program using the STANDARD Connes/Chamseddine noncommutative-geometry finite-spectral-triple classification (KO-dimension, first-order condition, Krajewski diagrams, order-zero condition) -- not a fabrication, not the same as the previously-found and rejected 'graph-automorphism-commutant' route (SEF SIT Specification v2 / Audit and Recommended Revisions), which is a DIFFERENT, separate attempted route in this corpus.",
+    "V2_CALC_001_principal_result": "A_F=C(+)H(+)M3(C) |- G_SM, result = (SU(3)xSU(2)xU(1))/Z6 -- note the explicit Z6 quotient, a real technical detail (matching the actual Connes-Chamseddine literature) that this run's user-supplied MDCL-G write-up omitted (it wrote the bare product SU(3)xSU(2)xU(1), not the quotient).",
+    "V2_CALC_017_candidate_elimination_table": "A genuine multi-candidate test was run: C(+)H(+)M3(C) [survives all tests, 'CONDITIONALLY UNIQUE WITHIN TESTED MINIMAL ANSATZ'], H(+)M3(C) [survives gauge-algebra-only, 'NON-UNIQUE AT GAUGE-ALGEBRA LEVEL'], M2(C)(+)M3(C) [survives gauge-algebra-only, 'NON-MINIMAL ALTERNATIVE'], C(+)M3(C) [NO-GO, no su2], M3(C) [NO-GO, no su2], C(+)H [NO-GO, no su3]. This is real elimination work, not an assumed conclusion.",
+    "explicit_self_reported_status_09_NCG_SM_CLOSURE_sheet": [
+      "A_F = C(+)H(+)M3(C): status PARTIAL, scope 'strong within minimal matrix ansatz', remaining = 'global uniqueness'",
+      "Gauge group su3(+)su2(+)u1: status CALCULATED, scope 'unimodularity', remaining = 'global/representation selection'",
+      "H_F (Hilbert space / generation content): status PARTIAL, remaining = 'multiplicity' (i.e. N_gen=3 not derived)",
+      "J_F, order-zero/first-order conditions: status PARTIAL, scope 'test-model' (2-point toy model only), remaining = 'full SM'"
+    ],
+    "explicit_open_closure_registry_04_OPEN_CLOSURE": [
+      "OPEN-001 (CRITICAL): 'Finite algebra uniqueness -- Prove unique selection beyond minimal matrix-algebra ansatz'",
+      "OPEN-003 (CRITICAL): 'Generation selection -- Derive N_gen=3'",
+      "OPEN-004 (CRITICAL): 'Yukawa / mixing -- Derive D_F/Yukawas and CKM/PMNS'",
+      "OPEN-024 (HIGH): 'TOEv semantic functor -- physical core -< invariant IR' -- the bridge between this NCG track and the DTC/compiler/TOEv layer (where this project's ARBS/seed/graph work lives) is EXPLICITLY OPEN, in both directions"
+    ],
+    "explicit_audit_correction_16_AUDIT_CORRECTIONS": [
+      "AUD-007: 'A_F uniqueness -- partial within ansatz -- PRESERVED -- global theorem open'",
+      "AUD-008: 'Physical grammar -- D/T/C/Pi are semantic layer, not physical foundation -- GOVERNED -- NCG-first'",
+      "AUD-010: 'ARBS -- legacy only -- RETIRED / PRESERVED -- not canonical foundation'"
+    ],
+    "latest_iteration_V2_CALC_024A_status": "Even the most recent, most refined iteration (working on the KO0 grading/Majorana-removal construction) explicitly reports: 'Hard classification: KO0 is viable at operator/grading level, not yet a full finite NCG closure -- OPEN'; 'First-order: universal KO0 symbolic test remains open -- OPEN'; 'Poincare: not yet recalculated -- OPEN'."
+  },
+  "corrected_classification": {
+    "A_F_and_G_SM": "PARTIAL / CALCULATED WITHIN AN EXPLICITLY-SCOPED MINIMAL ANSATZ -- this is a REAL, substantive, non-fabricated, iteratively-tested result of this project (V2-CALC-001 through 024A), UPGRADED from this run's earlier classification of 'EMPIRICAL INPUT, no route located' (that classification was based on an incomplete search that missed this dedicated workbook entirely). It is NOT, however, a closed, globally-unique, fully-CERTIFIED result -- the workbook's own tracking explicitly and repeatedly says so (OPEN-001, CRITICAL; AUD-007). The correct status, in this project's own vocabulary, is PARTIAL / STRUCTURE-CALCULATED, not CERTIFIED or CANONICAL.",
+    "correction_to_this_runs_MDCL_G_writeup": "The user-supplied MDCL-G derivation this turn is mathematically faithful to V2-CALC-001's actual computation (the algebra-to-gauge-group steps check out and match this project's own prior work) but overstates its closure status by omitting every PARTIAL/OPEN label the source material itself attaches, and by presenting global algebra uniqueness (explicitly OPEN-001, CRITICAL, in this project's own registry) as already settled ('not an unresolved target').",
+    "correction_to_this_runs_own_prior_placement_of_ARBS": "Runs 13-16 of this project built an extensive kernel/compiler architecture around the graph-theoretic seed (R*, Gamma_infty, tilde_G_k) and ARBS's two certified axioms (TH-ARBS-001A/B), treating that as the compiler's primitive/admissibility layer. This newly-found workbook's OWN internal governance (AUD-008, AUD-010) explicitly states the OPPOSITE architectural relationship: the NCG spectral-triple axioms are to be treated as the primary physical foundation ('NCG-first'), the D/T/C/Gamma organizational grammar is 'semantic layer, not physical foundation', and ARBS specifically is 'legacy only... RETIRED... not canonical foundation'. This is a genuine, source-documented architectural finding this run did not previously have, and it is NOT something to silently resolve in either direction without the user's input -- see the question posed in this run's response."
+  },
+  "what_this_does_not_change": [
+    "The independently-verified graph/seed mathematics from runs 13-16 (F_N counts, THM-SEED theorems, TH-ARBS-001A/B verification against tilde_G_k, the N=5 extension, C-004 series spectral lemmas) remains numerically and mathematically VALID regardless of this architectural question -- only its claimed ROLE (primary foundation vs. legacy/retired substrate) is now in question, sourced from this project's own material, not from this run's own judgment.",
+    "3 generations, CKM/PMNS, absolute mass/coupling values, and the cosmological constant remain OPEN in every source examined across all 17 runs, including this newly-found workbook's own registry (OPEN-003, OPEN-004, OPEN-013, OPEN-016)."
+  ]
+}
