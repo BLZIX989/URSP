@@ -1,0 +1,75 @@
+{
+  "main_sweep": {
+    "2": {
+      "N": 2,
+      "n_seeds": 1,
+      "n_nonabelian_Comm_DF": 0,
+      "max_irrep_dim_histogram": {
+        "1": 1
+      },
+      "given_nonabelian__order_zero_pass": 0,
+      "given_nonabelian__first_order_pass": 0,
+      "given_nonabelian__BOTH_pass": 0,
+      "given_abelian__order_zero_pass": 1,
+      "given_abelian__first_order_pass": 1
+    },
+    "3": {
+      "N": 3,
+      "n_seeds": 4,
+      "n_nonabelian_Comm_DF": 0,
+      "max_irrep_dim_histogram": {
+        "1": 4
+      },
+      "given_nonabelian__order_zero_pass": 0,
+      "given_nonabelian__first_order_pass": 0,
+      "given_nonabelian__BOTH_pass": 0,
+      "given_abelian__order_zero_pass": 4,
+      "given_abelian__first_order_pass": 4
+    },
+    "4": {
+      "N": 4,
+      "n_seeds": 23,
+      "n_nonabelian_Comm_DF": 11,
+      "max_irrep_dim_histogram": {
+        "2": 11,
+        "1": 12
+      },
+      "given_nonabelian__order_zero_pass": 0,
+      "given_nonabelian__first_order_pass": 11,
+      "given_nonabelian__BOTH_pass": 0,
+      "given_abelian__order_zero_pass": 12,
+      "given_abelian__first_order_pass": 12
+    },
+    "5": {
+      "N": 5,
+      "n_seeds": 231,
+      "n_nonabelian_Comm_DF": 45,
+      "max_irrep_dim_histogram": {
+        "1": 186,
+        "3": 45
+      },
+      "given_nonabelian__order_zero_pass": 0,
+      "given_nonabelian__first_order_pass": 45,
+      "given_nonabelian__BOTH_pass": 0,
+      "given_abelian__order_zero_pass": 186,
+      "given_abelian__first_order_pass": 186
+    }
+  },
+  "controls": {
+    "A_remove_relation_DF_zero": {
+      "nonabelian": true,
+      "block_dims": [
+        4
+      ],
+      "note": "D_F=0 has one degenerate eigenspace of full dimension N -> Comm(D_F)=M_N(C), MAXIMALLY non-abelian but physically vacuous (D_F=0 means no seed relation at all)."
+    },
+    "E_maximal_abelian_reference": {
+      "note": "See ncg_first_order_proofs.json: order-zero always passes, first-order always fails, for the maximal abelian algebra."
+    },
+    "B_randomized_bipartite_same_N_and_edge_count": {
+      "n_trials": 50,
+      "n_degenerate_eigenvalue_found": 23,
+      "note": "Tests whether eigenvalue degeneracy (hence non-abelian Comm(D_F)) is specific to F_N^derived_v2's Gamma-fixed, rigid seeds, or a generic feature of sparse bipartite 0/1 matrices at this size."
+    }
+  }
+}

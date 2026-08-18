@@ -1,0 +1,67 @@
+{
+  "run": "OPEN-024B (non-abelian) -- Comm(D_F) bridge",
+  "frozen_prior_result": "SEMANTIC-FUNCTOR-BRIDGE-001 and OPEN-024B (asymmetric abelian): order-zero always passes, first-order always fails, for any representation of the maximal abelian algebra A_F=C^N. NOT re-run as open; reused as-is.",
+  "this_run_summary": {
+    "n_seeds_total": 259,
+    "n_nonabelian_seeds": 56,
+    "n_seeds_by_N": {
+      "2": 1,
+      "3": 4,
+      "4": 23,
+      "5": 231
+    },
+    "n_nonabelian_by_N": {
+      "2": 0,
+      "3": 0,
+      "4": 11,
+      "5": 45
+    },
+    "given_nonabelian__order_zero_pass_fraction": "0/56 (0%)",
+    "given_nonabelian__first_order_pass_fraction": "56/56 (100%)",
+    "given_nonabelian__BOTH_pass_fraction": "0/56 (0%)"
+  },
+  "outcome_classification": "B -- A canonical non-abelian algebra (A_seed=Comm(D_F)) is derived purely from the seed's own Hermitian D_F, and it correctly closes first-order (the axiom that was the frozen prior obstruction) -- but a DIFFERENT axiom, order-zero, now fails universally, for a proven, general, representation-choice-independent reason. Exactly one NCG axiom remains unresolved for this construction.",
+  "exact_first_unresolved_dependency": "Order-zero, per THM-NAB-ORDER-ZERO-OBSTRUCTION-001: for ANY conjugation-closed seed-derived algebra (which includes every construction mechanism in Section 4A-4G, since all are built from the seed's real adjacency matrix) combined with the standard swap-conjugate real structure J0 and the identical/inner-automorphism/conjugate representation family, order-zero holds iff the algebra is abelian -- so it can NEVER hold for a genuinely non-abelian seed-derived algebra under this natural representation/reality-structure convention. Closing the bridge requires EITHER (a) a fundamentally different real structure J not of swap-conjugate form, or (b) a genuinely representation-INEQUIVALENT pi_R -- which requires an algebra with multiple inequivalent irreps of compatible dimension, a structure NONE of the 259 admissible seeds through N=5 possess (every non-abelian seed's A_seed has each block occurring with multiplicity exactly 1). Neither (a) nor (b) is attempted this run, per the stop condition.",
+  "status_registry": {
+    "OPEN-024B-NAB-001": {
+      "item": "Non-abelian seed-derived algebra exists",
+      "status": "PROVEN (THM-NAB-001)"
+    },
+    "OPEN-024B-NAB-002": {
+      "item": "Multi-dimensional irrep exists",
+      "status": "PROVEN (THM-NAB-002)"
+    },
+    "OPEN-024B-NAB-003": {
+      "item": "Representation selection is canonical",
+      "status": "PROVEN (THM-NAB-003)"
+    },
+    "OPEN-024B-NAB-004": {
+      "item": "H_F dimension from seed (not forced to 32)",
+      "status": "DERIVED: dim=2N per seed"
+    },
+    "OPEN-024B-NAB-005": {
+      "item": "Asymmetric pi_L != pi_R representation freedom",
+      "status": "PROVEN IRRELEVANT (THM-NAB-004): all natural candidates give the same verdict"
+    },
+    "OPEN-024B-NAB-006": {
+      "item": "J_F / KO-dimension for non-abelian case",
+      "status": "VERIFIED (THM-NAB-007): unchanged, {0,6} mod 8"
+    },
+    "OPEN-024B-NAB-007": {
+      "item": "Order-zero",
+      "status": "FALSIFIED, universally (THM-NAB-005 / THM-NAB-ORDER-ZERO-OBSTRUCTION-001)"
+    },
+    "OPEN-024B-NAB-008": {
+      "item": "First-order",
+      "status": "PROVEN, universally (THM-NAB-006) -- first time in the entire investigation"
+    },
+    "OPEN-024B-NAB-009": {
+      "item": "Poincare duality / orientability",
+      "status": "OPEN, deferred per stop condition"
+    },
+    "OPEN-024B-NAB-010": {
+      "item": "Minimality / uniqueness of A_seed",
+      "status": "PROVEN NON-UNIQUE at the seed level (THM-NAB-010)"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "A_remove_relation_DF_zero": {
+    "nonabelian": true,
+    "block_dims": [
+      4
+    ],
+    "note": "D_F=0 has one degenerate eigenspace of full dimension N -> Comm(D_F)=M_N(C), MAXIMALLY non-abelian but physically vacuous (D_F=0 means no seed relation at all)."
+  },
+  "B_randomized_bipartite_same_N_and_edge_count": {
+    "n_trials": 50,
+    "n_degenerate_eigenvalue_found": 23,
+    "note": "Tests whether eigenvalue degeneracy (hence non-abelian Comm(D_F)) is specific to F_N^derived_v2's Gamma-fixed, rigid seeds, or a generic feature of sparse bipartite 0/1 matrices at this size."
+  },
+  "C_randomize_relation_preserving_bipartition": {
+    "status": "SUBSUMED_BY_B",
+    "note": "Control B's random_bipartite_mat already respects a fixed bipartition coloring (edges only placed between the two color classes), so it already tests exactly this condition; not run as a separate experiment to avoid duplicating B."
+  },
+  "D_randomize_topology_preserving_degree_sequence": {
+    "status": "LIMITATION_DOCUMENTED",
+    "n_trials": 30,
+    "n_degenerate_eigenvalue_found": 30,
+    "note": "Implemented as vertex relabeling (permutation similarity) of the N=4 witness seed's own adjacency matrix. This is HONESTLY REPORTED AS UNINFORMATIVE: permutation similarity leaves the spectrum of D_F exactly invariant by construction (conjugate matrices share eigenvalues), so 30/30 trivially reproduces the base seed's degeneracy pattern. A genuine degree-preserving rewiring (double-edge swap changing the actual topology, not just relabeling) was not implemented this run; this control's result should NOT be read as evidence that degeneracy survives generic degree-preserving rewiring -- only that it survives relabeling, which was never in doubt."
+  },
+  "E_maximal_abelian_reference": {
+    "note": "See ncg_first_order_proofs.json: order-zero always passes, first-order always fails, for the maximal abelian algebra."
+  },
+  "F_generic_matrix_algebra_same_dimension": {
+    "algebra": "M_4(C), the full 4x4 matrix algebra (NOT seed-derived, NOT contained in Comm(D_F) -- a genuinely non-abelian algebra of the same dimension as H_F^bare used only as a negative control)",
+    "nonabelian": true,
+    "order_zero_holds": false,
+    "order_zero_worst_residual": 1.0,
+    "first_order_holds": false,
+    "first_order_worst_residual": 2.0,
+    "finding": "BOTH order-zero AND first-order fail for M_4(C) (first-order residual 2.0, vs machine precision for A_seed=Comm(D_F)). This isolates THM-NAB-006's mechanism precisely: first-order holding is NOT a generic property of any non-abelian algebra of the right dimension -- it specifically requires A to be contained in Comm(D_F), i.e. commuting with D_F by construction. Confirms the commutant construction (4B) is doing real, load-bearing work, not incidental to the result."
+  },
+  "G_asymmetric_to_identical": {
+    "status": "COVERED_BY_representation_registry",
+    "note": "The 'identity' candidate in nonabelian_representation_registry.json IS this control -- order-zero fails there too (worst residual 1.0), so this is not a case where asymmetry was masking a real pass."
+  }
+}

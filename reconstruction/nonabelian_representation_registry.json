@@ -1,0 +1,20 @@
+{
+  "description": "Representation candidates for pi_R on the non-abelian A_seed=Comm(D_F), predefined before this sweep by direct analogy with OPEN-024B's asymmetric search space (identity/conjugate) plus the one new candidate genuinely available to a non-abelian algebra: an inner automorphism (conjugation by a random unitary acting within each degenerate eigenspace block; by Skolem-Noether every automorphism of a full matrix-algebra block is inner, so this exhausts the 'genuinely different representation' freedom available when each irrep occurs with multiplicity 1 in the defining representation, which is the case for every non-abelian seed found -- see block_dims in the seed algebra registry, no repeated non-trivial block ever occurs).",
+  "n_nonabelian_seeds_tested": 56,
+  "candidates": {
+    "identity": {
+      "n_oz_pass": 0,
+      "n_fo_pass": 56
+    },
+    "inner_automorphism": {
+      "n_oz_pass": 0,
+      "n_fo_pass": 56
+    },
+    "conjugate": {
+      "n_oz_pass": 0,
+      "n_fo_pass": 56
+    }
+  },
+  "validity_note": "conjugate is C-antilinear (pi_R(i*a) != i*pi_R(a) in general), a legitimate R-algebra representation but not a C-algebra one -- same caveat as the prior asymmetric run's 'conjugate' candidate. Reported for completeness, not treated as equally valid.",
+  "finding": "ALL THREE candidates fail order-zero on EVERY non-abelian seed tested, with the identical worst-case residual (1.0, exact) across candidates and seeds -- direct numerical confirmation that the obstruction is basis-independent (as the analytic proof in the theorem registry predicts), not an artifact of which representative within the equivalence class is chosen. First-order holds for ALL three candidates on EVERY non-abelian seed (elements of Comm(D_F) commute with D_F by definition, independent of the choice of pi_R)."
+}

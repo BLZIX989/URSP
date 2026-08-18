@@ -1,0 +1,87 @@
+{
+  "witness_seed": {
+    "N": 4,
+    "seed_id": 20,
+    "adjacency_matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ]
+  },
+  "A_seed": {
+    "block_dims": [
+      1,
+      2,
+      1
+    ],
+    "dim": 6,
+    "nonabelian": true,
+    "max_irrep_dim": 2
+  },
+  "H_F": {
+    "dim": 8,
+    "construction": "H_F = C^N (+) C^N, particle (+) antiparticle, N = seed vertex count -- NOT forced to 32, determined purely by the seed."
+  },
+  "grading": {
+    "gamma_F_squared_eq_1": false,
+    "anticommutes_with_D_F": false,
+    "holds": false
+  },
+  "hermiticity": {
+    "D_F_eq_D_F_dagger": true,
+    "holds": true
+  },
+  "reality_J": {
+    "construction": "standard swap-conjugate J0 from ncg_bridge.py, unchanged from SEMANTIC-FUNCTOR-BRIDGE-001 / OPEN-024B",
+    "phase1_phase2_verification": {
+      "J_squared_sign_eps": 1,
+      "JD_sign_eps_prime": 1,
+      "Jgamma_sign_eps_dprime": 1,
+      "matched_KO_dimensions_mod_8": [
+        0
+      ]
+    }
+  },
+  "order_zero_identical_pi_R": {
+    "holds": false,
+    "worst_residual": 0.9999999999999993
+  },
+  "first_order_identical_pi_R": {
+    "holds": true,
+    "worst_residual": 5.495323605393211e-16
+  },
+  "poincare_duality": {
+    "status": "DEFERRED",
+    "reason": "order-zero (an earlier item in the Section-19 closure checklist) already fails for every representation candidate tested -- per Section 19's stop condition, axioms downstream of the first failure are not tested against a triple that isn't closed."
+  },
+  "orientability": {
+    "status": "DEFERRED",
+    "reason": "same as poincare_duality above."
+  },
+  "KO_dimension": {
+    "same_sign_convention": 0,
+    "opposite_sign_convention": 6,
+    "note": "unchanged from prior runs -- the KO class is fixed by the doubling convention (an external choice, sections established in OPEN-024B), not by the algebra construction, so this run's non-abelian A_seed doesn't move it."
+  }
+}

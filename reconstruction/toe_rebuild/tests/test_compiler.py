@@ -9,6 +9,7 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from compiler import compile_seed, enumerate_admissible_seeds, kernel, ncg_bridge
 from compiler import ncg_asymmetric_bridge as ab
+from compiler import ncg_nonabelian_bridge as nab
 
 
 def test_seed_counts_match_prior_runs():
@@ -152,6 +153,85 @@ def test_D_F_squared_not_equal_laplacian():
             A_sym = (A + A.T) / 2.0
             L = np.diag(A_sym.sum(axis=1)) - A_sym
             assert not np.allclose(D_F_sq, L), f"N={N}: unexpectedly found D_F^2==L, would overturn ncg_df_laplacian_relation.json"
+
+
+def test_nonabelian_seed_count_matches_report():
+    """OPEN-024B (non-abelian): 11/23 seeds at N=4, 45/231 at N=5, 0 at N=2,3 have a
+    non-abelian Comm(D_F) -- exact counts this run's report and workbook rely on."""
+    import numpy as np
+    from run_bridge import get_n5_candidates
+
+    def get_seeds(N):
+        if N <= 4:
+            return [s.adjacency_matrix for s in enumerate_admissible_seeds(N)]
+        return get_n5_candidates()
+
+    expected_nonabelian = {2: 0, 3: 0, 4: 11, 5: 45}
+    for N, exp in expected_nonabelian.items():
+        n_nonab = 0
+        for mat in get_seeds(N):
+            p1 = ncg_bridge.build_phase1(mat, N)
+            basis, block_dims, groups, eigvecs = nab.commutant_basis(p1["D_F"])
+            if nab.is_nonabelian(basis):
+                n_nonab += 1
+        assert n_nonab == exp, f"N={N}: expected {exp} non-abelian seeds, got {n_nonab}"
+
+
+def test_nonabelian_commutant_first_order_always_holds_THM_NAB_006():
+    """THM-NAB-006: for a in Comm(D_F), [D_F,a]=0 by definition, so first-order holds
+    identically for the identical-copy representation -- the first axiom-pass of this
+    kind anywhere in the whole investigation."""
+    import numpy as np
+    N = 4
+    for seed in enumerate_admissible_seeds(N):
+        mat = seed.adjacency_matrix
+        p1 = ncg_bridge.build_phase1(mat, N)
+        D_F = p1["D_F"]
+        basis, block_dims, groups, eigvecs = nab.commutant_basis(D_F)
+        if not nab.is_nonabelian(basis):
+            continue
+        p2 = ncg_bridge.build_phase2(p1, True)
+        fo_ok, fo_resid = nab.test_first_order_full_commutant(basis, p2["D_F_full"], p2["J0"], N)
+        assert fo_ok, f"N={N} seed {seed.canonical_int}: first-order unexpectedly failed for Comm(D_F)"
+        assert fo_resid < 1e-8
+
+
+def test_nonabelian_commutant_order_zero_always_fails_THM_NAB_005():
+    """THM-NAB-005 / THM-NAB-ORDER-ZERO-OBSTRUCTION-001: order-zero requires the
+    conjugation-closed algebra to be abelian; it must fail whenever Comm(D_F) is
+    genuinely non-abelian, with zero exceptions."""
+    N = 4
+    for seed in enumerate_admissible_seeds(N):
+        mat = seed.adjacency_matrix
+        p1 = ncg_bridge.build_phase1(mat, N)
+        D_F = p1["D_F"]
+        basis, block_dims, groups, eigvecs = nab.commutant_basis(D_F)
+        if not nab.is_nonabelian(basis):
+            continue
+        p2 = ncg_bridge.build_phase2(p1, True)
+        oz_ok, oz_resid = nab.test_order_zero_full_commutant(basis, p2["J0"], N)
+        assert not oz_ok, f"N={N} seed {seed.canonical_int}: order-zero UNEXPECTEDLY PASSED for non-abelian Comm(D_F) -- theorem violated, investigate immediately"
+
+
+def test_nonabelian_control_full_matrix_algebra_fails_both_axioms():
+    """Control F: M_N(C) (non-abelian, but NOT contained in Comm(D_F)) fails BOTH
+    order-zero and first-order -- isolates that first-order's pass is specifically
+    because A_seed commutes with D_F, not a generic non-abelian-algebra property."""
+    import numpy as np
+    N = 4
+    mat = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 1], [0, 1, 0, 0]]
+    p1 = ncg_bridge.build_phase1(mat, N)
+    p2 = ncg_bridge.build_phase2(p1, True)
+    basisF = []
+    for p in range(N):
+        for q in range(N):
+            e = np.zeros((N, N), dtype=complex)
+            e[p, q] = 1.0
+            basisF.append(e)
+    oz_ok, _ = nab.test_order_zero_full_commutant(basisF, p2["J0"], N)
+    fo_ok, _ = nab.test_first_order_full_commutant(basisF, p2["D_F_full"], p2["J0"], N)
+    assert not oz_ok, "control M_N(C) unexpectedly passed order-zero"
+    assert not fo_ok, "control M_N(C) unexpectedly passed first-order"
 
 
 if __name__ == "__main__":
