@@ -1,0 +1,20 @@
+{
+  "task": "Section 18 (falsification requirement) + running ledger across this run's own new claims.",
+  "falsified_this_run": [
+    {"claim": "TH-ARBS-001A and TH-ARBS-001B can both be applied directly to the seed relation R with no incompatibility", "result": "FALSIFIED as originally applied in UOC-C0-SEED-CANONICALITY-002 -- Symmetric-cap-Acyclic(R)={empty} for any nonempty R when both axioms are imposed on R itself"},
+    {"claim": "This falsifies the bipartite-nilpotent architecture altogether", "result": "FALSIFIED (of the falsification) -- the incompatibility was an ARTIFACT of applying TH-ARBS-001B to the wrong object; correctly re-attached to a derived orientation N_orient(R), the incompatibility DISSOLVES (PROVEN: any bipartite R's canonical orientation is automatically nilpotent, no separate constraint needed)"},
+    {"claim": "Section 18's list of 'CERTIFIED' physics results are all independently established", "result": "PARTIALLY FALSIFIED -- the specific gauge-group item is a SOURCE CONFLICT: the v1 'CERTIFIED' label is explicitly superseded by the project's own later post-audit source, which relabels it an unproven INPUT. See uoc_historical_reclassification.json."}
+  ],
+  "falsified_in_prior_runs_reaffirmed": [
+    "Graph-automorphism route to SU(3)xSU(2)xU(1): empirically rejected, 0/200 (source's own test, SEF SIT Specification v2.docx)",
+    "Generation-emergence-from-spectral-gaps (R6): withdrawn on dynamical-range grounds (lambda_max <= 2*max_degree theorem forbids required ratios)",
+    "Deprecated alpha_k formula (automorphism-ratio): disagrees with the retained projector-overlap formula for any specific physical eigenstate",
+    "SIT Delta->G unconstrained selector: converges to near-complete graph, not a bipartite-shell graph (source's own test)",
+    "Gamma_1 (one-shot color refinement) idempotence: falsified, 4/104 and 59/3044 counterexamples at N=3,4 (UOC-C0-MINIMAL-SEED-CLOSURE-001)"
+  ],
+  "not_falsified_remains_open": [
+    "Whether F_N_derived_v2 eventually becomes unique at larger N, or a canonical family/quotient structure exists -- NOT falsified, NOT proven, genuinely open",
+    "Whether persistence Pi can be given a parameter-free definition -- NOT falsified (not ruled out), simply never attempted with success",
+    "Whether the compiler can eventually reach PASS-10 onward under some future resolution of the N-scaling/lambda_gap blocks -- open by construction, not falsified"
+  ]
+}

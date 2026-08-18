@@ -1,0 +1,6 @@
+{
+  "task": "Section 38 required artifact.",
+  "predictions": [],
+  "why_empty": "A prediction requires PASS-18 (Observation Compilation) to execute, which requires every pass from PASS-10 onward to close first (see uoc_compiler_passes.json). None of them do. Populating this registry with any numeric claim -- however hedged -- would violate Section 43's explicit prohibition ('Do not manufacture physical equations simply because the compiler should eventually generate them... Do not manually insert the desired physical equation') and Section 0's explicit prohibition on choosing parameters because they reproduce known physics. An honestly empty prediction registry is the correct output of this compiler at its current closure frontier, not an oversight.",
+  "what_would_populate_it": "A resolved lambda_gap (or a parameter-free replacement), a resolved N-scaling/continuum construction for F_N_derived_v2, and a non-input derivation of the gauge sector -- in that dependency order, per uoc_master_mdcl.json."
+}

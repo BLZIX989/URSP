@@ -1,0 +1,32 @@
+{
+  "task": "Section 22: minimal equation basis, partitioned per the required categories, not concatenated from the historical registry.",
+  "primitive_definitions": [
+    "R subset X*X (kernel)",
+    "L := D - A_sym; Q := -D^{-1}L; Q* := -LD^{-1} (kept distinct, never merged, per prior-run theorem THM-GEN-DISTINCT-001)"
+  ],
+  "compiler_rules": [
+    "Gamma(R) := color-refinement quotient of R (equitable partition construction)",
+    "Gamma_infty(R) := iterate Gamma to convergence",
+    "N_orient(R) := canonical X->Y orientation of a bipartite R (this run's derivation)"
+  ],
+  "derived_equations": [
+    "|End(Delta)| = sum_sigma prod_i n_{sigma(i)}^{n_i}; |Aut(Delta)| analogous restricted sum (UOC-C0-MINIMAL-SEED-CLOSURE-001)",
+    "d_diff(i,j)^2 = R_eff(i,j) (C-004I, proven via Moore-Penrose pseudoinverse -- promoted this run to a general reusable lemma, not seed-specific)",
+    "Bipartite R => N_orient(R)^2 = 0 (this run, general theorem)"
+  ],
+  "equivalent_representations": [
+    "Typed relation R=(X,R,tau) ~ Sigma-indexed family {R_a}_{a in Sigma} of ordinary relations -- informationally equivalent, no new primitive (UOC-C0-MINIMAL-SEED-CLOSURE-001)",
+    "(D,T,C) as independent primitives ~ (D_R,T_R,C_R) as derived functions of R, when the derived reading is used -- ZERO additional bits either way"
+  ],
+  "constitutive_relations": [],
+  "boundary_conditions": [],
+  "empirical_inputs": [
+    "AX2 Gauge Input Axiom: G := Aut(K) x Spin(8), explicitly labeled INPUT (not derived) in the project's own post-audit source (SEF SIT Specification v2.docx) -- listed here as an empirical input EXACTLY as the source itself labels it, not smuggled in as a derived equation",
+    "N_gen := 3, explicitly labeled INPUT ('Compactification Constraint') in the same source",
+    "lambda_gap, lambda_C, theta, beta, Lambda, m_0 -- all explicitly labeled 'Unfixed' free parameters in the source's own Free Parameter Registry (recovered in full in KIJ-THETA-IMAGE-RECOVERY-001)"
+  ],
+  "observational_outputs": [
+    "NONE -- see uoc_master_prediction_registry.json. No equation in this registry has been run forward to an observational comparison, because no pass past PASS-09 closes."
+  ],
+  "minimization_note": "The 'primitive definitions' and 'compiler rules' sections above are the actual minimal basis needed to regenerate every DERIVED equation and every CLOSED compiler-pass result in this project through PASS-09. Nothing in 'empirical inputs' is claimed as derived -- they are listed explicitly as inputs because the source itself labels them that way, and no computation performed by this project (15 runs) has changed that status."
+}

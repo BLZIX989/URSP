@@ -1,0 +1,6 @@
+{
+  "task": "Section 20 firewall audit, re-run against every artifact produced this run.",
+  "method": "Grepped all 14 uoc_*.json artifacts and the closure report for: 32, N_H, G*, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, CKM, PMNS, Xi_obs, DESI, CMB, Lambda_obs, H_0 (properly word/digit-bounded to avoid substring false positives, cross-checked against an unbounded pass to catch anything the bounded pass might miss).",
+  "result": "PASS. The only genuine hit (uoc_historical_reclassification.json) is a quoted discussion, within the provenance audit itself, of the SOURCE's own claim about gauge-group recovery being CERTIFIED-then-REJECTED -- this is provenance auditing, not using a downstream target to SELECT an upstream object. No compiler construction, filter, kernel definition, or seed-selection criterion anywhere in this run references any downstream physics value.",
+  "specific_check_on_the_new_kernel_reconfiguration": "The bipartite-only re-derivation of F_N_derived_v2, and the N_orient nilpotency theorem, were both derived from TH-ARBS-001A/B (already-certified, source-derived structural axioms) and from pure graph theory (canonical orientation, matrix nilpotency) -- no physics value entered the construction at any point, verified directly by re-reading uoc_compiler_kernel.json's own derivation chain."
+}
