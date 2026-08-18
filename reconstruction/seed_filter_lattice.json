@@ -1,0 +1,311 @@
+{
+  "2": {
+    "N": 2,
+    "F_N_total": 6,
+    "filters": [
+      {
+        "filter": "rigid_Aut_eq_1",
+        "status": "UNJUSTIFIED",
+        "justification": "No independently-certified UOC dependency requires trivial automorphism group. Rejected per Rule 0.4 unless later justified.",
+        "candidates_before": 6,
+        "candidates_after": 6
+      },
+      {
+        "filter": "minimal_edge_count",
+        "status": "UNJUSTIFIED",
+        "justification": "'Minimal edge count' is not a fixed predicate -- it requires choosing a threshold with no independent derivation. HEURISTIC ONLY per section 13; not applied as a hard filter, reported as a ranking statistic instead.",
+        "survivors": null
+      },
+      {
+        "filter": "functional",
+        "status": "UNJUSTIFIED",
+        "justification": "Functionality (deterministic successor) is not independently required by any certified upstream UOC dependency for a graph/relation node -- BRIDGE B-001 and Graph_ARBS's axioms say nothing about functionality. PROPOSED only.",
+        "candidates_before": 6,
+        "candidates_after": 1
+      },
+      {
+        "filter": "weakly_connected",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 6,
+        "candidates_after": 5
+      },
+      {
+        "filter": "strongly_connected",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 6,
+        "candidates_after": 1
+      },
+      {
+        "filter": "irreflexive",
+        "status": "DERIVED",
+        "justification": "Follows NECESSARILY from TH-ARBS-001A (bipartite reciprocity lock, independently certified in ARBS-GRAPH-REALIZATION-001): a self-loop connects a vertex to itself, which cannot cross a bipartition, so any TH-ARBS-001A-admissible graph is automatically irreflexive. Not imposed as a free-standing axiom -- it is a logical consequence of an already-certified filter (bipartite_TH_ARBS_001A) applied below.",
+        "candidates_before": 6,
+        "candidates_after": 1
+      },
+      {
+        "filter": "reflexive",
+        "status": "UNJUSTIFIED",
+        "justification": "No independent derivation; also directly INCOMPATIBLE with the DERIVED irreflexivity consequence above for any nontrivial candidate.",
+        "candidates_before": 6,
+        "candidates_after": 1
+      },
+      {
+        "filter": "symmetric",
+        "status": "DERIVED-CONDITIONAL",
+        "justification": "Every certified spectral/persistence/thermodynamic construction reproduced in this project's prior runs (runs 1-9, tilde_G_k family) was built and verified EXCLUSIVELY on symmetric (undirected) weighted graphs -- Spec(L)={lambda_n,phi_n} with a real orthonormal eigenbasis, the heat kernel K_t=exp(-tL) as a genuine diffusion semigroup, and the Q=-D^{-1}L thermodynamic generator (real spectrum via similarity to the symmetric D^{-1/2}LD^{-1/2}) all implicitly require L symmetric, equivalently A symmetric. This is a PRECONDITION already built into the certified machinery, not an aesthetic preference newly imposed here -- see spectral closure section for the direct computational demonstration (asymmetric candidates give complex adjacency spectra).",
+        "candidates_before": 6,
+        "candidates_after": 2
+      },
+      {
+        "filter": "antisymmetric",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 6,
+        "candidates_after": 5
+      },
+      {
+        "filter": "transitive",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 6,
+        "candidates_after": 5
+      },
+      {
+        "filter": "acyclic_TH_ARBS_001B",
+        "status": "DERIVED",
+        "justification": "TH-ARBS-001B (Shell Nilpotency Lock, independently certified in ARBS-GRAPH-REALIZATION-001) requires the directed transport matrix to be nilpotent for some finite power. For R taken as its own already-directed transport matrix, nilpotency is equivalent to acyclicity (a 0/1 matrix is nilpotent iff its digraph has no directed cycle, including self-loops as length-1 cycles) -- verified computationally (nilpotent_by_power == acyclic, asserted with zero exceptions across all candidates).",
+        "candidates_before": 6,
+        "candidates_after": 1
+      },
+      {
+        "filter": "bipartite_TH_ARBS_001A",
+        "status": "DERIVED",
+        "justification": "TH-ARBS-001A (Bipartite Reciprocity Lock), independently certified in ARBS-GRAPH-REALIZATION-001 as one of exactly two concrete, checkable admissibility axioms for the Graph_ARBS category. Applied here as a FILTER on an independently-derived downstream (well, same-layer -- see dependency-order note below) admissibility condition, per Rule 0.7.",
+        "candidates_before": 6,
+        "candidates_after": 1
+      },
+      {
+        "filter": "nontrivial_spectral_gap",
+        "status": "UNJUSTIFIED",
+        "justification": "No certified threshold for 'nontrivial' exists in source; reported as a computed statistic, not applied as a hard filter.",
+        "candidates_before": 6,
+        "candidates_after": 5
+      },
+      {
+        "filter": "laplacian_connected_nullity_1",
+        "status": "UNJUSTIFIED",
+        "justification": "Laplacian-nullity-equals-1 (graph connected) is a standard spectral graph theory fact, but no certified UOC dependency requires the SEED specifically to be connected. Reported as a statistic.",
+        "candidates_before": 6,
+        "candidates_after": 5
+      }
+    ]
+  },
+  "3": {
+    "N": 3,
+    "F_N_total": 70,
+    "filters": [
+      {
+        "filter": "rigid_Aut_eq_1",
+        "status": "UNJUSTIFIED",
+        "justification": "No independently-certified UOC dependency requires trivial automorphism group. Rejected per Rule 0.4 unless later justified.",
+        "candidates_before": 70,
+        "candidates_after": 70
+      },
+      {
+        "filter": "minimal_edge_count",
+        "status": "UNJUSTIFIED",
+        "justification": "'Minimal edge count' is not a fixed predicate -- it requires choosing a threshold with no independent derivation. HEURISTIC ONLY per section 13; not applied as a hard filter, reported as a ranking statistic instead.",
+        "survivors": null
+      },
+      {
+        "filter": "functional",
+        "status": "UNJUSTIFIED",
+        "justification": "Functionality (deterministic successor) is not independently required by any certified upstream UOC dependency for a graph/relation node -- BRIDGE B-001 and Graph_ARBS's axioms say nothing about functionality. PROPOSED only.",
+        "candidates_before": 70,
+        "candidates_after": 3
+      },
+      {
+        "filter": "weakly_connected",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 70,
+        "candidates_after": 60
+      },
+      {
+        "filter": "strongly_connected",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 70,
+        "candidates_after": 20
+      },
+      {
+        "filter": "irreflexive",
+        "status": "DERIVED",
+        "justification": "Follows NECESSARILY from TH-ARBS-001A (bipartite reciprocity lock, independently certified in ARBS-GRAPH-REALIZATION-001): a self-loop connects a vertex to itself, which cannot cross a bipartition, so any TH-ARBS-001A-admissible graph is automatically irreflexive. Not imposed as a free-standing axiom -- it is a logical consequence of an already-certified filter (bipartite_TH_ARBS_001A) applied below.",
+        "candidates_before": 70,
+        "candidates_after": 7
+      },
+      {
+        "filter": "reflexive",
+        "status": "UNJUSTIFIED",
+        "justification": "No independent derivation; also directly INCOMPATIBLE with the DERIVED irreflexivity consequence above for any nontrivial candidate.",
+        "candidates_before": 70,
+        "candidates_after": 7
+      },
+      {
+        "filter": "symmetric",
+        "status": "DERIVED-CONDITIONAL",
+        "justification": "Every certified spectral/persistence/thermodynamic construction reproduced in this project's prior runs (runs 1-9, tilde_G_k family) was built and verified EXCLUSIVELY on symmetric (undirected) weighted graphs -- Spec(L)={lambda_n,phi_n} with a real orthonormal eigenbasis, the heat kernel K_t=exp(-tL) as a genuine diffusion semigroup, and the Q=-D^{-1}L thermodynamic generator (real spectrum via similarity to the symmetric D^{-1/2}LD^{-1/2}) all implicitly require L symmetric, equivalently A symmetric. This is a PRECONDITION already built into the certified machinery, not an aesthetic preference newly imposed here -- see spectral closure section for the direct computational demonstration (asymmetric candidates give complex adjacency spectra).",
+        "candidates_before": 70,
+        "candidates_after": 4
+      },
+      {
+        "filter": "antisymmetric",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 70,
+        "candidates_after": 30
+      },
+      {
+        "filter": "transitive",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 70,
+        "candidates_after": 20
+      },
+      {
+        "filter": "acyclic_TH_ARBS_001B",
+        "status": "DERIVED",
+        "justification": "TH-ARBS-001B (Shell Nilpotency Lock, independently certified in ARBS-GRAPH-REALIZATION-001) requires the directed transport matrix to be nilpotent for some finite power. For R taken as its own already-directed transport matrix, nilpotency is equivalent to acyclicity (a 0/1 matrix is nilpotent iff its digraph has no directed cycle, including self-loops as length-1 cycles) -- verified computationally (nilpotent_by_power == acyclic, asserted with zero exceptions across all candidates).",
+        "candidates_before": 70,
+        "candidates_after": 3
+      },
+      {
+        "filter": "bipartite_TH_ARBS_001A",
+        "status": "DERIVED",
+        "justification": "TH-ARBS-001A (Bipartite Reciprocity Lock), independently certified in ARBS-GRAPH-REALIZATION-001 as one of exactly two concrete, checkable admissibility axioms for the Graph_ARBS category. Applied here as a FILTER on an independently-derived downstream (well, same-layer -- see dependency-order note below) admissibility condition, per Rule 0.7.",
+        "candidates_before": 70,
+        "candidates_after": 4
+      },
+      {
+        "filter": "nontrivial_spectral_gap",
+        "status": "UNJUSTIFIED",
+        "justification": "No certified threshold for 'nontrivial' exists in source; reported as a computed statistic, not applied as a hard filter.",
+        "candidates_before": 70,
+        "candidates_after": 60
+      },
+      {
+        "filter": "laplacian_connected_nullity_1",
+        "status": "UNJUSTIFIED",
+        "justification": "Laplacian-nullity-equals-1 (graph connected) is a standard spectral graph theory fact, but no certified UOC dependency requires the SEED specifically to be connected. Reported as a statistic.",
+        "candidates_before": 70,
+        "candidates_after": 60
+      }
+    ]
+  },
+  "4": {
+    "N": 4,
+    "F_N_total": 2462,
+    "filters": [
+      {
+        "filter": "rigid_Aut_eq_1",
+        "status": "UNJUSTIFIED",
+        "justification": "No independently-certified UOC dependency requires trivial automorphism group. Rejected per Rule 0.4 unless later justified.",
+        "candidates_before": 2462,
+        "candidates_after": 2462
+      },
+      {
+        "filter": "minimal_edge_count",
+        "status": "UNJUSTIFIED",
+        "justification": "'Minimal edge count' is not a fixed predicate -- it requires choosing a threshold with no independent derivation. HEURISTIC ONLY per section 13; not applied as a hard filter, reported as a ranking statistic instead.",
+        "survivors": null
+      },
+      {
+        "filter": "functional",
+        "status": "UNJUSTIFIED",
+        "justification": "Functionality (deterministic successor) is not independently required by any certified upstream UOC dependency for a graph/relation node -- BRIDGE B-001 and Graph_ARBS's axioms say nothing about functionality. PROPOSED only.",
+        "candidates_before": 2462,
+        "candidates_after": 6
+      },
+      {
+        "filter": "weakly_connected",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 2462,
+        "candidates_after": 2327
+      },
+      {
+        "filter": "strongly_connected",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 2462,
+        "candidates_after": 985
+      },
+      {
+        "filter": "irreflexive",
+        "status": "DERIVED",
+        "justification": "Follows NECESSARILY from TH-ARBS-001A (bipartite reciprocity lock, independently certified in ARBS-GRAPH-REALIZATION-001): a self-loop connects a vertex to itself, which cannot cross a bipartition, so any TH-ARBS-001A-admissible graph is automatically irreflexive. Not imposed as a free-standing axiom -- it is a logical consequence of an already-certified filter (bipartite_TH_ARBS_001A) applied below.",
+        "candidates_before": 2462,
+        "candidates_after": 136
+      },
+      {
+        "filter": "reflexive",
+        "status": "UNJUSTIFIED",
+        "justification": "No independent derivation; also directly INCOMPATIBLE with the DERIVED irreflexivity consequence above for any nontrivial candidate.",
+        "candidates_before": 2462,
+        "candidates_after": 136
+      },
+      {
+        "filter": "symmetric",
+        "status": "DERIVED-CONDITIONAL",
+        "justification": "Every certified spectral/persistence/thermodynamic construction reproduced in this project's prior runs (runs 1-9, tilde_G_k family) was built and verified EXCLUSIVELY on symmetric (undirected) weighted graphs -- Spec(L)={lambda_n,phi_n} with a real orthonormal eigenbasis, the heat kernel K_t=exp(-tL) as a genuine diffusion semigroup, and the Q=-D^{-1}L thermodynamic generator (real spectrum via similarity to the symmetric D^{-1/2}LD^{-1/2}) all implicitly require L symmetric, equivalently A symmetric. This is a PRECONDITION already built into the certified machinery, not an aesthetic preference newly imposed here -- see spectral closure section for the direct computational demonstration (asymmetric candidates give complex adjacency spectra).",
+        "candidates_before": 2462,
+        "candidates_after": 16
+      },
+      {
+        "filter": "antisymmetric",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 2462,
+        "candidates_after": 430
+      },
+      {
+        "filter": "transitive",
+        "status": "UNJUSTIFIED",
+        "justification": "Not independently derived from any certified dependency.",
+        "candidates_before": 2462,
+        "candidates_after": 111
+      },
+      {
+        "filter": "acyclic_TH_ARBS_001B",
+        "status": "DERIVED",
+        "justification": "TH-ARBS-001B (Shell Nilpotency Lock, independently certified in ARBS-GRAPH-REALIZATION-001) requires the directed transport matrix to be nilpotent for some finite power. For R taken as its own already-directed transport matrix, nilpotency is equivalent to acyclicity (a 0/1 matrix is nilpotent iff its digraph has no directed cycle, including self-loops as length-1 cycles) -- verified computationally (nilpotent_by_power == acyclic, asserted with zero exceptions across all candidates).",
+        "candidates_before": 2462,
+        "candidates_after": 17
+      },
+      {
+        "filter": "bipartite_TH_ARBS_001A",
+        "status": "DERIVED",
+        "justification": "TH-ARBS-001A (Bipartite Reciprocity Lock), independently certified in ARBS-GRAPH-REALIZATION-001 as one of exactly two concrete, checkable admissibility axioms for the Graph_ARBS category. Applied here as a FILTER on an independently-derived downstream (well, same-layer -- see dependency-order note below) admissibility condition, per Rule 0.7.",
+        "candidates_before": 2462,
+        "candidates_after": 23
+      },
+      {
+        "filter": "nontrivial_spectral_gap",
+        "status": "UNJUSTIFIED",
+        "justification": "No certified threshold for 'nontrivial' exists in source; reported as a computed statistic, not applied as a hard filter.",
+        "candidates_before": 2462,
+        "candidates_after": 2327
+      },
+      {
+        "filter": "laplacian_connected_nullity_1",
+        "status": "UNJUSTIFIED",
+        "justification": "Laplacian-nullity-equals-1 (graph connected) is a standard spectral graph theory fact, but no certified UOC dependency requires the SEED specifically to be connected. Reported as a statistic.",
+        "candidates_before": 2462,
+        "candidates_after": 2327
+      }
+    ]
+  }
+}

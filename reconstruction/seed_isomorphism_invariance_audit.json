@@ -1,0 +1,97 @@
+{
+  "n_trials": 138,
+  "n_passed": 138,
+  "all_passed": true,
+  "sample": [
+    {
+      "N": 2,
+      "seed_id": "N2-0003",
+      "perm": [
+        0,
+        1
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0003",
+      "perm": [
+        0,
+        1
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0003",
+      "perm": [
+        0,
+        1
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0005",
+      "perm": [
+        1,
+        0
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0005",
+      "perm": [
+        1,
+        0
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0005",
+      "perm": [
+        0,
+        1
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0000",
+      "perm": [
+        1,
+        0
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0000",
+      "perm": [
+        1,
+        0
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0000",
+      "perm": [
+        0,
+        1
+      ],
+      "invariant_preserved": true
+    },
+    {
+      "N": 2,
+      "seed_id": "N2-0001",
+      "perm": [
+        1,
+        0
+      ],
+      "invariant_preserved": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "dependency_order_note": "TH-ARBS-001A and TH-ARBS-001B were both independently derived and verified in ARBS-GRAPH-REALIZATION-001 (prior run), entirely from the source-documented Graph_ARBS specification, with NO reference to the C0 relational-seed candidates being tested here. They are applied here strictly as filters on an already-independently-derived pair of admissibility axioms, per Rule 0.7's exception ('Only use a downstream layer as a FILTER after that layer has been independently derived from the candidate') -- not as a retroactive redefinition of the seed. No result from THIS run's seed candidates was fed back into TH-ARBS-001A/B's own derivation.",
+  "results": {
+    "2": {
+      "N": 2,
+      "active_filters_applied_in_order": [
+        "irreflexive",
+        "acyclic_TH_ARBS_001B",
+        "bipartite_TH_ARBS_001A"
+      ],
+      "survivor_lattice_trace": [
+        [
+          "F_N (all fixed points)",
+          6
+        ],
+        [
+          "irreflexive",
+          1
+        ],
+        [
+          "acyclic_TH_ARBS_001B",
+          1
+        ],
+        [
+          "bipartite_TH_ARBS_001A",
+          1
+        ]
+      ],
+      "F_N_derived_size": 1,
+      "survivor_seed_ids": [
+        "N2-0001"
+      ]
+    },
+    "3": {
+      "N": 3,
+      "active_filters_applied_in_order": [
+        "irreflexive",
+        "acyclic_TH_ARBS_001B",
+        "bipartite_TH_ARBS_001A"
+      ],
+      "survivor_lattice_trace": [
+        [
+          "F_N (all fixed points)",
+          70
+        ],
+        [
+          "irreflexive",
+          7
+        ],
+        [
+          "acyclic_TH_ARBS_001B",
+          3
+        ],
+        [
+          "bipartite_TH_ARBS_001A",
+          2
+        ]
+      ],
+      "F_N_derived_size": 2,
+      "survivor_seed_ids": [
+        "N3-0000",
+        "N3-0004"
+      ]
+    },
+    "4": {
+      "N": 4,
+      "active_filters_applied_in_order": [
+        "irreflexive",
+        "acyclic_TH_ARBS_001B",
+        "bipartite_TH_ARBS_001A"
+      ],
+      "survivor_lattice_trace": [
+        [
+          "F_N (all fixed points)",
+          2462
+        ],
+        [
+          "irreflexive",
+          136
+        ],
+        [
+          "acyclic_TH_ARBS_001B",
+          17
+        ],
+        [
+          "bipartite_TH_ARBS_001A",
+          6
+        ]
+      ],
+      "F_N_derived_size": 6,
+      "survivor_seed_ids": [
+        "N4-0000",
+        "N4-0016",
+        "N4-0018",
+        "N4-0076",
+        "N4-0128",
+        "N4-0182"
+      ]
+    }
+  }
+}

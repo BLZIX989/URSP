@@ -1,0 +1,20 @@
+{
+  "2": {
+    "N": 2,
+    "raw_fixed_relations": 12,
+    "independent_isomorphism_classes_networkx_VF2": 6,
+    "class_sizes_sum_check": true
+  },
+  "3": {
+    "N": 3,
+    "raw_fixed_relations": 420,
+    "independent_isomorphism_classes_networkx_VF2": 70,
+    "class_sizes_sum_check": true
+  },
+  "4": {
+    "N": 4,
+    "raw_fixed_relations": 59088,
+    "independent_isomorphism_classes_networkx_VF2": 2462,
+    "class_sizes_sum_check": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "persistence_closure": {
+    "construction": "Pi(K) := sum_{n: lambda_n < lambda_gap} sqrt(lambda_n)  (SEF SIT Specification v2.docx, D5)",
+    "status": "BLOCKED",
+    "exact_missing_dependency": "lambda_gap -- established as an OPEN, unfixed free parameter with 'no derivation anywhere in the corpus' in ARBS-GRAPH-REALIZATION-001 / KIJ-THETA-IMAGE-RECOVERY-001 (this project's own prior runs). Without lambda_gap, Pi_R cannot be evaluated as a concrete number for ANY candidate -- the persistence sector {n : lambda_n < lambda_gap} is undefined.",
+    "second_persistence_notion_also_blocked": "The Architecture-layer 'Organizational Persistence Functional' Pi_O = f(sigma, C, Spec(L)) is SEPARATELY recorded as OPEN in source (DER-ORG-007, 'coupling equation proposed; stationary distribution ... approach outlined but not executed') -- both persistence notions found anywhere in this corpus are open, not just the one nominally invoked by this protocol.",
+    "consequence": "F_N^(persistence) = F_N^(spectral) unchanged. No additional narrowing is possible from persistence without inventing lambda_gap, which Rule 0.4/0.3 forbid.",
+    "what_remains_computable_without_Pi": "The diffusion-distance chain d(i,j) = sqrt(sum_k (phi_k(i)-phi_k(j))^2 / lambda_k) via Spec(L) does NOT require Pi and was independently certified/used throughout runs 1-9 on tilde_G_k. This is attempted separately below for the symmetric survivors, bypassing the blocked Pi construction."
+  },
+  "geometry_closure": {
+    "chain_attempted": "R -> L -> Spec(L) -> d(i,j) [diffusion distance, Pi-independent, certified] -> metric candidate g_mu_nu -> curvature",
+    "d_ij_computable": "YES for symmetric survivors -- Spec(L_sym) exists and is real (verified above); diffusion distance can be formed directly.",
+    "metric_and_curvature_status": "BLOCKED",
+    "exact_missing_dependency": "A meaningful continuum metric tensor g_mu_nu and curvature require enough independent spectral modes / points to approximate a manifold in a refinement limit -- this was only ever done in prior runs (1-9) on the GROWING tilde_G_k family at large shell index k (N up into the thousands), never on a single N=2,3,4 point graph. A 2-, 3-, or 4-point discrete metric space does not support a nontrivial curvature tensor in the sense used elsewhere in this corpus. This is exactly the unresolved N->infinity / canonical-family question flagged in section 12 of this protocol -- geometry closure is blocked on THAT unresolved question, not on a new obstruction discovered here."
+  }
+}

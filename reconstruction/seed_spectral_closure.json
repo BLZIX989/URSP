@@ -1,0 +1,29 @@
+{
+  "2": {
+    "N": 2,
+    "total_F_N": 6,
+    "n_symmetric": 2,
+    "symmetric_implies_real_spectrum_verified": true,
+    "n_real_spectrum_total": 6,
+    "nonsymmetric_candidates_with_real_spectrum_observed_not_required": 4,
+    "nonsymmetric_candidates_total": 4
+  },
+  "3": {
+    "N": 3,
+    "total_F_N": 70,
+    "n_symmetric": 4,
+    "symmetric_implies_real_spectrum_verified": true,
+    "n_real_spectrum_total": 61,
+    "nonsymmetric_candidates_with_real_spectrum_observed_not_required": 57,
+    "nonsymmetric_candidates_total": 66
+  },
+  "4": {
+    "N": 4,
+    "total_F_N": 2462,
+    "n_symmetric": 16,
+    "symmetric_implies_real_spectrum_verified": true,
+    "n_real_spectrum_total": 1480,
+    "nonsymmetric_candidates_with_real_spectrum_observed_not_required": 1464,
+    "nonsymmetric_candidates_total": 2446
+  }
+}
