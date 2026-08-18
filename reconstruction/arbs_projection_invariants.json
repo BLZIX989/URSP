@@ -1,0 +1,14 @@
+{
+  "task": "Section 11/J -- what information a G_k realization would lose, IF a projection existed",
+  "caveat": "Since arbs_graph_projection.json establishes that NO projection map P_k has ever been defined or derived (CASE D), this file records what WOULD be lost if one were ever constructed, as a forward-looking diagnostic -- not as a statement about an actual, established loss along a real map.",
+  "structure_that_would_be_lost_under_any_forgetful_map_ARBS_to_simple_graph": [
+    "Node typing (Object vs Operator) -- collapsed to untyped vertices",
+    "All 9 edge types (Dependency, Creates, Transforms, Constrains, Measures, Mapping, Feedback, Projection, Hyperedge) -- collapsed to a single undifferentiated adjacency relation",
+    "Edge directionality/asymmetry (ARBS's Dependency relation is a strict partial order) -- collapsed to symmetric graph adjacency",
+    "Hyperedges of arity >=3 -- cannot be represented at all in an ordinary graph without an auxiliary incidence structure (e.g. re-expanding to a bipartite incidence graph, which is NOT what G_k is)",
+    "The fixed 8-shell derivation-stage structure -- replaced by an unbounded recursion index with no stated correspondence to any of the 8 named shells",
+    "The feedback/fixed-point recursion mechanism (Pi_0 constraining G) -- replaced by a one-directional graph-growth recursion with no feedback"
+  ],
+  "invariants_that_would_survive_IF_a_structure_preserving_map_existed": "Cannot be determined without the map itself. In general, a well-defined graph realization of a typed hypergraph (e.g. via incidence-graph expansion of hyperedges, or via a 'shadow'/1-skeleton construction) COULD in principle preserve connectivity-type invariants, but constructing such a map for ARBS specifically has not been attempted in this project and is not needed for the honest CASE D conclusion.",
+  "status": "NOT APPLICABLE -- no projection exists to analyze losses for. Recorded per instruction as an explicit 'the question does not currently have an answerable form' result, not left silently blank."
+}

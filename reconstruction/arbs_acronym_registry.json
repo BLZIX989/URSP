@@ -1,0 +1,36 @@
+{
+  "task": "Recover the exact expansion and each letter's meaning",
+  "full_expansion": "Abelian Recursive Bipartite Shell Typed Dependency Hyper-Graph",
+  "source": "UOC_ToE_Canonical_Theory_of_Everything_Master_v1.0.xlsx, 54_SOURCE_TEXT_CORPUS row 1925, verbatim",
+  "components": {
+    "Abelian": {
+      "recovered_meaning": "Local operator commutativity [A,B]=0 for operators acting on independent subspaces/shells (row 1934); explicitly regional, not global -- see arbs_ontology_registry.json THM-ARBS-ABELIAN-001",
+      "status": "DERIVED / VERIFIED (for the stated operator-family examples)"
+    },
+    "Recursive": {
+      "recovered_meaning": "A feedback/fixed-point self-reference: Pi_0 (shell 6 output) feeds back to constrain G (shell 1 input); the base primitive Omega is itself a 'recursive distinction' (row 2075). NOT a graph-growth recursion.",
+      "status": "DERIVED / VERIFIED (mechanism documented); distinct from G_k's growth-type recursion"
+    },
+    "Bipartite": {
+      "recovered_meaning": "Object Node (states/entities) vs Operator Node (maps/functions) -- a SEMANTIC/TYPE bipartition of the hypergraph's own nodes (which represent mathematical objects and transformations in the project's derivation pipeline), NOT a structural halving of a combinatorial vertex set like G_k's L_k/R_k.",
+      "status": "DERIVED / VERIFIED (node taxonomy explicitly documented, row 1927)"
+    },
+    "Shell": {
+      "recovered_meaning": "One of 8 FIXED organizational/physical-scale layers (k=0 Primitives through k=7 Emergent Structures) -- see full shell registry table in arbs_ontology_registry.json. NOT a combinatorial recursion depth as used for G_k throughout runs 2-9.",
+      "status": "DERIVED / VERIFIED (full table recovered, rows 2074-2082)"
+    },
+    "Typed": {
+      "recovered_meaning": "Every edge and node carries an explicit type -- 2 node types (Object, Operator) and 9 edge types (Dependency, Creates/Generates, Transforms, Constrains, Measures/Spectral, Mapping/Functor, Feedback, Projection, Hyperedge) -- see arbs_type_registry.json for the complete table.",
+      "status": "DERIVED / VERIFIED (complete taxonomy recovered with color/direction/semantics for each type, rows 2064-2073)"
+    },
+    "Dependency": {
+      "recovered_meaning": "The primary edge type: 'A -> B: B uses or requires A. Standard dependency. The primary structure of the spine.' This IS the prec relation used throughout the project's MDCL (Gamma prec ARBS prec G prec L prec ...).",
+      "status": "DERIVED / VERIFIED -- see arbs_dependency_registry.json"
+    },
+    "Hyper-Graph": {
+      "recovered_meaning": "Genuine hyperedges of arity >=3 exist: ARBS HYPER-001 canonical form H:(A,B,C)->D, generalized H_e:(A_1,...,A_k)->D, with the certified constraint 'Preserves Measure' (consistency with the invariant measure P_ss). G_k, by contrast, is an ordinary graph with only arity-2 (pairwise) edges -- it contains NO hyperedges at all.",
+      "status": "DERIVED / VERIFIED (definition + certified property recovered, rows 1972-1978) -- see arbs_hypergraph.json"
+    }
+  },
+  "provenance_note": "Every component of the acronym is explicitly, textually documented in the corpus (not merely inferable from the acronym itself) -- this recovery is documentary, not reconstructive. The gap identified in this run is NOT that ARBS's definition is missing; it is that the specific K_{2^k,2^k}/R_{k-1}xL_k GRAPH CONSTRUCTION tested throughout runs 2-9 was never shown to be an instance, realization, or projection of THIS documented object."
+}

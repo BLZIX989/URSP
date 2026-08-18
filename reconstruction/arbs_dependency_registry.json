@@ -1,0 +1,23 @@
+{
+  "task": "THM-ARBS-DEPENDENCY-001 -- exact dependency relation recovery",
+  "recovered_relation": "The ARBS 'Dependency' edge type (A -> B: 'B uses or requires A') IS the prec relation used throughout this entire project's MDCL / canonical dependency chain (Gamma prec ARBS prec G prec L prec Spec(L) prec ... prec Pi_0 prec G*).",
+  "governing_axioms_(SDR_registry, CERTIFIED elsewhere in corpus)": [
+    "SDR-001: prec is defined on D x D (definitional)",
+    "SDR-002: Irreflexivity",
+    "SDR-003: Transitivity",
+    "SDR-004: Acyclicity",
+    "SDR-005: Recovery admissibility"
+  ],
+  "property_tests": {
+    "reflexivity": "N/A -- SDR-002 explicitly requires IRREFLEXIVITY (A prec A is false for all A), consistent with a strict partial order",
+    "antisymmetry": "Follows from irreflexivity + transitivity for a strict order (standard); not separately axiomatized but implied",
+    "transitivity": "SDR-003, CERTIFIED",
+    "acyclicity": "SDR-004, CERTIFIED -- explicitly required (a DAG, not merely a directed graph)"
+  },
+  "classification": "A strict partial order (irreflexive, transitive, hence antisymmetric) realized as a DAG -- confirmed structure: 'directed acyclic relation'.",
+  "critical_distinction_from_G_k_adjacency": {
+    "finding": "G_k's edges (A_ij in {0,1}, undirected, symmetric) are NOT dependency edges in ARBS's sense. G_k's adjacency matrix A is symmetric (A_ij=A_ji) by construction -- appropriate for an undirected GRAPH used in spectral graph theory (Laplacian, heat kernel, etc.), but INCOMPATIBLE with a strict partial order / DAG (which must be irreflexive and, critically, ANTISYMMETRIC -- if A_ij=1 then A_ji cannot also independently represent a valid nonzero dependency in the reverse direction under a strict order, though the graph-theoretic A_ij=A_ji=1 pattern is exactly what an undirected edge means).",
+    "conclusion": "G_k's edges represent GRAPH ADJACENCY (a symmetric, structural relation suited to spectral analysis), not ARBS's DEPENDENCY relation (an asymmetric, strict-order relation suited to derivation sequencing). These are different mathematical objects serving different purposes. This project's own MDCL prec-chain (which IS an ARBS-style dependency DAG, e.g. 'G prec L prec Spec(L) prec ...') is completely separate from, and not realized by, G_k's internal edge structure."
+  },
+  "status": "DERIVED / VERIFIED for the ARBS/MDCL prec relation (fully axiomatized, CERTIFIED). G_k's own edges are PROVEN NOT to be an instance of this relation (structural type mismatch: symmetric adjacency vs. strict partial order)."
+}

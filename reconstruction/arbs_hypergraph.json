@@ -1,0 +1,22 @@
+{
+  "task": "THM-ARBS-HYPERGRAPH-001 -- hyperedge structure recovery",
+  "recovered_definition": {
+    "id": "ARBS HYPER-001: Canonical Hyperedge Definition",
+    "form": "Hyperedge H: (A,B,C) -> D is a dependency with arity 3, meaning D cannot be computed from A alone, B alone, or C alone -- it requires all three jointly.",
+    "general_notation": "H_e : (A_1, A_2, ..., A_k) -> D with arity k",
+    "certified_property": "'Preserves Measure' -- the hyperedge must be consistent with the invariant measure P_ss",
+    "certification_status": "'Certified structure in the ARBS graph.' (source, row 1978)"
+  },
+  "min_max_cardinality": "Minimum demonstrated arity: 3 (the canonical example). No explicit maximum arity stated; the general notation (A_1,...,A_k)->D allows arbitrary k >= 2, though every concretely named example in the corpus has arity exactly 3.",
+  "shell_dependent_structure": "Not explicitly tabulated per-shell in the recovered material; hyperedges appear to connect nodes across shells (e.g. multiple upstream objects jointly determining a downstream one) rather than being confined within a single shell.",
+  "typed_hyperedges": "The Hyperedge itself is listed as one of the 9 entries in the edge-type taxonomy (arbs_type_registry.json), suggesting hyperedges are typed alongside binary edges, though no further hyperedge sub-typing was found.",
+  "dependency_hyperedges": "By definition, every hyperedge IS a (generalized) dependency relation -- 'a many-to-one dependency relation connecting multiple input nodes simultaneously to a single output node' (row 1973).",
+  "recursive_hyperedge_refinement": "Not found -- no source material describes hyperedges being refined or subdivided recursively.",
+  "reduction_to_pairwise_edges": {
+    "question": "Do all ARBS hyperedges reduce canonically to ordinary pairwise edges?",
+    "finding": "NO reduction is given or claimed anywhere in source. The explicit motivation for hyperedges is that they capture genuinely irreducible multi-input dependencies ('D cannot be computed from A alone, B alone, or C alone') -- the source's own stated point is that this is NOT expressible as a set of pairwise edges without losing information (a hyperedge (A,B,C)->D is strictly more informative than the three pairwise edges A->D, B->D, C->D, since the latter don't encode the joint-necessity condition).",
+    "consequence": "G_k, being an ordinary simple graph, structurally CANNOT represent this object -- every edge in G_k is binary (arity 2) by construction. No hyperedge of arity >=3 exists anywhere in G_k. This is not a matter of G_k losing some information under a projection; G_k's underlying data structure (a graph, not a hypergraph) is not expressive enough to even state a hyperedge, let alone realize one."
+  },
+  "G_k_hyperedge_content": "ZERO. Confirmed by construction: build_arbs.py / arbs_light.py construct only pairwise edges (u,v) with u,v single vertices; no data structure for arity>=3 relations exists anywhere in the G_k construction or its exports.",
+  "status": "HYPERGRAPH STRUCTURE: DERIVED / VERIFIED for ARBS (definition + certified property recovered). REALIZATION BY G_k: PROVEN INCOMPATIBLE -- an ordinary graph cannot represent ARBS's hyperedges without loss, and G_k contains none at all, so no realization map G_k=P(ARBS) preserving this structure can exist unless it explicitly discards the hypergraph structure entirely (an admission, not a proof of equivalence)."
+}

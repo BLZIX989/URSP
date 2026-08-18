@@ -1,0 +1,24 @@
+{
+  "task": "THM-ARBS-REALIZATION-001 -- graph realization/projection recovery",
+  "question": "Recover or derive the map P_k: A_k (full ARBS object) -> G_k (explicit bipartite-shell graph)",
+  "search_result": "NO source-supported map P_k was found anywhere in the corpus. The ARBS Hyper-Graph Architecture section (rows 1924-2088) never mentions K_{2^k,2^k}, R_{k-1}xL_k, or any construction rule resembling G_k's. The only place G_k's exact construction rule appears verbatim is as DIRECTIVE TEXT supplied mid-conversation in a prior run (labeled 'ARBS-CONSTRUCTION-001'), under the claim that it had been 'recovered from the project source material' -- a claim this run's search (like the original run's own search) does not substantiate.",
+  "what_G_k_could_legitimately_be": "At most, G_k could be understood as ONE CANDIDATE INSTANCE for the single Object Node 'G=(V,E,W)' that occupies ARBS's shell k=1 (see arbs_ontology_registry.json). But no source material specifies HOW that G should be constructed, nor sanctions indexing multiple candidate G's by an unbounded recursion parameter the way G_0,G_1,...,G_9 have been built throughout this project. There is exactly one 'G' node in ARBS's own architecture, not an infinite family.",
+  "P_k_properties_(since_no_P_k_exists)": {
+    "P_V": "UNDEFINED -- no map from ARBS's node set (Object nodes + Operator nodes across 8 shells) to G_k's vertex set (2(2^(k+1)-1) bare indices) has ever been specified.",
+    "P_E": "UNDEFINED -- no map from ARBS's 9 typed edge classes to G_k's single untyped edge class exists.",
+    "P_H": "UNDEFINED, and PROVABLY CANNOT preserve information -- G_k has no hyperedges to receive the image of any ARBS hyperedge (see arbs_hypergraph.json).",
+    "P_tau": "UNDEFINED -- G_k's vertices carry no Object/Operator type tag at all.",
+    "P_prec": "UNDEFINED -- G_k's edges are symmetric graph adjacency, not the asymmetric strict-order Dependency relation ARBS defines (see arbs_dependency_registry.json)."
+  },
+  "injective_surjective_structure_preserving": "None of these questions are answerable, because no map P_k has been defined to begin with. This is recorded honestly as 'map does not exist' rather than forcing an answer to injectivity/surjectivity/structure-preservation questions about an undefined object.",
+  "case_classification": {
+    "options": {
+      "A": "ARBS = G_k",
+      "B": "ARBS -> G_k, canonical realization/projection",
+      "C": "ARBS -> G_k, quotient/shadow/partial realization",
+      "D": "G_k reproduces ARBS-associated checkpoints but is not a formally derived realization of ARBS"
+    },
+    "finding": "CASE D applies, decisively, on the evidence above: (1) ARBS's own documented ontology (Object/Operator bipartition, 8 fixed organizational shells indexing derivation STAGES not combinatorial recursion depth, 9 typed edge classes, hyperedges of arity>=3, feedback-based recursion) is categorically different in kind from G_k's structure (untyped simple bipartite graph, unbounded recursion depth, symmetric adjacency only, no hyperedges); (2) no source document ever states or derives a map between them; (3) the ONLY reason G_k was ever labeled 'ARBS' is that it reproduces certain numeric checkpoints (sigma16, sigma17, N/E counts) that were themselves supplied alongside the construction rule as directive text, not independently found in source -- checkpoint reproduction is not documentary provenance (a principle this project has itself insisted on since run 1).",
+    "status": "CASE D -- CONFIRMED"
+  }
+}

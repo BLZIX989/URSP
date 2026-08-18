@@ -1,0 +1,38 @@
+{
+  "task": "ARBS-ONTOLOGY-RECOVERY-001",
+  "central_finding": "ARBS, as actually documented in source, is the project's own META-LEVEL derivation-pipeline hypergraph (8 fixed organizational shells, Omega through emergent physics) -- NOT a specific finite combinatorial graph to be spectrally analyzed. The K_{2^k,2^k}/R_{k-1}xL_k construction computed throughout runs 2-9 (labeled G_k in this run) is a DIFFERENT, self-contained graph family with no established, source-supported connection to the documented ARBS object.",
+  "full_source_definition": {
+    "location": "UOC_ToE_Canonical_Theory_of_Everything_Master_v1.0.xlsx, sheet 54_SOURCE_TEXT_CORPUS, rows 1924-2088 ('III. ARBS Hyper-Graph Architecture', part of a document describing the 'Universal Persistence Graph')",
+    "definition": "'The Abelian Recursive Bipartite Shell Typed Dependency Hyper-Graph (ARBS) is the organizational substrate in which the canonical spine operates. It has four structural properties that together define it uniquely: Abelian operator composition within shells, recursive self-similar construction, bipartite separation of objects and operators, and typed dependency edges.'",
+    "node_taxonomy": "'The ARBS graph is bipartite: every node is either an Object Node (states/entities) or an Operator Node (maps/functions). Edges connect object nodes to operator nodes only -- never object-to-object or operator-to-operator directly.'",
+    "shell_taxonomy": "'The shell index k assigns each node to an organizational layer. The ARBS graph has 8 shell layers (k=0 through 7), each representing a qualitatively distinct level of organizational complexity.'",
+    "shell_registry_table": {
+      "k=0": "Primitives -- Omega, Delta -- recursive distinction, the origin point; no geometry, no graph, no dynamics",
+      "k=1": "Discrete Organization -- G=(V,E,W), V_i, E_ij -- 'The organizational graph. Entities, relations, and weights. The structural fact.'",
+      "k=2": "Spectral / Analytical -- L, Spec(L), H(t), delta_spec -- Graph Laplacian and spectral decomposition",
+      "k=3": "Continuum Geometry -- g_mu_nu, Gamma, Delta_M, R^a_bcd, R_ab, G_ab -- emergent Riemannian geometry",
+      "k=4": "Dynamics / Probabilistic -- L (script), L* (script), T_e, F[P||P_ss] -- Fokker-Planck dynamics",
+      "k=5": "Thermodynamic / Info -- P_ss, T_ab, div T_ab, sigma -- stationary measure, entropy production",
+      "k=6": "Persistence -- Pi_0, lambda_FP -- the organizational invariant",
+      "k=7": "Emergent Structures -- Life, Chemistry, Mind, Planets, Stars, Galaxies, Cosmic Web"
+    },
+    "critical_observation": "ARBS's 'shell index k' indexes STAGES OF THE PROJECT'S OWN DERIVATION PIPELINE (the same Gamma < ARBS < G < L < Spec(L) < ... < Pi_0 < G* canonical dependency chain referenced throughout every run of this project) -- it is NOT a combinatorial graph-construction recursion depth. The ENTIRE graph object 'G=(V,E,W)' occupies exactly ONE node (shell k=1) of the ARBS hypergraph; there is no source-supported notion of 'G_0, G_1, G_2, ...' as sub-shells of ARBS's own shell structure. This is a direct naming collision (the word 'shell' and the letter 'k' used for two conceptually unrelated indices) that appears to be the root cause of the identification tested throughout runs 2-9."
+  },
+  "abelian_recovery": {
+    "id": "THM-ARBS-ABELIAN-001",
+    "exact_definition_recovered": "A o B = B o A when A and B act on independent subspaces or shells, i.e. [A,B] = AB-BA = 0 (source: row 1934). Explicitly a LOCAL/regional property, not global.",
+    "abelian_region_examples_(source-listed)": ["Heat semigroup e^{-tL} (operator powers commute)", "Laplacian powers L^k (all commute: L^aL^b=L^{a+b})", "Spectral projections P_lambda (orthogonal, pairwise commuting)", "Diffusion operators on independent shells", "Within-shell operator composition A.B=B.A"],
+    "non_abelian_region_examples_(source-listed)": ["Nonlinear dynamics (replicator, nonlinear Fokker-Planck)", "Time-dependent constraints (non-stationary problems)", "External forcing (inhomogeneous Fokker-Planck)", "Non-self-adjoint operators (open quantum systems)", "Cross-shell interaction where order matters"],
+    "proof_for_the_specific_operator_families_listed": "TRIVIALLY TRUE as elementary functional calculus: for ANY fixed symmetric operator L, any two functions of L (e.g. e^{-t1L}, e^{-t2L}, L^a, L^b, spectral projections P_lambda1, P_lambda2) commute with each other, since they share the same eigenbasis. This is a standard, general fact -- verified trivially for the L_k already computed throughout runs 2-9 (any two of e^{-tL_k}, L_k^a, P_lambda are simultaneously diagonalized by L_k's own eigenbasis, hence commute).",
+    "status": "DERIVED / VERIFIED for the stated linear-operator-family instances (a standard, general mathematical fact, not ARBS-specific); the BROADER architectural claim that ARBS's hypergraph 'divides into Abelian and non-Abelian REGIONS' (i.e. that this property partitions actual nodes/shells of the hypergraph itself, not just characterizes which operator families commute) is a qualitative organizing principle, not itself reduced to a checkable theorem anywhere in source -- recorded as OPEN at that level."
+  },
+  "recursive_structure_recovery": {
+    "id": "THM-ARBS-RECURSION-001",
+    "exact_mechanism_recovered": "FEEDBACK, not growth. 'The ARBS graph is self-referential through a recursion schema that feeds the output Pi_0 back into the input Omega... the persistence functional Pi_0 at the k=6 layer feeds back to constrain the organizational graph G at k=1, which modifies L, which modifies Spec(L), which modifies Pi_0. This recursive feedback loop is what makes the ARBS graph an organizational equilibrium rather than a one-shot derivation. Organizational structures persist because they satisfy the fixed-point condition: Pi_0[G*] is maximized.' (rows 1980-1983)",
+    "base_object": "Omega (recursive distinction primitive), k=0",
+    "recursive_object": "The fixed point G* such that Pi_0[G*] is maximized -- a SELF-CONSISTENCY condition on the SAME 8-shell structure, not an ever-growing sequence H_0,H_1,H_2,...",
+    "distinction_from_G_k's_construction": "G_k's recursion (S_k=L_k(+)R_k, |L_k|=|R_k|=2^k, new shells ADDED at each step, N_k -> infinity) is a GRAPH-GROWTH process. ARBS's recursion is a FEEDBACK/FIXED-POINT process over a FIXED 8-node shell structure. These are different mathematical operations sharing only the word 'recursive'.",
+    "old_edges_persist_or_replaced": "Not applicable to ARBS's own recursion -- ARBS's shells are fixed conceptual stages (Primitives, Discrete Organization, Spectral, ..., Emergent Structures), not accumulating combinatorial structure the way G_k's shells S_0,S_1,S_2,... do.",
+    "status": "DERIVED / VERIFIED (the feedback mechanism is explicitly documented) -- but this is NOT the mechanism realized by G_k's construction, which remains a self-contained, differently-motivated recursion."
+  }
+}

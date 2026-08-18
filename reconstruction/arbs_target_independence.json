@@ -1,0 +1,7 @@
+{
+  "task": "Section 17 -- target independence audit of the entire ontology recovery",
+  "check": "Searched every recovered ARBS definition, type, edge-taxonomy entry, hyperedge rule, and dependency axiom, plus the reclassification table and all case-selection reasoning, for any reference to 32, N_H, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, V_CKM, U_PMNS, or Xi_obs.",
+  "result": "PASS. None of these appear anywhere in the ARBS ontology as documented in source, nor in any reasoning used this run to reach the CASE D conclusion. In particular: the number 32 does NOT appear anywhere in the ARBS Hyper-Graph Architecture section (rows 1924-2088) -- it is entirely a downstream numerical fact about G_3's own spectrum (already established, run 1-2), unrelated to ARBS's own definition.",
+  "construction_code_check": "build_arbs.py / arbs_light.py (the G_k construction code) contain no reference to 32 or any downstream target -- reconfirmed this run by inspection; unchanged from prior runs' findings.",
+  "hidden_fitted_constants": "None found in the ontology recovery -- this run performed no numerical fitting; it is a documentary/textual recovery exercise plus re-application of already-established graph-theoretic facts (automorphism arguments, standard identities)."
+}

@@ -1,0 +1,26 @@
+{
+  "task": "THM-ARBS-TYPE-001 -- exact ARBS type system recovery",
+  "source": "UOC_ToE_Canonical_Theory_of_Everything_Master_v1.0.xlsx, 54_SOURCE_TEXT_CORPUS rows 2064-2073",
+  "node_types": {
+    "Object Node": "states/entities (e.g. G, L, Spec(L), g_mu_nu, P_ss, sigma, Pi_0 -- example tags found: 'sigma | Object (k=5->6)', 'Pi_0 | Object (k=6->7)')",
+    "Operator Node": "maps/functions (e.g. the bridge theorems B-001..B-008, T_e=e^{tL}, F'[P] -- example tags found: 'T_e=e^{tL} | Operator (k=4)', \"F'[P] | Operator (k=5)\")"
+  },
+  "edge_types": [
+    {"type": "Dependency", "color": "Green solid", "direction": "A -> B", "meaning": "B uses or requires A. Standard dependency. The primary structure of the spine."},
+    {"type": "Creates / Generates", "color": "Red solid", "direction": "A -> B", "meaning": "A creates B. Stronger than dependency -- B would not exist without A."},
+    {"type": "Transforms", "color": "Orange solid", "direction": "A -> B", "meaning": "A is transformed into B by an operator."},
+    {"type": "Constrains", "color": "Green solid (dark)", "direction": "A - B", "meaning": "A places a constraint on B. Bidirectional restriction."},
+    {"type": "Measures / Spectral", "color": "Teal / Purple", "direction": "A -> B", "meaning": "A measures or decomposes B spectrally."},
+    {"type": "Mapping / Functor", "color": "Blue solid", "direction": "A -> B", "meaning": "A maps to B via a functor. Used for bridge theorems."},
+    {"type": "Feedback (Recursive)", "color": "Purple dashed", "direction": "A <-hook- B", "meaning": "Recursive feedback. Omega feeds back into itself; Pi_0 feeds back into G."},
+    {"type": "Projection", "color": "Dashed gray", "direction": "A --> B", "meaning": "A projects or coarse-grains to B. Macro <- Micro."},
+    {"type": "Hyperedge", "color": "Diamond", "direction": "(A,B,C) -> D", "meaning": "Many-to-one dependency. H: (A,B,C)->D with arity 3. Constraint: Preserves Measure."}
+  ],
+  "count_reconciliation": "Source states 'Six primary edge types are defined, plus feedback and projection edges' (row 1929). The 9 rows recovered above match this exactly: Dependency, Creates/Generates, Transforms, Constrains, Measures/Spectral, Mapping/Functor = 6 primary types; Feedback and Projection = the '+2' named separately; Hyperedge is the distinct hypergraph structure (not a binary edge type at all).",
+  "comparison_to_G_k": {
+    "G_k_node_types": "NONE -- G_k's vertices carry no semantic type at all; they are bare indices 0..N_k-1, distinguished only by which shell/partition (L_j or R_j) they structurally belong to. This structural label is NOT the same as ARBS's Object/Operator semantic typing.",
+    "G_k_edge_types": "NONE -- G_k's edges are a single undifferentiated type (A_ij in {0,1}); there is no Dependency/Creates/Transforms/etc. distinction, no Feedback or Projection edges, and no hyperedges of any arity.",
+    "conclusion": "G_k has ZERO of ARBS's 2 node types and ZERO of ARBS's 9 edge types realized in any form. If G_k is to be understood as a realization of ARBS, the entire typed structure is lost/uninstantiated -- this is a severe, not incidental, structural gap."
+  },
+  "status": "TYPE SYSTEM: DERIVED / VERIFIED for ARBS (fully documented in source). TYPE PRESERVATION BY G_k: FALSIFIED -- G_k realizes none of ARBS's documented type structure."
+}
