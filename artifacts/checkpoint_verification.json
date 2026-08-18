@@ -1,0 +1,110 @@
+{
+  "lambda_c_check": {
+    "G0": {
+      "t_H": "0.17328679514",
+      "lambda_c_computed_from_1_over_tH": "5.7707801635553983043095940310781143805508318549194",
+      "lambda_c_given_in_workbook": "5.770780163555398",
+      "abs_diff": "3.0430959403107811438055083185491937811120561024476e-16",
+      "consistent_at_double_precision": true
+    },
+    "G1": {
+      "t_H": "0.13757844653",
+      "lambda_c_computed_from_1_over_tH": "7.2685804006512211051929806958840066501512633412056",
+      "lambda_c_given_in_workbook": "7.268580400651221",
+      "abs_diff": "1.0519298069588400665015126334120557093397883590847e-16",
+      "consistent_at_double_precision": true
+    },
+    "G2": {
+      "t_H": "0.079911417241",
+      "lambda_c_computed_from_1_over_tH": "12.513856399069492258212019513693560173008219818014",
+      "lambda_c_given_in_workbook": "12.513856399069492",
+      "abs_diff": "2.5821201951369356017300821981801447473998793026729e-16",
+      "consistent_at_double_precision": true
+    },
+    "G3": {
+      "t_H": "0.043225367441",
+      "lambda_c_computed_from_1_over_tH": "23.134563317823480292020312776500939033394115225747",
+      "lambda_c_given_in_workbook": "23.13456331782348",
+      "abs_diff": "2.9202031277650093903339411522574682656786585069189e-16",
+      "consistent_at_double_precision": true
+    },
+    "G4": {
+      "t_H": "0.022564403969",
+      "lambda_c_computed_from_1_over_tH": "44.317589836356647617506585866070478167656669469194",
+      "lambda_c_given_in_workbook": "44.317589836356648",
+      "abs_diff": "-3.8249341413392952183234333053080604405843605746697e-16",
+      "consistent_at_double_precision": true
+    }
+  },
+  "G3_boundary_check": {
+    "sigma16": "2.828427124746192",
+    "sigma17": "2.849152618684595",
+    "sigma16_squared": "8.000000000000010761580418500864",
+    "lambda16_given": "8.000000000000011",
+    "sigma17_squared": "8.117670644557285197508090314025",
+    "lambda17_given": "8.117670644557285",
+    "delta_sigma_computed": "0.020725493938403000000000000000000000000000000000001",
+    "delta_sigma_given": "0.020725493938403",
+    "consistent_at_double_precision": true,
+    "note": "sigma16(G3) coincides with sqrt(8)=2*sqrt(2) to ~1.9e-15 and sigma17(G3)^2 - 8 = 0.11767... ; this is an observation about the reported numbers only, not an independent derivation."
+  },
+  "G4_boundary_check": {
+    "sigma16_eq_sigma17": "3.464101615137755",
+    "squared": "12.000000000000002860967626440025",
+    "note": "coincides with sqrt(12)=2*sqrt(3) to ~4.1e-16; degenerate boundary confirmed self-consistent."
+  },
+  "NE_pattern_observation": {
+    "G0": {
+      "N_reported": 2,
+      "N_closed_form_guess_2^(k+2)-2": 2,
+      "N_match": true,
+      "E_reported": 1,
+      "E_closed_form_guess_2^(2k+1)-1": 1,
+      "E_match": true,
+      "status": "OPEN / PROPOSED -- pattern-matches all 5 reported points but is NOT a source-derived construction rule and MUST NOT be used to generate any adjacency matrix or spectrum."
+    },
+    "G1": {
+      "N_reported": 6,
+      "N_closed_form_guess_2^(k+2)-2": 6,
+      "N_match": true,
+      "E_reported": 7,
+      "E_closed_form_guess_2^(2k+1)-1": 7,
+      "E_match": true,
+      "status": "OPEN / PROPOSED -- pattern-matches all 5 reported points but is NOT a source-derived construction rule and MUST NOT be used to generate any adjacency matrix or spectrum."
+    },
+    "G2": {
+      "N_reported": 14,
+      "N_closed_form_guess_2^(k+2)-2": 14,
+      "N_match": true,
+      "E_reported": 31,
+      "E_closed_form_guess_2^(2k+1)-1": 31,
+      "E_match": true,
+      "status": "OPEN / PROPOSED -- pattern-matches all 5 reported points but is NOT a source-derived construction rule and MUST NOT be used to generate any adjacency matrix or spectrum."
+    },
+    "G3": {
+      "N_reported": 30,
+      "N_closed_form_guess_2^(k+2)-2": 30,
+      "N_match": true,
+      "E_reported": 127,
+      "E_closed_form_guess_2^(2k+1)-1": 127,
+      "E_match": true,
+      "status": "OPEN / PROPOSED -- pattern-matches all 5 reported points but is NOT a source-derived construction rule and MUST NOT be used to generate any adjacency matrix or spectrum."
+    },
+    "G4": {
+      "N_reported": 62,
+      "N_closed_form_guess_2^(k+2)-2": 62,
+      "N_match": true,
+      "E_reported": 511,
+      "E_closed_form_guess_2^(2k+1)-1": 511,
+      "E_match": true,
+      "status": "OPEN / PROPOSED -- pattern-matches all 5 reported points but is NOT a source-derived construction rule and MUST NOT be used to generate any adjacency matrix or spectrum."
+    }
+  },
+  "C004B_ordering_check": {
+    "lambda16": "8.000000000000010761580418500864",
+    "lambda17": "8.117670644557285197508090314025",
+    "lambda_c_G3": "23.13456331782348",
+    "lambda16_lt_lambda17_lt_lambda_c": true,
+    "conclusion": "Confirms C-004B = FALSIFIED FOR 32-BOUNDARY COMPATIBILITY: the canonical threshold lambda_c=1/t_H lies strictly above the independently reported G3 boundary interval, so it does not select that boundary."
+  }
+}
