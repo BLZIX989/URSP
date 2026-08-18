@@ -1,0 +1,54 @@
+{
+  "2": {
+    "N": 2,
+    "n_candidates": 1,
+    "n_phase1_structural_axioms_pass": 1,
+    "ko_class_matches": {
+      "same_sign=True_KO=0": 1,
+      "same_sign=False_KO=6": 1
+    },
+    "n_order_zero_pass_same_sign": 1,
+    "n_order_zero_pass_opposite_sign": 1,
+    "n_first_order_pass_same_sign": 0,
+    "n_first_order_pass_opposite_sign": 0
+  },
+  "3": {
+    "N": 3,
+    "n_candidates": 4,
+    "n_phase1_structural_axioms_pass": 4,
+    "ko_class_matches": {
+      "same_sign=True_KO=0": 4,
+      "same_sign=False_KO=6": 4
+    },
+    "n_order_zero_pass_same_sign": 4,
+    "n_order_zero_pass_opposite_sign": 4,
+    "n_first_order_pass_same_sign": 0,
+    "n_first_order_pass_opposite_sign": 0
+  },
+  "4": {
+    "N": 4,
+    "n_candidates": 23,
+    "n_phase1_structural_axioms_pass": 23,
+    "ko_class_matches": {
+      "same_sign=True_KO=0": 23,
+      "same_sign=False_KO=6": 23
+    },
+    "n_order_zero_pass_same_sign": 23,
+    "n_order_zero_pass_opposite_sign": 23,
+    "n_first_order_pass_same_sign": 0,
+    "n_first_order_pass_opposite_sign": 0
+  },
+  "5": {
+    "N": 5,
+    "n_candidates": 231,
+    "n_phase1_structural_axioms_pass": 231,
+    "ko_class_matches": {
+      "same_sign=True_KO=0": 231,
+      "same_sign=False_KO=6": 231
+    },
+    "n_order_zero_pass_same_sign": 231,
+    "n_order_zero_pass_opposite_sign": 231,
+    "n_first_order_pass_same_sign": 0,
+    "n_first_order_pass_opposite_sign": 0
+  }
+}

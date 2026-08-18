@@ -7,7 +7,7 @@ pytest is unavailable).
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from compiler import compile_seed, enumerate_admissible_seeds, kernel
+from compiler import compile_seed, enumerate_admissible_seeds, kernel, ncg_bridge
 
 
 def test_seed_counts_match_prior_runs():
@@ -69,6 +69,40 @@ def test_no_symmetric_bipartite_survivor_through_N4():
             mat = seed.adjacency_matrix
             is_sym = all(mat[i][j] == mat[j][i] for i in range(N) for j in range(N))
             assert not is_sym, f"N={N}: found an unexpected symmetric survivor -- would update the report"
+
+
+def test_ncg_bridge_phase1_always_passes():
+    """THM-BRIDGE-ORDER-ZERO-001's precondition: the bare graded module axioms
+    (grading, hermiticity, off-diagonality) hold for every admissible seed."""
+    for N in [2, 3, 4]:
+        for seed in enumerate_admissible_seeds(N):
+            p1 = ncg_bridge.build_phase1(seed.adjacency_matrix, N)
+            v1 = ncg_bridge.verify_phase1(p1)
+            assert all(v1.values()), f"N={N} seed {seed.canonical_int}: phase1 failed {v1}"
+
+
+def test_ncg_bridge_order_zero_always_passes_first_order_always_fails():
+    """THM-BRIDGE-ORDER-ZERO-001 and THM-BRIDGE-FIRST-ORDER-OBSTRUCTION-001,
+    re-verified independently here (not just in run_bridge.py's sweep)."""
+    for N in [2, 3, 4]:
+        for seed in enumerate_admissible_seeds(N):
+            res = ncg_bridge.full_bridge_test(seed.adjacency_matrix, N)
+            for same_sign in [True, False]:
+                r = res[f"phase2_3_same_sign={same_sign}"]
+                assert r["order_zero_holds_for_diagonal_algebra"], f"N={N}: order-zero failed unexpectedly"
+                assert not r["first_order_holds_for_diagonal_algebra"], f"N={N}: first-order passed unexpectedly"
+
+
+def test_ncg_bridge_D_F_zero_control_makes_first_order_hold():
+    """Control case proving the obstruction is caused specifically by D_F != 0,
+    not by some other unrelated bug."""
+    import numpy as np
+    N = 3
+    p1 = {"gamma": np.array([1.0, 1.0, -1.0]), "D_F": np.zeros((N, N)), "color": {0: 0, 1: 0, 2: 1}, "N": N}
+    p2 = ncg_bridge.build_phase2(p1, True)
+    gens = ncg_bridge.build_phase3_diagonal_algebra(p1, p2)
+    v3 = ncg_bridge.verify_phase3(p2, gens)
+    assert v3["first_order_holds_for_diagonal_algebra"], "control case (D_F=0) should trivially satisfy first-order"
 
 
 if __name__ == "__main__":
