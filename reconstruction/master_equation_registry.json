@@ -1,0 +1,5 @@
+{
+  "task": "Section 39. Extends reconstruction/uoc_master_equation_registry.json (run 15) -- no new primitive equations this run; the equation basis is unchanged, only the seed-family DATA (not the equations) grew.",
+  "delta_from_run_15": "None -- the minimal equation basis established in run 15 (uoc_master_equation_registry.json) remains the correct minimal generating set. The N=5 computation used exactly the same operators (color refinement, canonical orientation, nilpotency test) with no new equation required. G_SM's reconciliation (reconciliation_registry.json) changes its EMPIRICAL-INPUT classification, not the equation registry, since G_SM=SU(3)xSU(2)xU(1) was already listed there as an empirical input, not newly added.",
+  "see_also": "reconstruction/uoc_master_equation_registry.json for the full primitive/rule/derived/equivalent/empirical partition."
+}

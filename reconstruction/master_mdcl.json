@@ -1,0 +1,11 @@
+{
+  "task": "Section 38: master MDCL, extending reconstruction/uoc_master_mdcl.json (run 15) with the N=5 result and the gauge-group reconciliation.",
+  "note": "Nodes X through 'PASS-10 diffusion distance / geometry' are unchanged from run 15 (reconstruction/uoc_master_mdcl.json) and are not repeated verbatim here -- see that file for the full node list through the spectral layer. This file adds only the nodes that changed or are new this run.",
+  "updated_or_new_nodes": [
+    {"id": "F_N_derived_v2 (updated)", "object": "corrected canonical-seed candidate family, now including N=5", "counts": {"N=2": 1, "N=3": 4, "N=4": 23, "N=5": 231}, "status": "PARTIALLY CLOSED (existence PROVEN, uniqueness DISPROVEN, growth rate suggests non-convergence but this is not proven for all N)", "provenance": "COMPUTATIONALLY RECONSTRUCTED, exhaustive over the bipartite subset at N=5 (not full brute force, not sampled)", "target_independence": "PASS"},
+    {"id": "G_SM gauge group node (reclassified)", "object": "Standard Model gauge group SU(3)xSU(2)xU(1)", "parents": ["reconciliation_registry.json:RECON-001"], "children": [], "status": "EMPIRICAL INPUT for the tested (rejected) route; OPEN for any untested route", "proof": "Route falsified with cited empirical test (0/200), reaffirmed across 4 independent source documents", "provenance": "EXTERNALLY STANDARD MATHEMATICS (the group itself, true independent of this project); EMPIRICAL INPUT (its adoption as this project's gauge sector, per source's own AX2 label)", "falsification_criterion": "A located, executed, independent derivation route distinct from the rejected automorphism route would upgrade this to DERIVED", "target_independence": "PASS -- not used to select any upstream object in this run", "next_dependency": "locate or construct an alternative derivation route (none found despite dedicated search this run)"}
+  ],
+  "no_cycles_found": true,
+  "no_orphaned_equations_found": true,
+  "no_downstream_to_upstream_edges_found": true
+}

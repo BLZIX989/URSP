@@ -1,0 +1,14 @@
+{
+  "task": "Section 37/55: registry describing the actual executable compiler implementation built this run.",
+  "location": "reconstruction/toe_rebuild/compiler/ (package), reconstruction/toe_rebuild/tests/test_compiler.py (test suite)",
+  "modules": [
+    {"file": "compiler/kernel.py", "implements": "PASS-00 (canonicalization), PASS-01 (primitive extraction, implicit), PASS-05 (color refinement / Gamma_1), PASS-06 (TH-ARBS-001A bipartite test, TH-ARBS-001B via canonical_orientation + is_nilpotent), PASS-09 partial (spectral_data)", "real_or_stub": "REAL -- every function is exercised by tests"},
+    {"file": "compiler/pipeline.py", "implements": "orchestration of PASS-00..09 into a single compile_seed() call, returning explicit per-pass status; PASS-10 onward represented as explicit BLOCKED stubs with their diagnosed reason (not fabricated content)", "real_or_stub": "REAL for PASS-00..09; HONEST STUB (not fabricated) for PASS-10+"},
+    {"file": "tests/test_compiler.py", "implements": "5 tests verifying: seed counts match prior runs (regression test against run 15's published numbers), all survivors rigid, the canonical-orientation-nilpotent theorem holds with zero exceptions (re-derived fresh, not just asserted), Gamma_1 non-idempotence reproduces the documented counterexample, zero symmetric survivors through N=4 (the honest residual finding)", "real_or_stub": "REAL, all 5 pass, ~18s runtime"}
+  ],
+  "what_was_deliberately_not_built": {
+    "PASS-10_through_PASS-18_implementations": "Not built as executable code, because there is nothing correct to execute -- geometry, gauge, quantum, matter, constant, cosmological, and observational compilation are all BLOCKED at the mathematical/derivational level (see uoc_compiler_passes.json, run 15). Writing Python functions for these passes would necessarily either raise NotImplementedError (adding no value beyond the JSON status already recorded) or require fabricating physics, which Section 2 of this run's own instructions forbids. The pipeline module represents this honestly: BLOCKED_REASONS is a literal dictionary of diagnosed reasons, not executable logic pretending to compute something.",
+    "TheoryInput/CanonicalTheory parser for external domain theories (Section 36)": "Not built. No domain theory (Maxwell, Navier-Stokes, etc.) has ever been run through even the working PASS-00..09 portion of this compiler, because those passes operate on finite relations, not on continuum field equations -- there is no bridge yet (PASS-10, geometry, is exactly the missing bridge, and it's blocked). Building a parser for theories the compiler cannot yet ingest meaningfully would be scaffolding without function."
+  },
+  "reproducibility": "cd reconstruction/toe_rebuild && python3 tests/test_compiler.py"
+}

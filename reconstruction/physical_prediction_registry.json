@@ -1,0 +1,5 @@
+{
+  "task": "Section 44 required artifact.",
+  "predictions": [],
+  "why_empty": "Unchanged from run 15's uoc_master_prediction_registry.json: PASS-10 onward (geometry through observation) remain BLOCKED or NOT ATTEMPTED. The N=5 seed-family extension and the gauge-group reconciliation performed this run are both upstream, kernel-layer results -- neither closes any downstream physical pass. Populating this registry would require fabricating exactly what Section 2 of this run's own instructions forbids."
+}

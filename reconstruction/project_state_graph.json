@@ -1,0 +1,27 @@
+{
+  "task": "Section 6: complete project state graph across all 16 runs (1 through this one) actually performed by this project in this session lineage. Not a claim about undocumented prior conversations (Section 3's 'project history larger than the corpus' caveat is acknowledged but this run has no access to any such material beyond what is listed here -- see reconciliation_registry.json RECON-001 for how an analogous claim about the gauge group was handled).",
+  "runs": [
+    {"id": "run1 (CLOSURE_REPORT.md)", "object": "sigma_16, sigma_17, checkpoint verification", "status": "VALID"},
+    {"id": "run2 (CLOSURE_REPORT_RUN2.md)", "object": "G3 boundary, full_analysis", "status": "VALID"},
+    {"id": "C-004C", "object": "entropy production / sigma_k non-identifiability", "status": "VALID (non-identifiability PROVEN under stated conditions)"},
+    {"id": "C-004D", "object": "Q=-D^-1 L vs -L distinctness, THM-C-004D-1", "status": "VALID, PROVEN, promoted this run to a general reusable lemma"},
+    {"id": "C-004E", "object": "discrete-to-continuum generator correspondence", "status": "VALID"},
+    {"id": "C-004F", "object": "degree-weighted thermodynamic continuum, Dirichlet form", "status": "VALID"},
+    {"id": "C-004G", "object": "primal edge scaling (recovered from embedded DOCX images)", "status": "VALID, EXPLICIT SOURCE"},
+    {"id": "C-004H", "object": "ARBS continuum compatibility", "status": "VALID"},
+    {"id": "C-004I", "object": "diffusion-metric convergence, d_diff^2=R_eff", "status": "VALID, PROVEN, promoted this run to a general reusable lemma"},
+    {"id": "ARBS-ONTOLOGY-RECOVERY-001", "object": "ARBS vs tilde_G_k naming/ontology gap", "status": "VALID -- established ARBS is an 8-shell typed hypergraph distinct from tilde_G_k"},
+    {"id": "ARBS-GRAPH-REALIZATION-001", "object": "TH-ARBS-001A/B certification, G_ARBS obstruction, SIT K_ij review (text only)", "status": "VALID -- G_ARBS=(V,E,W) has no concrete instantiation anywhere in corpus"},
+    {"id": "KIJ-THETA-IMAGE-RECOVERY-001", "object": "exhaustive image search for K_ij/theta, source-document-availability audit", "status": "VALID -- confirmed NOT RECOVERED, source docs for K_ij/theta absent from repo as files"},
+    {"id": "UOC-C0-MINIMAL-SEED-CLOSURE-001", "object": "Delta insufficiency proof, R fixed-point existence, Gamma_1 non-idempotence discovery", "status": "VALID"},
+    {"id": "UOC-C0-SEED-CANONICALITY-002", "object": "F_N/F_N^derived counts (1/2/6), TH-ARBS-001A/B misapplication (uncorrected at the time)", "status": "PARTIALLY SUPERSEDED this run's predecessor (run 15) -- raw F_N counts stand, F_N^derived corrected"},
+    {"id": "UOC-COMPILER-FULL-RECONFIGURATION-001 (run 15)", "object": "kernel reconfiguration (N_orient theorem), UOC-IR, compiler passes, first gauge-group source-conflict flag", "status": "VALID, extended this run with N=5 data and the formal reconciliation node"},
+    {"id": "UOC-TOE-COMPILER-FULL-REBUILD-001 (this run)", "object": "N=5 bipartite extension (231), gauge-group reconciliation registry, project state graph, working compiler package", "status": "IN PROGRESS / THIS RUN"}
+  ],
+  "cross_run_consistency_checks": [
+    "F_N raw fixed-point counts (6,70,2462) independently verified twice: run 14's own permutation-minimization method, and run 14's separate networkx VF2 cross-check. Zero discrepancy across both.",
+    "d_diff^2=R_eff (C-004I) and Q!=-L (C-004D) never contradicted in any later run -- reaffirmed as general lemmas this run.",
+    "The gauge-group finding (rejected route, input axiom) first surfaced in run 14 (KIJ-THETA search), reaffirmed in run 15, and STRENGTHENED this run by locating two additional independent corroborating documents (SRC-006, SRC-007) not previously cited."
+  ],
+  "no_undocumented_project_history_located": "Per Section 3's own caveat, this run does not assume the absence of undocumented prior derivations proves they never existed -- but this run also has no mechanism to access any conversation, workbook, or artifact beyond what is present in this git repository and its source/ directory, which have both been searched exhaustively across 16 runs. 'Project history is larger than the corpus' is acknowledged as a live possibility, not treated as false, but cannot be searched further than has already been done."
+}

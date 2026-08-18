@@ -1,0 +1,15 @@
+{
+  "N": 5,
+  "method": "direct bipartite construction (not full 2^25 brute force) -- exhaustive over this subset, not sampled",
+  "raw_bipartite_compatible_relations_generated": 36616,
+  "gamma_fixed_bipartite_isomorphism_classes": 231,
+  "all_canonical_orientations_nilpotent": true,
+  "n_rigid_Aut_eq_1": 231,
+  "n_symmetric": 0,
+  "comparison_to_prior_N": {
+    "N=2": 1,
+    "N=3": 4,
+    "N=4": 23,
+    "N=5": 231
+  }
+}
