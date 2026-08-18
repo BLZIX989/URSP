@@ -1,0 +1,40 @@
+{
+  "task": "C-004E -- Discrete-to-Continuum Thermodynamic Generator Correspondence",
+  "exact_proof_obligation": "L*_discrete = -LD^{-1}  -->?  L*_continuum = -div(P grad log P_ss), under the project's own continuum-limit machinery (a sequence G_n -> M with scaling operators R_n).",
+  "search_scope": "All 9 source workbooks + whitepaper, focused on: the refinement functor R, RF-001..005 (Universal Recovery Functor), BRIDGE B-004 (H(t)->g_mu_nu), Mosco convergence, Gromov-Hausdorff limits, Kato's Representation Theorem, Trotter-Kato, Delta_M=lim L_n, and every occurrence of L^2(V,mu) to determine which reference measure mu the certified convergence machinery actually uses.",
+  "findings": {
+    "F1_existing_convergence_machinery": {
+      "what_exists": "RF-001 through RF-005 (Universal Recovery Functor R: Graph_ARBS -> Field(M)), CERTIFIED, via the four-topology convergence chain (RF-003): G_n ->^{GH} (M,g) => E_n ->^{Mosco} E => L_n ->^{s.r.} L => T_n(t) ->^{s} T(t), citing Kato's First Representation Theorem and the Trotter-Kato theorem (external, standard references, correctly cited).",
+      "what_it_targets": "Geometric recovery: the discrete Dirac operator resolvent -> continuum Dirac resolvent (row 105-110, THM-SRC, CERTIFIED), and separately the heat kernel H(t)=e^{-tL} -> metric g_mu_nu via short-time asymptotics (BRIDGE B-004, OPEN) and the normalized Laplacian L_n -> Laplace-Beltrami operator Delta_M (row 2027, 1950-1952).",
+      "operator_it_is_built_on": "The SYMMETRIC spectral Laplacian L=D-A and its associated Dirac operator D_G and heat semigroup e^{-tL} -- the same object used throughout DER-SPC-001..006 (all CERTIFIED, the same branch independently verified in this project's ARBS reconstruction, run 2).",
+      "certification_status": "RF-001, RF-003 CERTIFIED (the abstract convergence chain exists as a theorem for the spectral branch). BRIDGE B-004 (the specific geometric-recovery bridge) is OPEN. Delta_M=lim L_n is stated but its own governing bridge (B-004) is unresolved."
+    },
+    "F2_reference_measure_ambiguity": {
+      "finding": "The corpus states L is 'a linear operator on L^2(V,mu)' (USR-007, OP-CMP-001) and gives the Hilbert-space construction 'H=closure(span{phi_n})=L^2(V,mu)' with inner product <phi_m,phi_n>=sum_i phi_m(i)phi_n(i)mu(i) (DER-QR-001, CERTIFIED) -- but mu is never explicitly pinned to counting measure (mu(i)=1) or degree measure (mu(i)=d_i) anywhere in the corpus.",
+      "resolution": "Every certified, actually-used instance of this construction (the eigendecomposition of L via DER-SPC-003, the heat kernel via DER-SPC-004, and this project's own independently-verified ARBS spectral reconstruction) computes L's eigenvectors as orthonormal under the STANDARD (counting-measure) inner product -- consistent only with mu=counting measure for the spectral branch. No certified entry anywhere redoes this Hilbert-space/eigendecomposition construction with mu=degree measure.",
+      "consequence": "The RF-001..005 / BRIDGE B-004 convergence machinery, inheriting 'L' and its Hilbert space from this same branch, is built on L^2(V, counting measure) -- NOT on L^2(V,d) (degree-weighted), the space in which Q=-D^{-1}L and its adjoint -LD^{-1} are naturally self-adjoint (via similarity to L_norm=D^{-1/2}LD^{-1/2}, proven in C-004D)."
+    },
+    "F3_no_connection_to_the_FP_equation": {
+      "finding": "The continuum object L*P=-div(P grad log P_ss) (row 2116, 'Fokker-Planck Dynamics') is stated as a bare PDE by analogy with standard non-equilibrium statistical mechanics. It is NEVER referenced alongside R_n, G_n->M, Mosco convergence, Gromov-Hausdorff, Delta_M, or any other refinement/limit apparatus anywhere in the corpus. Delta_M=lim L_n (row 2027) and BRIDGE B-004 target g_mu_nu (a METRIC recovery), a different object from P_ss or the FP equation (a PROBABILITY-evolution recovery) entirely.",
+      "consequence": "There is no attempted derivation, sketch, or even an informal claim anywhere in the ~450-sheet corpus that the continuum FP equation is, or should be, a limit of any discrete graph sequence under the project's refinement functor R."
+    }
+  },
+  "answer_to_the_exact_proof_obligation": {
+    "does_the_framework_provide_a_sequence_Gn_to_M_and_scaling_operators_such_that_lim_Rn(-LnDninv)_equals_the_continuum_FP_operator": "NO.",
+    "reasoning": "(1) The only certified discrete-to-continuum convergence apparatus in the source (RF-001..005, BRIDGE B-004) is built on the counting-measure spectral branch (L, not D^{-1}L or L_norm) -- confirmed by tracing every certified use of L^2(V,mu) back to constructions (eigendecomposition, heat kernel) that are only consistent with mu=counting measure. (2) That apparatus targets geometric recovery (g_mu_nu, Delta_M), not the Fokker-Planck/thermodynamic branch. (3) The continuum FP equation -div(P grad log P_ss) is never referenced alongside any refinement-limit machinery anywhere in the corpus -- it is an isolated, un-derived assertion. No sequence R_n, no scaling law, and no convergence theorem exists connecting -L_nD_n^{-1} (or any thermodynamic discretization) to it.",
+    "classification": "This is a genuine missing theorem, not merely an unresolved detail: the continuum FP equation and the graph-refinement convergence theory were developed as two entirely separate pieces of the framework that were never connected. C-004E is OPEN with a precise, theorem-level obstruction, exactly as anticipated by the governing instruction: 'If the necessary convergence map doesn't exist, that itself becomes the next theorem-level obstruction.'"
+  },
+  "general_theorem_promoted_to_canonical": {
+    "id": "THM-GEN-DISTINCT-001",
+    "statement": "For any connected, unweighted, undirected graph G=(V,E) with Laplacian L=D-A: (1) ker(L)=span{1} (standard), so the symmetric generator -L has UNIFORM stationary measure. (2) A reversible continuous-time Markov generator L*_therm with stationary measure P_ss proportional to d must satisfy L*_therm*d=0, i.e. d in ker(L*_therm). (3) Since d is in ker(L) if and only if G is regular (verified: L*d=0 exactly for regular G0; ||L*d|| grows with irregularity for G1-G4: 4.90, 25.77, 145.41, 822.50 respectively), ker(L) != span{d} for any irregular G. (4) Therefore -L != c*L*_therm for any scalar c, for any irregular connected graph: THE SPECTRAL AND THERMODYNAMIC GENERATORS ARE STRUCTURALLY DISTINCT OPERATORS whenever the graph is irregular. (5) The unique reconciling operator, given only the graph's edges and the detailed-balance condition w.r.t. P_ss proportional to d, is L*_therm=-LD^{-1} (derived in C-004D), similar to L_norm=D^{-1/2}LD^{-1/2}.",
+    "status": "PROVEN (algebraic proof + numerical confirmation across G0-G4, including the new kernel-membership check ||L*d|| in this run)",
+    "scope": "General -- applies to any connected graph with a degree-weighted stationary measure requirement, not specific to ARBS. Recommended for promotion to the canonical Universal Rosetta Stone theorem registry as a standing structural result, independent of the ARBS shell-selection question."
+  },
+  "final_status": {
+    "C004E": "OPEN -- precise theorem-level obstruction identified (see 'answer_to_the_exact_proof_obligation'); not invented around.",
+    "THM_GEN_DISTINCT_001": "PROVEN, recommended for canonical promotion.",
+    "C004D": "Unaffected, still PARTIALLY CLOSED (unchanged from prior run).",
+    "C004C": "Not reopened. sigma_k remains PROVEN NON-IDENTIFIABLE.",
+    "G_star": "UNRESOLVED (unchanged)."
+  }
+}

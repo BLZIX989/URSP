@@ -1,0 +1,27 @@
+{
+  "G0": {
+    "||L*d||": 0.0,
+    "d_in_ker(L)": true,
+    "regular": true
+  },
+  "G1": {
+    "||L*d||": 4.898979485566356,
+    "d_in_ker(L)": false,
+    "regular": false
+  },
+  "G2": {
+    "||L*d||": 25.768197453450252,
+    "d_in_ker(L)": false,
+    "regular": false
+  },
+  "G3": {
+    "||L*d||": 145.4097658343483,
+    "d_in_ker(L)": false,
+    "regular": false
+  },
+  "G4": {
+    "||L*d||": 822.4986322177077,
+    "d_in_ker(L)": false,
+    "regular": false
+  }
+}
