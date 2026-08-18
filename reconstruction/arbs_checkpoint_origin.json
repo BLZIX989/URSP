@@ -1,0 +1,21 @@
+{
+  "task": "ARBS-CHECKPOINT-ORIGIN-001 -- why does tilde_G_3 reproduce sigma_16, sigma_17, and why does the family reproduce t_H?",
+  "options": {
+    "A": "It is actually the canonical graph.",
+    "B": "It is a canonical realization.",
+    "C": "It is a quotient/representation preserving the relevant spectral operator.",
+    "D": "It is an independently constructed graph that happens to reproduce checkpoints.",
+    "E": "The checkpoints themselves originated from a different construction."
+  },
+  "evidence": [
+    "G_ARBS cannot be uniquely reconstructed from source (arbs_canonical_graph.json) -- rules out A and B outright, since both require a known canonical object to be equal to or realized by tilde_G_k.",
+    "No quotient/projection map from any hypergraph structure to tilde_G_k has ever been defined or attempted (ARBS-ONTOLOGY-RECOVERY-001, arbs_graph_projection.json) -- rules out C.",
+    "The construction rule (K_{2^k,2^k}, R_{k-1}xL_k) was supplied as directive text in a prior run under the claim it had been 'recovered from source material' -- but exhaustive search (that run, and this one) never located it anywhere in the ARBS architecture documentation or elsewhere in the corpus.",
+    "The checkpoint VALUES (sigma16=2.828427124746192, sigma17=2.849152618684595, t_H values, etc.) were already present in the v1.0 master workbook (session run 1) BEFORE any graph construction was supplied or computed -- i.e. the numbers predate, in this project's own history, the specific K_{2^k,2^k} rule that was later supplied to reproduce them.",
+    "When independently implemented from the bare combinatorial rules alone (run 2, no checkpoint values used in the construction code), tilde_G_k's spectrum reproduced all 8 independent checkpoint values to double-precision accuracy (~1e-13) -- this is a genuine, strong, unforced numerical match, not circular.",
+    "tilde_G_k independently satisfies BOTH of ARBS's own concrete admissibility axioms (arbs_graph_comparison.json) -- not proof of identity, but rules out 'arbitrary, unrelated graph' as a full description."
+  ],
+  "assessment": "Best-supported answer: A BLEND OF D AND E, more precisely characterized than either alone. The checkpoint VALUES (sigma16, sigma17, t_H, etc.) appear to have an origin independent of, and prior to, the specific K_{2^k,2^k}/R_{k-1}xL_k construction rule -- consistent with E (a different, unrecovered original construction or computation produced these numbers). The construction rule that was later supplied and tested (tilde_G_k) is an INDEPENDENTLY-MOTIVATED graph family, not derived from ARBS's own abstract G=(V,E,W) schema, that happens to reproduce those numbers to high numerical precision AND independently satisfies ARBS's two admissibility axioms -- consistent with D, but a stronger/more specific version of D than 'coincidence,' since the reproduction is exact to 8 independent checkpoints and the admissibility is a genuine structural match, not merely a spectral fluke.",
+  "not_selected": "A and B are excluded (no canonical graph exists to be identical to or a realization of). C is excluded (no projection map exists). Pure 'coincidence' framing of D is too weak given the precision and the admissibility match; pure E (checkpoints came from something totally unrelated) is too strong given the admissibility match is nontrivial and would be an unusual coincidence on its own.",
+  "status": "CALCULATED / ASSESSED, not provable to certainty from currently available source material -- the true origin of the original checkpoint numbers (prior to this project's own reconstruction work) remains outside what this project's own source corpus documents; it would require project history/session records predating this corpus, which are not available."
+}

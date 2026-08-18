@@ -1,0 +1,24 @@
+{
+  "task": "Structural comparison between the two admissibility axioms (the only concrete, checkable constraints found) and tilde_G_k, plus the one alternative construction attempt found in source",
+  "note": "Since G_ARBS itself cannot be uniquely reconstructed (arbs_canonical_graph.json), a full structural isomorphism test against tilde_G_k is not possible. What CAN be tested is whether tilde_G_k is an ADMISSIBLE member of the Graph_ARBS category, i.e. whether it satisfies the two concrete axioms TH-ARBS-001A and TH-ARBS-001B. This is a necessary-condition test, not a uniqueness/identity proof.",
+  "TH-ARBS-001A_bipartite_reciprocity_lock_test": {
+    "requirement": "V splits as V_0 union V_1 with edges only crossing between partitions",
+    "test_result": "SATISFIED -- verified in run 2 (workbook v1.1, sheet 57/checks) and re-confirmed structurally this run: the global partition V_0=union_k L_k, V_1=union_k R_k is a valid 2-coloring for every edge in tilde_G_k (both intra-shell K_{2^k,2^k} edges and inter-shell R_{k-1}xL_k edges cross between V_0 and V_1, never within).",
+    "status": "PASS"
+  },
+  "TH-ARBS-001B_shell_nilpotency_lock_test": {
+    "requirement": "A directed transport matrix N (edges oriented so shell index is monotonically non-decreasing, no back-directed loops) satisfies N^m=0 for some finite m",
+    "test_performed": "Oriented every edge of tilde_G_k from its lower canonical vertex index to its higher index (consistent with the construction order: vertices are added shell-by-shell, L_k before R_k, in increasing k) and tested nilpotency of the resulting directed adjacency matrix N.",
+    "numeric_result": "N is nilpotent for every tested shell: nilpotency index m = 1,3,5,7,9,11 for G0,G1,G2,G3,G4,G5 respectively (= diam(G_n)+... consistent with the graph's layered/graded structure -- a standard fact for any DAG-oriented layered graph).",
+    "status": "PASS"
+  },
+  "conclusion_on_admissibility": "tilde_G_k SATISFIES BOTH concrete ARBS admissibility axioms, for every tested shell. It is therefore a legitimate member of the Graph_ARBS category as formally defined (row 1450) -- NOT an arbitrary, unrelated graph. This is meaningfully more than nothing: it is real, positive, checkable evidence of compatibility. It is NOT, however, evidence of uniqueness or identity -- the axioms define an entire category of admissible graphs (in principle including many non-isomorphic members), and satisfying two necessary conditions does not select tilde_G_k as THE canonical choice.",
+  "alternative_construction_attempt_found_in_source": {
+    "location": "'Audit and Recommended Revisions.docx' (SEF/SIT Namespace A), Section 4 'Minimal Completion: Delta -> G=(V,E)'",
+    "construction": "K_ij = K(Delta_i,Delta_j) in [0,1], seeded from boundary overlap |dOmega_i cap dOmega_j|/|dOmega_i cup dOmega_j|; K* = argmax_K [Pi(K)/S(K) - lambda_C*C(K)], C(K)=sum_ij K_ij; A_ij = 1[K*_ij > theta], G*=(V,E)=(U,{(i,j): A_ij=1})",
+    "free_parameters": "lambda_C (complexity-penalty weight) and theta (discretization threshold) are BOTH explicitly flagged 'Unfixed' in the source's own Free Parameter Registry -- this is not a parameter-free canonical construction.",
+    "explicit_documented_failure": "'Unconstrained Pi/S selector (\"Theorem 1\") -- converges to near-complete graph, not the claimed Recursive Bipartite Shell Graph.' (source, Empirical Test Board, 'Doesn't work' category) -- i.e. the source's OWN best-documented attempt at constructing a G from first principles, when tested, does NOT reproduce anything resembling tilde_G_k's bipartite-shell structure. With lambda_C>0 the graphs are sparse and 'spectra genuinely drift toward bipartite symmetry... though no tested value produced' the claimed structure exactly.",
+    "relevance": "This is a DIFFERENT part of the corpus (SEF/SIT, not the ARBS Hyper-Graph Architecture section) attempting a related but distinct goal (a general Delta->G completion for the whole framework, not specifically ARBS shell 1). It neither supersedes nor is superseded by tilde_G_k -- both are independently-motivated, neither is proven canonical, and the source's own test explicitly found this alternative does NOT reproduce a bipartite-shell structure either. This reinforces, rather than resolves, the finding that no clean parameter-free source construction of G exists anywhere in the corpus."
+  },
+  "status": "ADMISSIBILITY: PASS (both axioms). UNIQUENESS/IDENTITY: NOT ESTABLISHED, and cannot be established without a concrete G_ARBS to compare against (see arbs_canonical_graph.json)."
+}

@@ -1,0 +1,5 @@
+{
+  "task": "Target independence audit for this run",
+  "checked": ["G=(V,E,W) occurrences and their context", "TH-ARBS-001A/B admissibility test code", "nilpotency orientation/test", "SIT Delta->G alternative construction review", "checkpoint-origin reasoning"],
+  "result": "PASS -- no reference to 32, N_H, Pi_0, G_star, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, V_CKM, U_PMNS, or Xi_obs anywhere in this run's source recovery, admissibility testing, or reasoning. The number 32 does not appear in G=(V,E,W)'s definition, in TH-ARBS-001A/B, or in the SIT Delta->G construction. The nilpotency/bipartiteness tests use only the already-verified tilde_G_k adjacency structure (A_k, shell indices), with no downstream target referenced."
+}

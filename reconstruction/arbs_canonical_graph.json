@@ -1,0 +1,17 @@
+{
+  "task": "ARBS-GRAPH-REALIZATION-001 -- recover G_ARBS = (V,E,W) at ARBS shell 1",
+  "search_scope": "All 9 source workbooks + whitepaper; text extraction AND direct inspection of embedded equation images (per the method that succeeded in C-004G); every occurrence of 'G=(V,E,W)', 'V,E,W', 'shell 1', 'organizational graph', 'weighted graph', 'adjacency', 'incidence' was traced to its full context.",
+  "every_occurrence_found": [
+    {"location": "row 1915 (whitepaper text corpus)", "text": "'The full chain: Omega -> Delta -> G=(V,E,W) -> L=D-A -> Spec(L) -> H(t)=e^{-tL} -> g_mu_nu -> L*,L* -> P_ss -> sigma -> Pi_0'", "nature": "Abstract pipeline notation -- G is a placeholder stage, not constructed here."},
+    {"location": "row 1938, BRIDGE B-001 (CERTIFIED)", "text": "'Given G=(V,E,W), the Laplacian L=D-A is uniquely defined, symmetric, and positive semi-definite.'", "nature": "Conditional/general statement -- takes G as ALREADY GIVEN. Proves a property of L given ANY G; does not construct G."},
+    {"location": "row 2008 / 2049 / 2097 (Variable Registry, multiple copies)", "text": "'G=(V,E,W) | Organizational Graph | Vertices V=entities/states; edges E=relations; weights W=relation strengths. A_ij=w_ij (i!=j); G encodes the structural fact that distinctions co-exist and relate.'", "nature": "Generic schema/definition of what V, E, W MEAN semantically (entities, relations, relation-strengths) -- NOT a concrete instantiation. No specific vertex list, edge list, or weight formula given."},
+    {"location": "row 1450, UCG Specification v5, RF-001 category definition", "text": "'Graph_ARBS | Finite typed weighted hypergraphs G=(V,E,W,sigma) satisfying TH-ARBS-001A and TH-ARBS-001B'", "nature": "Defines a CATEGORY (the class of all admissible graphs satisfying two axioms), not a single canonical member. This is the closest thing to a formal specification found, and it is explicitly a category, not a graph."}
+  ],
+  "conclusion": "V, E, W are defined ONLY abstractly/semantically (V=entities/states, E=relations, W=relation-strengths) everywhere they appear. No concrete vertex set, edge set, or weight function is ever given. The one formal structure recovered (Graph_ARBS, row 1450) is explicitly a CATEGORY of admissible graphs constrained by two axioms (TH-ARBS-001A bipartite-reciprocity-lock, TH-ARBS-001B shell-nilpotency-lock) -- it does not select a unique member.",
+  "the_two_admissibility_axioms_(concrete, checkable)": {
+    "TH-ARBS-001A_bipartite_reciprocity_lock": "The vertex set splits as V=V_0 union V_1 with edges only crossing between partitions.",
+    "TH-ARBS-001B_shell_nilpotency_lock": "The directed transport matrix N satisfies N^m=0 for some finite m. Shell indices are monotonically ordered; back-directed loops across shells are excluded."
+  },
+  "status": "G_ARBS CANNOT BE UNIQUELY RECONSTRUCTED. Source specifies G=(V,E,W) only as an abstract schema and defines only a CATEGORY of admissible graphs (via two checkable axioms), not a single canonical instance. This is the exact obstruction condition anticipated by this run's own stop rule.",
+  "no_canonical_graph_artifacts_produced": "Per the stop condition, no arbs_canonical_vertices.csv / arbs_canonical_edges.csv / arbs_canonical_weights.csv / arbs_canonical_adjacency.npy / arbs_canonical_laplacian.npy are produced -- there is no concrete G_ARBS to export. This omission is explicit, not silent."
+}
