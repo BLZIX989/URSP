@@ -1,0 +1,89 @@
+{
+  "task": "C-004C -- Entropy-Production Recovery",
+  "candidates": [
+    {
+      "candidate_id": "SIGMA-CAND-001",
+      "name": "H-theorem entropy production (BRIDGE B-006)",
+      "source": "UOC_ToE_Canonical_Theory_of_Everything_Master_v1.0.xlsx, sheet 54_SOURCE_TEXT_CORPUS, rows 1958-1961",
+      "exact_equation": "sigma = -dF/dt >= 0, F[P] = integral P log(P/P_ss) dmu, along any solution P(t) of d_t P = L* P",
+      "mathematical_meaning": "KL-divergence dissipation rate of a time-dependent distribution P(t) relative to a stationary measure P_ss, under a Fokker-Planck-type generator L*",
+      "variables_required": ["P(t) (a full trajectory)", "P_ss (stationary measure)", "the generator L*"],
+      "shell_dependence": "Implicit only through the generator and P_ss; not reduced to a per-shell scalar",
+      "initial_condition_dependence": "YES -- P(t) requires P(0); no canonical P(0) is fixed anywhere in the corpus for G_k",
+      "time_dependence": "YES -- sigma is a function of t, not a fixed number; no canonical evaluation time or reduction rule (e.g. asymptotic limit, time integral) is specified",
+      "normalization": "None given",
+      "positivity_condition": "sigma >= 0 always (CERTIFIED, H-theorem, log-sum inequality); sigma > 0 strictly whenever P(t) != P_ss (generic case)",
+      "target_dependence": "None found (formula contains no downstream object)",
+      "status": "SOURCE-EXACT for the functional FORM and for its sign; CONDITIONAL (not reducible to a number) for any specific numeric value"
+    },
+    {
+      "candidate_id": "SIGMA-CAND-002",
+      "name": "Onsager local entropy production (DER-TD-004 / TD-004)",
+      "source": "same workbook, sheet 54_SOURCE_TEXT_CORPUS, rows 2948-2949, 3009",
+      "exact_equation": "sigma = sum_i J_i X_i >= 0, X_i = grad_i Phi, J_i = sum_j L_{ij} grad_j Phi (Onsager flux-force, TD-003)",
+      "mathematical_meaning": "Standard non-equilibrium-thermodynamics local entropy production from linear flux-force relations",
+      "variables_required": ["a potential field Phi on the graph", "an Onsager coefficient matrix L_{ij} (stated abstractly, not identified with the ARBS graph Laplacian anywhere)"],
+      "shell_dependence": "Not specified -- Phi and its graph-realization are not defined for G_k anywhere in the corpus",
+      "initial_condition_dependence": "Effectively yes: requires specifying the field Phi (a boundary/driving condition), not fixed for ARBS shells",
+      "time_dependence": "Implicit (near-equilibrium instantaneous rate); no canonical evaluation time given",
+      "normalization": "None given",
+      "positivity_condition": "sigma >= 0 (CERTIFIED, positive-definiteness of Onsager coefficients, standard second-law argument)",
+      "target_dependence": "None found",
+      "status": "SOURCE-EXACT for the generic form; OPEN for any ARBS-shell-specific instantiation (Phi never constructed for G_k)"
+    },
+    {
+      "candidate_id": "SIGMA-CAND-003",
+      "name": "Proposed alternative Pi_O coupling (DER-TD-005 / DER-ORG-007 / DER-OPEN-003)",
+      "source": "same workbook, sheet 54_SOURCE_TEXT_CORPUS, rows 2950-2951, 2629-2630, 2958-2959",
+      "exact_equation": "Pi_O = 1 - exp(-sigma * delta_spec / lambda_c)  [proposed, NOT the ratio form (delta_spec-lambda_c)/sigma used in OPEN-020E.2]",
+      "mathematical_meaning": "An alternative, exponential-saturation coupling between the same three ingredients, explicitly labeled a proposal awaiting rigorous derivation",
+      "variables_required": ["sigma (same undefined quantity)", "delta_spec", "lambda_c"],
+      "shell_dependence": "Same blocking issue as SIGMA-CAND-001/002 -- still needs a concrete sigma",
+      "initial_condition_dependence": "Same as SIGMA-CAND-001",
+      "time_dependence": "Same as SIGMA-CAND-001",
+      "normalization": "n/a",
+      "positivity_condition": "n/a",
+      "target_dependence": "None found",
+      "status": "PROPOSED, explicitly OPEN in source (DER-ORG-007, DER-OPEN-003 'Pi_O Rigorous Derivation [OPEN]'). Kept SEPARATE from the OPEN-020E.2 ratio formula per governing instruction not to merge distinct sigma/Pi definitions sharing a symbol; NOT used to close C-004C or OPEN-020E.2."
+    },
+    {
+      "candidate_id": "SIGMA-CAND-004",
+      "name": "Asymptotic entropy-production rate (lim t->infinity sigma(t))",
+      "source": "NOT in the corpus -- considered and rejected here as an obvious external candidate",
+      "exact_equation": "sigma_infty = lim_{t->infinity} (-dF/dt)",
+      "mathematical_meaning": "The long-time entropy production rate",
+      "status": "REJECTED -- not source-supported, AND degenerate: F(t) -> 0 as t -> P_ss for any admissible generator, so sigma_infty = 0 identically for every shell, making Pi_0 = Delta_k/0 undefined for all k. Recorded only to show it was considered and excluded, not adopted."
+    }
+  ],
+  "generator_consistency_gap": {
+    "id": "GAP-GENERATOR-001",
+    "finding": "BRIDGE B-006 states the stationary measure is P_ss(i) = d_i/(2|E|) (the degree distribution), proved via Perron-Frobenius on 'the transition matrix.' The ARBS spectral reconstruction already CERTIFIED elsewhere in this project (DER-SPC-002/GEO-001: L=D-A; DER-SPC-004/GEO-003: K_t=exp(-tL)) uses the plain combinatorial graph Laplacian, whose kernel for a connected graph is the CONSTANT vector, i.e. exp(-tL) has the UNIFORM distribution as its stationary state, not the degree distribution -- these coincide only for regular graphs (every vertex the same degree). The ARBS shell graphs G0-G4 are NOT regular (intra- and inter-shell degrees differ substantially across L_k/R_k and across k). Therefore the generator L* used in BRIDGE B-006's entropy-production theorem is not demonstrably the same operator as the certified ARBS Laplacian L, and no source registry entry reconciles the two. This is an independent blocking gap on top of the initial-condition and evaluation-time gaps: even fixing P(0) and t, it is not certain which operator to evolve P(t) under.",
+    "status": "OPEN -- not resolved by this run; recorded, not invented around"
+  },
+  "der_registry_confirmation": {
+    "DER-ORG-007": "Organizational Persistence Functional Recovery [OPEN] -- Pi_O = f(sigma, C, Spec(L)) recovery itself (well-definedness, boundedness, monotonicity) is registered OPEN, independent of sigma's own definability.",
+    "DER-OPEN-003": "Pi_O Rigorous Derivation [OPEN] -- duplicate/reinforcing OPEN entry.",
+    "H_FP_hyperedge": "Registry hyperedge H_FP explicitly lists 'initial distribution' as a required-but-unsupplied input alongside the generator and boundary conditions for even the simpler object P_ss."
+  },
+  "only_precedent_for_choosing_an_initial_condition": {
+    "location": "BRIDGE B-007 representation-invariance test / C-008, row 1965 and 2149",
+    "finding": "The one place in the corpus where an initial-condition choice was actually made for a Pi-type quantity used a(0)=e_1, an arbitrary unit-vector choice, on the DIFFERENT test graph K3,3 (not any ARBS shell G0-G4), for a one-off computational demonstration ('COMP. ESTAB.'). This is evidence AGAINST the existence of a canonical rule: when the source's own authors needed a number, they picked one for illustration rather than citing a general prescription."
+  },
+  "sign_result": {
+    "statement": "sigma_k > 0 whenever P(t) != P_ss (generic, non-equilibrium case), for ANY admissible generator and initial condition, by the CERTIFIED H-theorem (BRIDGE B-006).",
+    "consequence": "Since delta_spec(G_k) - lambda_c,k < 0 for every k=0..4 (lambda_c,k > lambda_max(L_k) >= delta_spec(G_k), established in the prior run), Pi_0(G_k) = (delta_spec-lambda_c)/sigma_k < 0 for every k=0..4, for ANY admissible sigma_k satisfying the certified sign.",
+    "status": "PROVEN (sign only)"
+  },
+  "nonidentifiability_demonstration": {
+    "method": "reconstruction/sigma_nonidentifiability_demo.py -- computes sigma(t)=-dF/dt using the CERTIFIED heat semigroup exp(-tL) already used throughout ARBS (resolving GAP-GENERATOR-001 in the single most literal reading available: same L, therefore P_ss=uniform, not the degree distribution B-006 states -- itself only one arbitrary resolution among others), sampled at 2 illustrative initial nodes x 3 illustrative times, across all 5 shells.",
+    "result": "argmax_k Pi_0(G_k) takes 3 DIFFERENT values (G0, G1, or G2) across just 6 sampled (P(0),t) combinations; G3 is never the argmax in this sample.",
+    "caveat": "This is an illustrative existence proof of parameter-dependence, not a claim about what the 'true' ranking is under any specific canonical choice -- no such canonical choice exists in the source material. It is not evidence for or against G3; it demonstrates that the ranking question is not well-posed without first resolving GAP-GENERATOR-001 and fixing P(0) and t, none of which this run invents.",
+    "status": "Parameter-dependent ranking CONFIRMED (Section 17 outcome: 'G* is not uniquely determined' via this route)"
+  },
+  "final_status": {
+    "sigma_k": "PROVEN NON-IDENTIFIABLE as a specific per-shell number from currently certified ARBS/UOC mathematics. Sign only (sigma_k>0, generic case) is derivable.",
+    "Pi_0(G_k)": "Sign derived: Pi_0(G_k) < 0 for all k=0..4. Magnitude and ranking: OPEN (non-identifiable without additional, currently unsupplied, source data).",
+    "OPEN-020E.2": "Remains OPEN. argmax_k Pi_0(G_k) is not evaluable; demonstrated parameter-dependent when illustrative choices are substituted.",
+    "G_star": "UNRESOLVED (unchanged)."
+  }
+}
