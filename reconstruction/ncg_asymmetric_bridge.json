@@ -1,0 +1,21 @@
+{
+  "task": "OPEN-024B top-level summary. Sections 12-13, 15, 27.",
+  "minimal_success_condition_Section_12": "NOT MET. No candidate (out of 4 representations x 259 seeds x 2 sign conventions) satisfies D_F!=0 AND grading AND Hermiticity AND real structure AND order-zero AND first-order simultaneously -- first-order fails universally (see ncg_first_order_proofs.json).",
+  "seed_dependence_Section_15": {
+    "question": "Does the representation/bridge actually depend on the relational seed R, or is it seed-insensitive?",
+    "finding": "MIXED, precisely characterized: the PASS/FAIL OUTCOME of first-order is seed-INSENSITIVE (uniformly fails for every one of the 259 seeds, for a structural reason independent of R's specific topology -- THM-ASYM-BRIDGE-OBSTRUCTION-001). But the CONSTRUCTED OBJECTS THEMSELVES (D_F, its rank, its spectrum, which KO class combinations are even reachable, whether orientation_reversed is defined at all) DO depend on R's specific structure (edge count, bipartition split sizes) -- e.g. orientation_reversed is defined only for seeds with balanced bipartition (0/1 at N=2, 0/4 at N=3 [none], 38/46 instances at N=4, 0/462 at N=5 [none, N odd]). So: the BRIDGE is seed-sensitive at the level of the objects it builds; the SPECIFIC AXIOM TESTED (first-order, for this algebra class) is seed-insensitive in its outcome."
+  },
+  "status_registry_Section_27": {
+    "OPEN-024B-001_asymmetric_representation_existence": "RESOLVED -- exists (3 valid C-linear candidates constructed and tested: identity, orientation_reversed, random_diagonal_perm; 1 additional non-C-linear but computed data point, conjugate)",
+    "OPEN-024B-002_order_zero_closure": "CLOSED -- passes universally for all candidates, all seeds (PROVEN, THM-BRIDGE-ORDER-ZERO-001 from run 17, reaffirmed unaffected by asymmetry choice)",
+    "OPEN-024B-003_first_order_closure": "CLOSED -- fails universally, PROVEN (THM-ASYM-BRIDGE-OBSTRUCTION-001), not merely observed",
+    "OPEN-024B-004_representation_canonicality": "MOOT -- vacuous, no successful representation exists to classify (ncg_representation_equivalence.json)",
+    "OPEN-024B-005_seed_dependence": "RESOLVED -- mixed/precisely characterized (see above)",
+    "OPEN-024B-006_DF_squared_L_relation": "RESOLVED, NEGATIVE -- D_F^2 != L exactly, proven for all 28 tested N<=4 seeds (ncg_df_laplacian_relation.json)",
+    "OPEN-024B-007_KO_dimension_selection": "PARTIAL -- 2 reachable classes (0,6 mod 8), not uniquely selected by R (ncg_ko_dimension.json)",
+    "OPEN-024B-008_poincare_duality": "DEFERRED -- contingent on first-order closing, which it does not (ncg_poincare_duality.json)",
+    "OPEN-024B-009_orientability": "DEFERRED -- same reasoning (ncg_orientability.json)",
+    "OPEN-024B-010_finite_algebra_selection": "OPEN -- the tested (abelian) class is proven inadmissible; a non-abelian candidate is the correctly-identified but not-yet-attempted next step (ncg_algebra_enumeration.json)"
+  },
+  "reclassification_of_OPEN_024_Section_30": "OPEN-024 (the original semantic-functor gap both threads flagged) is now more precisely understood, not closed: CLOSED FOR SYMMETRIC REPRESENTATION (run 17's finding) is SUBSUMED by the more general CLOSED FOR ANY REPRESENTATION OF AN ABELIAN ALGEBRA (this run's finding, THM-ASYM-BRIDGE-OBSTRUCTION-001). Neither is evidence that Track A cannot generate NCG in principle -- both are evidence that a specific, well-motivated, minimal-assumption construction attempt (abelian algebra, standard doubling) cannot, for a precisely proven structural reason. OPEN-024B remains OPEN, now sharpened: the question is whether a NON-abelian algebra bridge can succeed, not yet attempted."
+}

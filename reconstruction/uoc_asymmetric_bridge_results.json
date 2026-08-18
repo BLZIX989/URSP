@@ -1,0 +1,118 @@
+{
+  "2": {
+    "n_candidates": 1,
+    "by_representation": {
+      "identity": {
+        "tested": 2,
+        "undefined": 0,
+        "order_zero_pass": 2,
+        "first_order_pass": 0
+      },
+      "conjugate": {
+        "tested": 2,
+        "undefined": 0,
+        "order_zero_pass": 2,
+        "first_order_pass": 0
+      },
+      "orientation_reversed": {
+        "tested": 2,
+        "undefined": 0,
+        "order_zero_pass": 2,
+        "first_order_pass": 0
+      },
+      "random_diagonal_perm": {
+        "tested": 2,
+        "undefined": 0,
+        "order_zero_pass": 2,
+        "first_order_pass": 0
+      }
+    }
+  },
+  "3": {
+    "n_candidates": 4,
+    "by_representation": {
+      "identity": {
+        "tested": 8,
+        "undefined": 0,
+        "order_zero_pass": 8,
+        "first_order_pass": 0
+      },
+      "conjugate": {
+        "tested": 8,
+        "undefined": 0,
+        "order_zero_pass": 8,
+        "first_order_pass": 0
+      },
+      "orientation_reversed": {
+        "tested": 0,
+        "undefined": 8,
+        "order_zero_pass": 0,
+        "first_order_pass": 0
+      },
+      "random_diagonal_perm": {
+        "tested": 8,
+        "undefined": 0,
+        "order_zero_pass": 8,
+        "first_order_pass": 0
+      }
+    }
+  },
+  "4": {
+    "n_candidates": 23,
+    "by_representation": {
+      "identity": {
+        "tested": 46,
+        "undefined": 0,
+        "order_zero_pass": 46,
+        "first_order_pass": 0
+      },
+      "conjugate": {
+        "tested": 46,
+        "undefined": 0,
+        "order_zero_pass": 46,
+        "first_order_pass": 0
+      },
+      "orientation_reversed": {
+        "tested": 38,
+        "undefined": 8,
+        "order_zero_pass": 38,
+        "first_order_pass": 0
+      },
+      "random_diagonal_perm": {
+        "tested": 46,
+        "undefined": 0,
+        "order_zero_pass": 46,
+        "first_order_pass": 0
+      }
+    }
+  },
+  "5": {
+    "n_candidates": 231,
+    "by_representation": {
+      "identity": {
+        "tested": 462,
+        "undefined": 0,
+        "order_zero_pass": 462,
+        "first_order_pass": 0
+      },
+      "conjugate": {
+        "tested": 462,
+        "undefined": 0,
+        "order_zero_pass": 462,
+        "first_order_pass": 0
+      },
+      "orientation_reversed": {
+        "tested": 0,
+        "undefined": 462,
+        "order_zero_pass": 0,
+        "first_order_pass": 0
+      },
+      "random_diagonal_perm": {
+        "tested": 462,
+        "undefined": 0,
+        "order_zero_pass": 462,
+        "first_order_pass": 0
+      }
+    }
+  }
+}

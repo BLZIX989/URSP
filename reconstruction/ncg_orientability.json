@@ -1,0 +1,6 @@
+{
+  "task": "Section 19: orientability -- does gamma_F admit the required Hochschild-cycle representation?",
+  "status": "DEFERRED, same reasoning as ncg_poincare_duality.json -- contingent on a closed finite triple, which this bridge does not produce (first-order fails universally).",
+  "what_IS_established": "gamma_F itself (the grading operator) is well-defined and satisfies its own structural axioms (gamma_F^2=1, {gamma_F,D_F}=0) for every seed -- PROVEN, Phase 1, run 17 -- but the STRONGER orientability requirement (an explicit Hochschild cycle c with pi_D(c)=gamma_F) requires a valid algebra representation pi to even state, which this run's search did not produce.",
+  "context": "Also OPEN in the source workbook's own intended target candidate (sheet 203_V2_CALC_021_ORIENTABILITY: 'need explicit c with pi_D(c)=gamma_F -- not serialized -- OPEN'; sheet 202 HC-005: 'full cycle coefficients not stored in V2.18 -- cannot assert exact closure')."
+}

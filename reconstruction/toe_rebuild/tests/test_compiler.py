@@ -8,6 +8,7 @@ pytest is unavailable).
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from compiler import compile_seed, enumerate_admissible_seeds, kernel, ncg_bridge
+from compiler import ncg_asymmetric_bridge as ab
 
 
 def test_seed_counts_match_prior_runs():
@@ -103,6 +104,54 @@ def test_ncg_bridge_D_F_zero_control_makes_first_order_hold():
     gens = ncg_bridge.build_phase3_diagonal_algebra(p1, p2)
     v3 = ncg_bridge.verify_phase3(p2, gens)
     assert v3["first_order_holds_for_diagonal_algebra"], "control case (D_F=0) should trivially satisfy first-order"
+
+
+def test_asymmetric_bridge_order_zero_always_passes():
+    for N in [2, 3]:
+        for seed in enumerate_admissible_seeds(N):
+            res = ab.full_asymmetric_sweep(seed.adjacency_matrix, N)
+            for key, r in res.items():
+                if r["status"] == "TESTED":
+                    assert r["order_zero_holds"], f"N={N} {key}: order-zero failed unexpectedly"
+
+
+def test_asymmetric_bridge_first_order_always_fails_THM_ASYM_001():
+    """THM-ASYM-BRIDGE-OBSTRUCTION-001: no representation (symmetric or
+    asymmetric) of the abelian algebra satisfies first-order for a
+    nonzero D_F."""
+    for N in [2, 3]:
+        for seed in enumerate_admissible_seeds(N):
+            res = ab.full_asymmetric_sweep(seed.adjacency_matrix, N)
+            for key, r in res.items():
+                if r["status"] == "TESTED":
+                    assert not r["first_order_holds"], f"N={N} {key}: first-order UNEXPECTEDLY PASSED -- theorem violated, investigate immediately"
+
+
+def test_conjugate_representation_is_not_C_linear():
+    """Validity audit: confirms the 'conjugate' candidate is only R-linear,
+    not a genuine C-algebra representation -- documents the caveat rather
+    than silently treating it as equally valid."""
+    import numpy as np
+    a = np.array([1 + 2j, 3 - 1j])
+    alpha = 1j
+    lhs = np.conj(alpha * a)
+    rhs = alpha * np.conj(a)
+    assert not np.allclose(lhs, rhs), "expected conjugate to be C-antilinear, not C-linear"
+
+
+def test_D_F_squared_not_equal_laplacian():
+    """THM/negative result: D_F^2 != L for the tested seeds."""
+    import numpy as np
+    for N in [2, 3, 4]:
+        for seed in enumerate_admissible_seeds(N):
+            mat = seed.adjacency_matrix
+            p1 = ncg_bridge.build_phase1(mat, N)
+            D_F = p1["D_F"]
+            D_F_sq = D_F @ D_F
+            A = np.array(mat, dtype=float)
+            A_sym = (A + A.T) / 2.0
+            L = np.diag(A_sym.sum(axis=1)) - A_sym
+            assert not np.allclose(D_F_sq, L), f"N={N}: unexpectedly found D_F^2==L, would overturn ncg_df_laplacian_relation.json"
 
 
 if __name__ == "__main__":

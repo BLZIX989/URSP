@@ -1,0 +1,7 @@
+{
+  "task": "Section 16: test whether D_F^2 relates to the seed's graph Laplacian L_R.",
+  "test": "D_F^2 vs L=D-A_sym (A_sym=(A+A^T)/2, the same symmetrized adjacency used throughout this project since C-004B), computed exactly for all 28 seeds at N=2,3,4.",
+  "result": "D_F^2 == L: 0/28 -- NO general equality. Concrete N=2 example: D_F=[[0,1],[1,0]], D_F^2=I (the 2x2 identity); L=[[0.5,-0.5],[-0.5,0.5]] -- structurally different (D_F^2 has zero row-sums-to-zero property that L has by construction; D_F^2 is an involution-derived identity-like matrix in this small case, not a graph Laplacian).",
+  "no_shifted_relation_found": "D_F^2 = L + c*I for a constant c was not found to hold either (D_F^2's off-diagonal entries are generally nonzero while cI's are zero, so a scalar shift cannot reconcile the two matrices' off-diagonal structure).",
+  "status": "PROVEN NEGATIVE (for the specific D_F construction used, exact non-equality demonstrated on all tested seeds, not merely unobserved) -- the seed-relation-to-Dirac-operator-to-Laplacian chain hypothesized in Section 16 does NOT hold for this bridge's specific D_F construction. This does not rule out some OTHER D_F construction relating to L differently; not investigated further this run given the first-order obstruction already stops the branch (Section 32)."
+}

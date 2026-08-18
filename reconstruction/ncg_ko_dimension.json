@@ -1,0 +1,6 @@
+{
+  "task": "Section 17: does the seed construction uniquely select a KO dimension?",
+  "result": "The KO-dimension result is UNCHANGED from SEMANTIC-FUNCTOR-BRIDGE-001 and is INDEPENDENT of the representation-asymmetry question tested this run (Phase 2's grading/reality structure does not involve the algebra representation pi at all). Confirmed again this run, same-sign doubling convention -> KO=0 mod 8; opposite-sign convention -> KO=6 mod 8, with 100% consistency across all 259 seeds (both runs agree exactly).",
+  "is_it_uniquely_selected": "NOT uniquely selected by the seed itself -- it is selected by the DOUBLING SIGN CONVENTION (an arbitrary binary choice made by the bridge-builder, not derived from R). Both KO=0 and KO=6 are reachable, and the seed's own structure (N, parity, bipartition sizes, orientation) does not favor one over the other in this construction -- verified: identical KO results occur for seeds of every tested N and every bipartition size split.",
+  "status": "PARTIAL -- a definite, narrow (2-class) set of KO dimensions is reachable and provably so (not merely observed), but the seed does not itself select between them; the choice remains external to R, an honest, unresolved ambiguity rather than a forced/derived result."
+}

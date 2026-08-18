@@ -1,0 +1,5 @@
+{
+  "task": "Section 18: Poincare duality -- only tested after first-order closure succeeds.",
+  "status": "DEFERRED, per Section 32's explicit stop condition ('if first-order cannot be closed: STOP after proving the obstruction'). First-order does not close (ncg_first_order_proofs.json) -- no finite triple candidate from this bridge reaches the point where Poincare duality is a well-posed test (there is no valid (A_F,H_F,D_F,J_F,gamma_F) satisfying the prior axioms to build an intersection matrix from).",
+  "context": "Worth noting for completeness: even the source NCG workbook's own intended target candidate (A_F=C(+)H(+)M3(C)) has Poincare duality explicitly UNRESOLVED ('NOT CALCULATED in V2.18... OPEN', sheet 176_V2_CALC_019_POINCARE) -- so this is not a gap this run introduces; it remains open in the project's own most advanced prior attempt too."
+}

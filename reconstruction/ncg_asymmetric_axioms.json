@@ -1,0 +1,16 @@
+{
+  "task": "Section 4: recover the project's own precise finite spectral-triple axioms before constructing anything new.",
+  "source": "source/UOC_NCG_First_Principles_Unified_ToE_Rebuild_v2.25_KO0_Explicit_First_Order_Closure.xlsx, sheets 152-157 (V2-CALC-017), quoted verbatim, not paraphrased from an external textbook.",
+  "axioms": {
+    "grading": {"gamma_F_squared": "gamma_F^2 = 1 (source: GR-001, DERIVED STRUCTURE)", "anticommute": "{gamma_F, D_F} = 0 (source: GR-003, DERIVED STRUCTURE)", "centrality": "[gamma_F, pi_F(a)] = 0 (source: GR-002, OPEN for full SM realization)"},
+    "hermiticity": "D_F = D_F^dagger (source: DF-001, CLOSED STRUCTURE)",
+    "oddness": "D_F = [[0,M^dagger],[M,0]] (source: DF-002, CLOSED STRUCTURE, required by grading)",
+    "real_structure": {"J_squared": "J_F^2 = epsilon (source: J-001, KO-dependent, CONDITIONED)", "JD": "J_F D_F = epsilon' D_F J_F (source: J-002, OPEN for full SM, requires explicit J_F and D_F)", "Jgamma": "J_F gamma_F = epsilon'' gamma_F J_F (source: J-003, OPEN for full SM)", "right_action": "rho(b) = J_F pi_F(b) J_F^{-1} (source: J-004, OPEN for full SM)"},
+    "order_zero": "[pi(a), J pi(b) J^-1] = 0 for all a,b in A_F (source: OZ-002, 'must hold on each bimodule component', OPEN UNTIL EXPLICIT FULL BIMODULE MATRIX IS BUILT for the SM case; CLOSED only for the source's own 2-point test model, OZ-003)",
+    "first_order": "[[D_F, pi(a)], J pi(b) J^-1] = 0 for all a,b in A_F (source: FO-001, 'full finite triple', OPEN for the SM case; CLOSED only for the 2-point test model, FO-002)",
+    "KO_dimension_sign_table": "verbatim from sheet 152_V2_CALC_017_KO_DIM: (KO mod 8, eps=J^2, eps'=JD sign, eps''=Jgamma sign) pairs: (0,1,1,1),(2,-1,1,-1),(4,-1,1,1),(6,1,1,-1),(8,1,-1,1),(10,-1,-1,-1),(12,-1,-1,1),(14,1,-1,-1)",
+    "orientability": "requires an explicit Hochschild cycle c with pi_D(c)=gamma_F (source: HC-003, 'required orientability condition', OPEN EXPLICIT CYCLE even for the source's own intended SM candidate, HC-005: 'full cycle coefficients not stored... cannot assert exact closure')",
+    "poincare_duality": "requires a nondegenerate intersection matrix Q built from K0 generators x bimodule multiplicities (source: 176_V2_CALC_019_POINCARE, 'NOT CALCULATED in V2.18... UNRESOLVED... OPEN' even for the source's own intended candidate)"
+  },
+  "important_note": "Both orientability and Poincare duality are OPEN in the source's own workbook even for its own intended target candidate (A_F=C(+)H(+)M3(C)) -- these are not axioms this run is expected to newly close where the source's own more extensive effort (V2-CALC-001 through 024A) did not. Per OPEN-024B's own stop condition (Section 32), these are correctly deferred unless first-order closes first, which it does not (see ncg_first_order_proofs.json)."
+}

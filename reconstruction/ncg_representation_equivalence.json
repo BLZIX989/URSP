@@ -1,0 +1,5 @@
+{
+  "task": "Section 14: canonicality test -- are all successful representations in one equivalence class?",
+  "result": "VACUOUS. Zero representations (out of 4 candidates x 259 seeds x 2 sign conventions = up to 2072 instances) satisfy first-order (see ncg_first_order_proofs.json). There is no nonempty set of successful representations to classify into equivalence classes.",
+  "status": "MOOT, not OPEN -- canonicality only becomes a meaningful question once at least one representation succeeds. This is explicitly distinguished from an unresolved-but-meaningful question, per this run's own governing principle (Section 33: 'A universal obstruction is a successful result... Multiple inequivalent successful representations are an unresolved canonicality result') -- zero successful representations is neither of those; it is the first (obstruction) case, already fully addressed in ncg_first_order_proofs.json."
+}
