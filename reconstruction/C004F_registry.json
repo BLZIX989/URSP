@@ -1,0 +1,112 @@
+{
+  "task": "C-004F -- Degree-Weighted Thermodynamic Continuum Recovery",
+  "recovery_order_status": {
+    "C-004F.1_degree_measure": "DERIVED / VERIFIED",
+    "C-004F.2_weighted_hilbert_space": "DERIVED FROM P_ss (not source-certified as an explicit construction)",
+    "C-004F.3_weighted_generator": "DERIVED / VERIFIED (carried forward from C-004D, re-verified here with detailed balance, conservation, stochastic semigroup checks)",
+    "C-004F.4_dirichlet_form": "DERIVED / VERIFIED (exact formula proven and numerically confirmed to ~5e-17 residual after an arithmetic bug caught and fixed during verification)",
+    "C-004F.5_refinement_map": "COMBINATORIAL MAP DERIVED (exact inclusion/embedding, degree transformation computed exactly); METRIC RESCALING NOT SOURCE-SUPPORTED (registered obstruction, not invented around)",
+    "C-004F.6_measure_pushforward": "CALCULATED across G0..G9 (extended beyond G0-G4 per Section 17)",
+    "C-004F.7_weighted_convergence": "OUTCOME D -- no identifiable limit (strong numerical evidence, not a closed-form proof)",
+    "C-004F.8_continuum_dirichlet_form": "NOT ATTEMPTED -- blocked by C-004F.7 (Section 24 stop rule)",
+    "C-004F.9_continuum_generator": "NOT ATTEMPTED -- blocked",
+    "C-004F.10_fokker_planck_correspondence": "NOT ATTEMPTED -- blocked"
+  },
+  "C004F_1_degree_measure": {
+    "formula": "pi_k(i) = d_i / (2|E_k|)",
+    "verified": "pi_k(i) >= 0 and sum_i pi_k(i) = 1 for G0..G9 (exact to floating point)",
+    "note": "Entropy H(pi_k), ||pi_k-u_k||_1, ||pi_k-u_k||_2 computed for G0..G9; see c004f_degree_measure.json. u_k=1/N_k. The distance from uniform grows with shell size (irregularity increases), consistent with C-004D/E findings.",
+    "status": "CALCULATED (as directed, not yet called a continuum measure at this stage)"
+  },
+  "C004F_2_weighted_hilbert_space": {
+    "definition": "H_k = L^2(V_k, mu_k), <f,g>_mu = sum_i f_i g_i pi_k(i)",
+    "source_support": "NOT explicitly source-certified: the corpus states L is 'a linear operator on L^2(V,mu)' without ever specifying mu (confirmed in C-004E search); this construction is DERIVED FROM the source-certified P_ss (BRIDGE B-005), not itself a pre-existing source object.",
+    "positivity_nondegeneracy": "VERIFIED: pi_k(i) > 0 for every vertex in every shell G0-G9 (no isolated/zero-degree vertices by construction), so <.,.>_mu is a genuine (positive-definite) inner product.",
+    "status": "DERIVED FROM P_ss"
+  },
+  "C004F_3_weighted_generator": {
+    "Q": "-D^{-1}L", "Qstar": "-LD^{-1} = Q^T",
+    "verified_Qstar_d_eq_0": "residual ~1e-16 to 1e-17 for all shells G0-G9",
+    "verified_Qstar_pi_eq_0": "residual ~1e-16 to 1e-19 (pi is a scalar multiple of d, same statement)",
+    "verified_detailed_balance": "pi_i Q_ij = pi_j Q_ji exactly (residual = 0.0 to machine precision, all shells)",
+    "verified_conservation": "1^T Qstar = 0 (residual ~1e-16), confirming sum_i(Qstar P)_i=0 for any P",
+    "T(t)_exp(tQ)_stochastic": "VERIFIED row-stochastic (row sums = 1 to <1e-15, all entries nonnegative) at t=0.05,0.2,1.0, all shells G0-G9",
+    "convention_recorded": "Q_ij=A_ij/d_i (i!=j), Q_ii=-1: a ROW generator, exp(tQ) row-stochastic. Q*=Q^T acts on COLUMN probability vectors via dP/dt=Q*P. This convention is recorded explicitly and used consistently; no silent transpose.",
+    "status": "DERIVED / VERIFIED"
+  },
+  "C004F_4_dirichlet_form": {
+    "exact_formula_derived": "E_k(f,g) = (1/(4|E_k|)) sum_{i,j} A_ij (f_i-f_j)(g_i-g_j) = (1/(2|E_k|)) f^T L_k g",
+    "derivation": "Standard graph identity f^T L g = (1/2) sum_ij A_ij(f_i-f_j)(g_i-g_j), combined with <f,-Qg>_mu = (1/(2|E_k|)) f^T L g (from Q=-D^{-1}L and pi_i/d_i=1/(2|E_k|)).",
+    "numeric_verification": "Confirmed E_k(f,g) = <f,-Qg>_mu to ~5.5e-17 residual on 5 random test-function pairs per shell, G0-G9. NOTE: an initial implementation had a factor-of-2 arithmetic error (divided by 2E instead of 4E); caught and fixed during verification -- residual was 0.31 before the fix, ~5.5e-17 after. This is recorded transparently as the trust-but-verify process working as intended.",
+    "positivity": "E_k(f,f) = (1/(2E)) f^T L f >= 0 (L is PSD, proven throughout this project)",
+    "kernel": "ker(E_k) = span{1} -- PROVEN: E_k(f,f)=0 iff Lf=0 iff f is constant (G connected)",
+    "corollary": "Since E_k(f,g)=<f,-Qg>_mu is manifestly symmetric in f,g (built from (f_i-f_j)(g_i-g_j)), Q is SELF-ADJOINT w.r.t. <.,.>_mu -- this proves THEOREM C-004F.2 (weighted reversibility) as a direct corollary, without a separate argument.",
+    "status": "DERIVED / VERIFIED"
+  },
+  "C004F_5_refinement_map": {
+    "combinatorial_map": "rho_k: G_k -> G_k+1 is the INCLUSION G_k as an induced subgraph of G_k+1 -- verified exactly for every transition G0->G1 through G8->G9 (A_k = A_{k+1} restricted to the first N_k vertices, exactly).",
+    "vertex_ancestry": "Identity inclusion on the first N_k indices",
+    "shell_ancestry": "S_j for j<=k unchanged verbatim",
+    "partition_ancestry": "L_j, R_j for j<=k unchanged verbatim",
+    "edge_ancestry": "All E(S_j) and E(S_{j-1},S_j) for j<=k unchanged; G_k+1 adds S_k+1's intra-shell K_{2^(k+1),2^(k+1)} edges plus the new inter-shell R_k x L_k+1 edges",
+    "degree_transformation": "VERIFIED exactly: only R_k vertices change degree, each gaining exactly 2^(k+1) new edges (to all of L_k+1); every other vertex's degree is completely unchanged. Confirmed for every transition G0->G1 through G8->G9.",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED. No explicit contraction constant, edge-length law, or embedding-radius rescaling exists anywhere in the corpus for this specific K_{2^k,2^k}/R_{k-1}xL_k construction. The whitepaper's Section 2.1 asserts an abstract 'global isotropic contraction constant alpha, 0<alpha<1' for the GENERIC refinement functor R, but gives no formula tying it to ARBS's actual edge/shell rule. REGISTERED AS AN OBSTRUCTION, not invented around.",
+    "status": "REFINEMENT MAP DERIVED (combinatorially, exactly); METRIC RESCALING OPEN/NOT SOURCE-SUPPORTED"
+  },
+  "C004F_6_measure_pushforward": {
+    "definition": "(rho_k)_* pi_k = pi_k extended by zero to the new vertices of G_k+1 (since rho_k is inclusion)",
+    "computed_for": "every transition G0->G1 through G8->G9 (9 transitions)",
+    "total_variation_distance_trend": "0.7143, 0.6452, 0.6299, 0.6262, 0.62531, 0.62508, 0.62502, 0.625005, 0.625001 (G0->G1 ... G8->G9)",
+    "convergence_pattern": "GEOMETRIC convergence toward 0.625 exactly, with each successive deviation from 0.625 shrinking by a factor of ~4 per shell (0.0012 -> 0.000305 -> 0.0000763 -> 0.0000191 -> 0.00000477 -> 0.00000119). This is a clean, precise numerical trend, not a closed-form proof of the exact limiting constant.",
+    "critical_finding": "The total variation distance STABILIZES AT A POSITIVE CONSTANT (~5/8), it does NOT go to zero. Under the sole recoverable (unrescaled) refinement map, the pushforward measure sequence therefore does NOT Cauchy-converge to a coherent limit -- a persistent, non-vanishing fraction of the total measure is displaced onto genuinely new vertices at every single refinement step, forever.",
+    "status": "CALCULATED; demonstrates NO CONVERGENCE under the unrescaled map"
+  },
+  "C004F_7_weighted_convergence_outcome": {
+    "outcome": "D -- no identifiable limit",
+    "justification": "The pushforward TV/L1/L2 discrepancy between (rho_k)_*mu_k and mu_k+1 stabilizes at a strictly positive constant (~0.625) rather than vanishing, established with strong (geometric, 9-transition) numerical evidence. Outcome A (canonical limit) is explicitly not promoted -- no closed-form proof of the exact asymptotic value is given, and more importantly the sequence itself does not converge to ANY single limiting measure under the only recoverable map.",
+    "caveat_section_17": "This is an EXACT finite-shell numerical result over 9 transitions (G0-G9), not a k->infinity theorem. The geometric convergence pattern is very strong evidence but is explicitly NOT claimed as a formal proof of asymptotic behavior.",
+    "status": "OUTCOME D established with strong numerical evidence; formal proof not attempted"
+  },
+  "C004F_8_9_10": {
+    "status": "NOT ATTEMPTED. Per Section 24's explicit stop rule ('If measure convergence is unresolved: stop there'), and since C-004F.7's finding is stronger than 'unresolved' (it is a positive demonstration of non-convergence under the only recoverable map), no attempt is made to construct a continuum Dirichlet form limit, continuum generator, or Fokker-Planck correspondence. These remain blocked at C-004F.7/C-004F.5 (metric rescaling)."
+  },
+  "entropy_production_consequence_section_13": {
+    "question": "Does F[P||P_ss] yield sigma=-dF/dt>=0 directly from the recovered generator Q*, without choosing P(0) or t?",
+    "answer": "YES, as an INEQUALITY (not a specific number). Standard Lyapunov-function argument for reversible Markov generators: dF/dt = sum_i(Q*P)_i log(P_i/pi_i) [using conservation, proven C-004F.3], which symmetrizes via detailed balance [proven C-004F.3] into a sum of terms of the form -(1/2)pi_i Q_ij(a-b)(log a - log b) with a=P_j/pi_j, b=P_i/pi_i, each term <=0 by the elementary inequality (a-b)(log a-log b)>=0 for a,b>0. Hence dF/dt<=0 always, i.e. sigma=-dF/dt>=0, for ANY trajectory -- this requires ONLY detailed balance + conservation (both now concretely proven for Q*, not merely asserted abstractly as in BRIDGE B-006), NOT a choice of P(0) or evaluation time.",
+    "numerical_sanity_check": "Confirmed sigma>=0 numerically across 12 sampled (P(0),t) combinations (4 random P(0), 3 times each) for every shell G0-G4; see c004f_entropy_consequence.json. No sample or trajectory choice is treated as canonical -- this is a sanity check of the algebra, not a determination of sigma_k's value.",
+    "status": "SIGN DERIVED (confirms and formalizes BRIDGE B-006's own claimed proof method, now on the concrete Q*). MAGNITUDE remains PROVEN NON-IDENTIFIABLE (C-004C, unchanged, not reopened)."
+  },
+  "theorem_registry": {
+    "THEOREM_C004F.1_degree_measure": "PROVEN -- pi_k is a normalized positive measure (verified G0-G9) and is stationary for Q_k* (Q_k* pi_k = 0, residual ~1e-16 to 1e-19, verified G0-G9)",
+    "THEOREM_C004F.2_weighted_reversibility": "PROVEN -- Q_k is self-adjoint w.r.t. <.,.>_{mu_k} (detailed balance residual = 0.0 exactly, all shells; also follows as a corollary of the symmetric Dirichlet-form identity, C004F.4)",
+    "THEOREM_C004F.3_dirichlet_representation": "PROVEN -- E_k(f,g)=(1/(4|E_k|))sum A_ij(f_i-f_j)(g_i-g_j) = <f,-Q_kg>_{mu_k} exactly (residual ~5.5e-17)",
+    "THEOREM_C004F.4_refinement_compatibility": "DISPROVEN -- the ARBS refinement map does NOT preserve or asymptotically preserve the degree measure; the pushforward discrepancy stabilizes at a strictly positive constant (~0.625) rather than vanishing",
+    "THEOREM_C004F.5_continuum_thermodynamic_limit": "DISPROVEN for the unrescaled/inclusion refinement map (strong numerical evidence, C004F.6/7); OPEN for any rescaled version (untestable -- no source-supported metric rescaling exists, C004F.5)",
+    "THEOREM_C004F.6_fokker_planck_correspondence": "NOT TESTABLE / OPEN -- blocked upstream by THEOREM C-004F.5"
+  },
+  "target_independence_audit": {
+    "checked_objects": ["pi_k", "Q_k", "Qstar_k", "E_k (Dirichlet form)", "refinement map rho_k", "pushforward TV/L1/L2 distances"],
+    "result": "PASS for all -- every object is a function of (k, A_k, D_k, L_k) alone; no reference to 32, N_H, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, V_CKM, U_PMNS, or Xi_obs anywhere in the construction code or derivations.",
+    "hidden_fitted_constants_check": "None introduced -- all quantities are exact rational/algebraic functions of the graph structure; no free parameters were fit to any target."
+  },
+  "source_conflict_ledger": {
+    "carried_forward_from_C004D": "'-L is the generator for the continuous-time random walk' (row 2024) vs. BRIDGE B-005's CERTIFIED degree-weighted P_ss (rows 1954-1957) -- both preserved, resolved at the discrete level by THM-GEN-DISTINCT-001 (C-004D/E)."
+  },
+  "provenance_ledger": {
+    "ARBS_graph_construction": "DERIVED / VERIFIED (mathematical reproducibility); PROVENANCE GAP (historical textual, per run 2)",
+    "generator_statement": "SOURCE CONFLICT (preserved, not collapsed)",
+    "degree_weighted_generator_Q_Qstar": "DERIVED (C-004D, re-verified this run)",
+    "weighted_Hilbert_space_L2(V,mu)": "DERIVED FROM P_ss (this run) -- NOT source-certified as an explicit prior construction",
+    "Dirichlet_form_E_k": "DERIVED (this run, exact formula + proof)",
+    "refinement_map_rho_k": "DERIVED (combinatorial part, this run); metric rescaling OPEN",
+    "continuum_thermodynamic_correspondence": "OPEN / DISPROVEN-for-the-only-recoverable-map (this run) -- not proven, not invented around"
+  },
+  "final_status": {
+    "C004F": "PARTIALLY CLOSED. Steps .1-.6 executed and closed (DERIVED/VERIFIED or DISPROVEN with strong evidence, as appropriate); step .7 (weighted convergence) resolved as Outcome D; steps .8-.10 correctly NOT ATTEMPTED, blocked upstream.",
+    "THM_GEN_DISTINCT_001": "Unaffected, still PROVEN (C-004E)",
+    "C004E": "Unaffected, still OPEN (missing-theorem result)",
+    "C004D": "Unaffected, still PARTIALLY CLOSED",
+    "C004C": "NOT REOPENED. sigma_k remains PROVEN NON-IDENTIFIABLE (magnitude); sign result now additionally CONFIRMED via the concrete Q* (this run, Section 13)",
+    "G_star": "UNRESOLVED (unchanged)"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "G0_to_G1": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 1,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 2,
+      "actual_increase_min": 2.0,
+      "actual_increase_max": 2.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G1_to_G2": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 2,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 4,
+      "actual_increase_min": 4.0,
+      "actual_increase_max": 4.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G2_to_G3": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 4,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 8,
+      "actual_increase_min": 8.0,
+      "actual_increase_max": 8.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G3_to_G4": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 8,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 16,
+      "actual_increase_min": 16.0,
+      "actual_increase_max": 16.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G4_to_G5": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 16,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 32,
+      "actual_increase_min": 32.0,
+      "actual_increase_max": 32.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G5_to_G6": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 32,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 64,
+      "actual_increase_min": 64.0,
+      "actual_increase_max": 64.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G6_to_G7": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 64,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 128,
+      "actual_increase_min": 128.0,
+      "actual_increase_max": 128.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G7_to_G8": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 128,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 256,
+      "actual_increase_min": 256.0,
+      "actual_increase_max": 256.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  },
+  "G8_to_G9": {
+    "inclusion_holds_(G_k_is_induced_subgraph_of_G_k+1)": true,
+    "num_vertices_with_changed_degree": 256,
+    "changed_vertices_are_exactly_R_k": true,
+    "R_k_degree_increase_(all_equal_2^(n+1)?)": {
+      "expected_increase": 512,
+      "actual_increase_min": 512.0,
+      "actual_increase_max": 512.0,
+      "uniform": true
+    },
+    "map_type": "INCLUSION/EMBEDDING (G_k is an induced subgraph of G_k+1; ALL of G_k's vertices, edges, shells, and partitions are preserved verbatim; only R_k vertices gain new edges to L_k+1)",
+    "metric_rescaling_status": "NOT SOURCE-SUPPORTED -- no explicit contraction constant, edge-length law, or embedding-radius rescaling is given anywhere in the corpus for the specific K_{2^k,2^k}/R_{k-1}xL_k construction (only an abstract 'global isotropic contraction constant alpha, 0<alpha<1' is asserted for the GENERIC refinement functor R in the whitepaper's Section 2.1, with no formula tying it to ARBS's actual edge/shell rule)."
+  }
+}

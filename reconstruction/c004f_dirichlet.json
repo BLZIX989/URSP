@@ -1,0 +1,129 @@
+{
+  "G0": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 2.7755575615628914e-17,
+    "E_k(e_i,e_i)_first5": [
+      0.5,
+      0.5
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G1": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 1.1102230246251565e-16,
+    "E_k(e_i,e_i)_first5": [
+      0.07142857142857142,
+      0.21428571428571427,
+      0.21428571428571427,
+      0.21428571428571427,
+      0.14285714285714285
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G2": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 2.7755575615628914e-17,
+    "E_k(e_i,e_i)_first5": [
+      0.016129032258064516,
+      0.04838709677419355,
+      0.04838709677419355,
+      0.04838709677419355,
+      0.0967741935483871
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G3": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 5.551115123125783e-17,
+    "E_k(e_i,e_i)_first5": [
+      0.003937007874015748,
+      0.011811023622047244,
+      0.011811023622047244,
+      0.011811023622047244,
+      0.023622047244094488
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G4": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 5.551115123125783e-17,
+    "E_k(e_i,e_i)_first5": [
+      0.0009784735812133072,
+      0.0029354207436399216,
+      0.0029354207436399216,
+      0.0029354207436399216,
+      0.005870841487279843
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G5": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 2.7755575615628914e-17,
+    "E_k(e_i,e_i)_first5": [
+      0.0002442598925256473,
+      0.0007327796775769418,
+      0.0007327796775769418,
+      0.0007327796775769418,
+      0.0014655593551538837
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G6": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 1.3877787807814457e-17,
+    "E_k(e_i,e_i)_first5": [
+      6.104260774020266e-05,
+      0.000183127823220608,
+      0.000183127823220608,
+      0.000183127823220608,
+      0.000366255646441216
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G7": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 3.469446951953614e-17,
+    "E_k(e_i,e_i)_first5": [
+      1.5259254737998596e-05,
+      4.577776421399579e-05,
+      4.577776421399579e-05,
+      4.577776421399579e-05,
+      9.155552842799158e-05
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G8": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 2.7755575615628914e-17,
+    "E_k(e_i,e_i)_first5": [
+      3.814726369677503e-06,
+      1.1444179109032509e-05,
+      1.1444179109032509e-05,
+      1.1444179109032509e-05,
+      2.2888358218065018e-05
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  },
+  "G9": {
+    "formula": "E_k(f,g) = (1/(4E)) sum_ij A_ij (f_i-f_j)(g_i-g_j) = (1/(2E)) f^T L g",
+    "verified_equals_<f,-Qg>_mu_max_residual": 6.938893903907228e-18,
+    "E_k(e_i,e_i)_first5": [
+      9.53676135399123e-07,
+      2.861028406197369e-06,
+      2.861028406197369e-06,
+      2.861028406197369e-06,
+      5.722056812394738e-06
+    ],
+    "E_k(const,const)_(should_be_0)": 0.0,
+    "ker(E_k)_is_span{1}": "PROVEN: E_k(f,f)=(1/2E) f^T L f >= 0 (L psd); =0 iff Lf=0 iff f constant (G connected)"
+  }
+}

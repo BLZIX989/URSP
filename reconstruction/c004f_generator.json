@@ -1,0 +1,252 @@
+{
+  "G0": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 0.0,
+    "Qstar_pi_norm_(should_be_0)": 0.0,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 0.0,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 1.1102230246251565e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.220446049250313e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.220446049250313e-16
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G1": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 3.96508223080413e-18,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 1.9229626863835638e-16,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.220446049250313e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 1.1102230246251565e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.220446049250313e-16
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G2": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 8.953411488912552e-19,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 2.7755575615628914e-16,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 3.3306690738754696e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.220446049250313e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 4.440892098500626e-16
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G3": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 2.1854783949314105e-19,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 3.284083995358298e-16,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.220446049250313e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 4.440892098500626e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 5.551115123125783e-16
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G4": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 5.431619494252233e-20,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 8.916411167297361e-16,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 6.661338147750939e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 4.440892098500626e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 4.440892098500626e-16
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G5": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 1.355914783372199e-20,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 2.4001753372724877e-15,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 6.661338147750939e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 4.440892098500626e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.3314683517128287e-15
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G6": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 1.6362091669133412e-17,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 8.601049392476755e-15,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 6.661338147750939e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 6.661338147750939e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 2.6645352591003757e-15
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G7": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 8.470587974373276e-22,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 2.344911699890472e-14,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 6.661338147750939e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 5.551115123125783e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 5.551115123125783e-15
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G8": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 9.123753890035448e-18,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 7.10515969014804e-14,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 8.881784197001252e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 8.881784197001252e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 1.3877787807814457e-14
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  },
+  "G9": {
+    "weighted_inner_product_positive_definite": true,
+    "Qstar_d_norm_(should_be_0)": 5.551115123125783e-17,
+    "Qstar_pi_norm_(should_be_0)": 5.293966017778223e-23,
+    "detailed_balance_residual_(should_be_0)": 0.0,
+    "conservation_residual_1T_Qstar_(should_be_0)": 1.982801969377261e-13,
+    "T(t)_stochastic_checks": {
+      "t=0.05": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 8.881784197001252e-16
+      },
+      "t=0.2": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 8.881784197001252e-16
+      },
+      "t=1.0": {
+        "row_stochastic": true,
+        "nonneg_entries": true,
+        "max_row_sum_dev": 1.7430501486614958e-14
+      }
+    },
+    "convention": "Q_ij = A_ij/d_i for i!=j, Q_ii=-1 (row generator, row-stochastic exp(tQ)); Q*=Q^T acts on column probability vectors dP/dt=Q*P"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "G0_to_G1": {
+    "total_variation_distance": 0.7142857142857142,
+    "L1_distance": 1.4285714285714284,
+    "L2_distance": 0.6308400618805605,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.7142857142857142,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G1_to_G2": {
+    "total_variation_distance": 0.6451612903225805,
+    "L1_distance": 1.290322580645161,
+    "L2_distance": 0.37945048571868933,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6451612903225806,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G2_to_G3": {
+    "total_variation_distance": 0.6299212598425195,
+    "L1_distance": 1.259842519685039,
+    "L2_distance": 0.2515051414724791,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6299212598425197,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G3_to_G4": {
+    "total_variation_distance": 0.6262230919765166,
+    "L1_distance": 1.2524461839530332,
+    "L2_distance": 0.17469815156470117,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6262230919765166,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G4_to_G5": {
+    "total_variation_distance": 0.625305324865657,
+    "L1_distance": 1.250610649731314,
+    "L2_distance": 0.12294821008948026,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.625305324865657,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G5_to_G6": {
+    "total_variation_distance": 0.6250763032596753,
+    "L1_distance": 1.2501526065193507,
+    "L2_distance": 0.0868315971304656,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6250763032596752,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G6_to_G7": {
+    "total_variation_distance": 0.6250190740684225,
+    "L1_distance": 1.250038148136845,
+    "L2_distance": 0.061380185125328286,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6250190740684225,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G7_to_G8": {
+    "total_variation_distance": 0.625004768407962,
+    "L1_distance": 1.250009536815924,
+    "L2_distance": 0.04339895335795484,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6250047684079619,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  },
+  "G8_to_G9": {
+    "total_variation_distance": 0.6250011920951692,
+    "L1_distance": 1.2500023841903385,
+    "L2_distance": 0.030687092040545653,
+    "mass_fraction_pi_{k+1}_on_new_vertices": 0.6250011920951692,
+    "pushforward_equals_pi_{k+1}_exactly": false
+  }
+}
