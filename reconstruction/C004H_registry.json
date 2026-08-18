@@ -1,0 +1,73 @@
+{
+  "task": "C-004H -- ARBS Continuum Compatibility Recovery",
+  "governing_question": "Does the existing ARBS substrate contain enough structure to derive an ARBS-compatible refinement R_ARBS: G_k -> (M,mu,d) satisfying the source-defined refinement conditions?",
+  "source_exhaustion_search": {
+    "scope": "All 9 source workbooks + whitepaper (text AND, this run, direct inspection of embedded equation images in the .docx, extending the C-004G method).",
+    "new_findings_this_run": [
+      "The diffusion distance d(i,j)=sqrt(sum_{k:lambda_k>0} (phi_k(i)-phi_k(j))^2/lambda_k) is a CERTIFIED source object (DER-GEO-005 'd(i,j) = diffusion distance', CERTIFIED; ENG-011 in the original Calculation Engine sheet; cross-referenced as 'Spec(L) -> diffusion distance -> metric' dozens of times across every workbook in the corpus) -- this was available in source all along but was NOT tested as a candidate metric in C-004G, which tested only the (unlabeled, assumed) unit-edge hop-count metric.",
+      "Effective resistance R_eff(i,j)=L^+_ii+L^+_jj-2L^+_ij is also source-referenced (PHY-SIM-009: 'Spearman rho=0.91 between spectral distance and effective resistance on ARBS-3'; C-001a 'D_spec and R_eff rank-equivalent, NUMERICALLY SUPPORTED'). Verified computationally this run: R_eff(i,j) = d(i,j)^2 EXACTLY (identity residual ~1e-12 to 1e-16 across G0-G8) -- these are literally the same quantity, not independently confirming evidence.",
+      "No other embedded-image equations relevant to metric/measure recovery were found beyond the three already recovered in C-004G (Primal Edge Scaling, Induced Metric Invariance, Diameter Stability) -- confirmed by re-scanning all rId-referenced images in the whitepaper's Part I-V for proximity to refinement/metric/measure keywords."
+    ]
+  },
+  "C004H_1_refinement_structure": {
+    "carried_forward_from": "C-004F.5 (run 6), unaffected by this run's metric findings",
+    "result": "rho_k: G_k -> G_k+1 is an exact INCLUSION (G_k an induced subgraph of G_k+1); vertex/shell/partition/edge ancestry fully preserved verbatim; only R_k vertices gain degree, uniformly by 2^(k+1) each.",
+    "classification": "NESTED / EXPANDING (growth), NOT substitutive, NOT subdividing, NOT coarse-graining.",
+    "does_every_edge_have_R(e)": "NO -- proven: old edges are carried over completely unchanged, not replaced by any child-edge set.",
+    "status": "DERIVED / VERIFIED (unchanged)"
+  },
+  "C004H_2_edge_length_recovery": {
+    "search_result": "No canonical edge-length function l_k:E(G_k)->R_{>0} is defined anywhere in source specifically for ARBS. ARBS is defined purely combinatorially (A_ij in {0,1}); every certified downstream construction (L=D-A, B, D_G, heat kernel) treats every edge identically/unweighted -- this IS the source's own implicit convention, not an invented one, but it is a convention (unweighted graph), not an explicit 'length' assignment.",
+    "status": "UNRESOLVED as an explicit source object; SOURCE-CERTIFIED as an implicit convention (unweighted/unit treatment throughout every certified ARBS calculation in this project)"
+  },
+  "C004H_3_edge_scaling_test": {
+    "carried_forward_from": "C-004G (run 7), unaffected by this run",
+    "result": "alpha_ARBS = 1 exactly (forced), not 0<alpha<1, because old edges persist unchanged rather than being replaced by shorter children. The Primal Edge Scaling law has NO applicable domain for ARBS's own edges.",
+    "status": "PROVEN INCOMPATIBLE (unchanged)"
+  },
+  "C004H_4_5_6_metric_recovery_invariance_diameter": {
+    "candidate": "Diffusion distance / effective resistance (identical quantities, d(i,j)^2=R_eff(i,j), verified to ~1e-12 residual), CERTIFIED source object (DER-GEO-005, ENG-011)",
+    "diameter_trend": "1.0, 1.41421, 1.45774, 1.44698, 1.43342, 1.42887, 1.42887, 1.42887, 1.42887 for G0..G8 -- CONVERGES to a fixed constant (~1.4288690166) by G5, held exactly through G8 (9 shells, 4 in exact agreement to 10 decimal places).",
+    "diameter_stability_verdict": "SATISFIED, with strong numerical evidence (bounded, convergent) -- in sharp contrast to the unit-edge hop metric (C-004G), which is exactly UNBOUNDED (diam=2n+1).",
+    "induced_metric_invariance_trend": "Violation |d_{k+1}(v_i,v_j)-d_k(v_i,v_j)| over OLD vertex pairs: 0, 0.42265, 0.29886, 0.21132, 0.14943, 0.10566, 0.07471, 0.05283 for transitions G0->G1 through G7->G8 -- NOT exactly zero (invariance does not hold exactly), but shrinking GEOMETRICALLY with ratio EXACTLY sqrt(2)=1.41421356237... at every single step from G2->G3 onward (8-digit agreement, 6 consecutive transitions).",
+    "induced_metric_invariance_verdict": "Does NOT hold exactly (unlike the source's stated axiom, which asserts exact equality). Holds ASYMPTOTICALLY with an explicit, extremely clean geometric convergence rate (violation ~ C * 2^{-k/2} -> 0). This is a weaker, but still mathematically meaningful, form of the source's stated condition.",
+    "caveat": "This is strong numerical evidence (9-10 shells, clean geometric ratios reproducing to 10+ significant figures) but NOT a formal asymptotic/analytic proof -- no closed-form derivation of the limiting diameter constant or the exact convergence mechanism is attempted here, per this run's prohibition on introducing new continuum machinery.",
+    "status": "CONDITIONAL / PROMISING -- diameter bounded (strong evidence); metric invariance asymptotic, not exact (strong evidence, clean rate); NEITHER formally proven as a theorem."
+  },
+  "C004H_7_measure_recovery": {
+    "carried_forward_from": "C-004F.6/7 (run 6), UNAFFECTED by this run's metric findings -- measure pushforward depends only on the combinatorial inclusion map and the degree measure pi_k, not on which metric is used to measure distances",
+    "result": "Total variation distance between (rho_k)_*pi_k and pi_k+1 stabilizes at a strictly positive constant (~0.625), NOT converging to zero, across 9 transitions G0->G1 through G8->G9.",
+    "critical_tension_with_C004H_4_6": "Even though the METRIC structure (diffusion distance) now shows strong evidence of a bounded, asymptotically-coherent limit, the MEASURE structure (degree measure, needed specifically for the thermodynamic/Fokker-Planck branch) still provably does NOT converge under the same refinement map. A convergent metric-measure space (X,d,mu) requires BOTH pieces to converge together (Gromov-Hausdorff-Vague or measured-Gromov-Hausdorff sense) -- geometric convergence alone does not supply this.",
+    "status": "PROVEN NON-CONVERGENT (unchanged, not reopened)"
+  },
+  "C004H_8_dirichlet_form_compatibility": {
+    "carried_forward_from": "C-004F.4 (run 6), unaffected",
+    "result": "E_k(f,g) = (1/(4|E_k|)) sum A_ij(f_i-f_j)(g_i-g_j) = <f,-Q_kg>_{mu_k} EXACTLY (residual ~5.5e-17), proven as a corollary that Q_k is self-adjoint w.r.t. the weighted inner product.",
+    "status": "DERIVED / VERIFIED (unchanged)"
+  },
+  "theorem_C004H_9": {
+    "attempted_statement": "There exists a source-supported ARBS-compatible continuum refinement satisfying the source edge-scaling, metric-invariance, diameter, measure, and operator conditions.",
+    "verdict": "NEITHER C-004H.9 NOR C-004H.9-F is promoted outright. The honest, componentwise result is:",
+    "componentwise_result": {
+      "edge_scaling_(Primal_Edge_Scaling)": "PROVEN INCOMPATIBLE (C-004H.3 / C-004G, unchanged) -- no R(e) domain exists for ARBS's non-subdividing recursion",
+      "diameter_stability": "SATISFIED under the CERTIFIED diffusion-distance metric (strong numerical evidence, not formally proven); FALSIFIED under the unit-edge hop metric (C-004G, proven exactly)",
+      "induced_metric_invariance": "ASYMPTOTIC ONLY under the diffusion-distance metric (strong numerical evidence of an explicit geometric convergence rate, not exact, not formally proven); the exact form fails under any metric where old structure is preserved verbatim",
+      "measure_convergence": "PROVEN NON-CONVERGENT (C-004H.7 / C-004F, unchanged) -- the degree measure needed for the thermodynamic branch specifically does not converge under the only recoverable refinement map, regardless of metric choice",
+      "dirichlet_form_self_consistency": "DERIVED / VERIFIED (C-004H.8 / C-004F.4, unchanged)"
+    },
+    "synthesis": "ARBS admits a CERTIFIED, non-invented metric (diffusion distance) with strong numerical evidence of Gromov-Hausdorff-type geometric compatibility (bounded, convergent diameter; asymptotically vanishing metric-invariance violation at a clean geometric rate) -- a genuinely new, positive partial result not found in C-004G, which tested a different (unlabeled, non-canonical) metric. This is NOT, however, sufficient to certify a full continuum thermodynamic limit, for two independent reasons that this run does not resolve: (1) the source's own stated MECHANISM for deriving such limits (Primal Edge Scaling, an edge-subdivision law) remains structurally inapplicable to ARBS's growth-type recursion, so even if a metric limit exists, it is not licensed by the source's own stated derivation route; and (2) the degree MEASURE specifically required for the Fokker-Planck/thermodynamic branch (as opposed to the purely geometric/spectral branch) provably does not converge under the only recoverable refinement map, independent of which metric is used to discuss distances.",
+    "promoted_status": "PARTIALLY CLOSED. Geometric/metric compatibility: CONDITIONAL/PROMISING (upgraded from C-004G's outright falsification, but not proven). Thermodynamic/measure compatibility: PROVEN NON-CONVERGENT (unchanged). Overall THEOREM C-004H.9: NOT PROMOTED (neither the positive nor the impossibility form is fully established); the componentwise ledger above is the actual result."
+  },
+  "architectural_boundary_recorded": {
+    "ARBS_finite_spectral_substrate": "VERIFIED (unchanged from runs 1-2: ARBS-CONSTRUCTION-001, ARBS-FULL-SPEC-001 both DERIVED/VERIFIED)",
+    "ARBS_continuum_generating_refinement": "NOT VERIFIED -- CONDITIONAL at best (geometric side promising but unproven; measure side proven non-convergent). Per Section 12's explicit instruction, ARBS is NOT modified in response to this finding; this is recorded as a legitimate architectural boundary, not a defect to be patched."
+  },
+  "target_independence_audit": {
+    "checked_objects": ["diffusion distance matrix", "effective resistance matrix", "diameter trend", "metric invariance violation trend", "all C-004H.1-8 carried-forward objects"],
+    "result": "PASS -- every new object this run is a function of (k, L_k) alone (via its spectral decomposition); no reference to 32, N_H, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, V_CKM, U_PMNS, or Xi_obs anywhere."
+  },
+  "falsification_ledger_additions": {
+    "unit_edge_hop_metric_as_THE_canonical_ARBS_metric": "Not falsified per se (it remains a valid, simple graph metric), but this run establishes it is NOT the source's own preferred/certified metric for this purpose -- the diffusion distance (DER-GEO-005) is, and behaves qualitatively differently (bounded vs. unbounded diameter). Recorded as a methodological correction to C-004G's implicit assumption, not a retraction of C-004G's math (which is correct for the metric it tested)."
+  },
+  "next_dependency": "Formally prove (not merely numerically demonstrate) that the diffusion-distance metric sequence (V_k,d_k) is Gromov-Hausdorff convergent -- this requires an asymptotic spectral analysis of the ARBS Laplacian family (proving, e.g., that lambda_1(L_k) and the relevant eigenvector overlaps converge at the empirically-observed geometric rate, analytically rather than only for k<=8) -- AND, independently, find or derive a renormalized measure sequence (distinct from the raw degree measure pi_k, which is proven not to converge) that DOES converge under the same refinement map, since a full metric-measure (Gromov-Hausdorff-vague) limit requires both pieces together. Neither can be advanced by further reading of currently available source material -- both require new mathematical derivation beyond what exists in the corpus."
+}
