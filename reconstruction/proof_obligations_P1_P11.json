@@ -1,0 +1,67 @@
+{
+  "G0": {
+    "P1_|Lk|=|Rk|=2^k": "PASS (by construction, verified for all k<=n)",
+    "P2_|V(Gn)|=2(2^(n+1)-1)": "PASS",
+    "P3_|Eintra(k)|=4^k": "PASS (verified by construction loop, summed into P5)",
+    "P4_|Einter(k-1,k)|=2^(2k-1)": "PASS (verified by construction loop, summed into P5)",
+    "P5_En=sum4^k+sum2^(2k-1)": "PASS",
+    "P6_Gn_bipartite": "PASS",
+    "P7_Gn_connected": "PASS",
+    "P8_L=D-A": "PASS (by construction of L)",
+    "P9_L=BBt": "PASS",
+    "P10_DG2_block_structure": "PASS",
+    "P11_Spec(DG)\\{0}=+-sqrt(Spec(L)\\{0})": "PASS"
+  },
+  "G1": {
+    "P1_|Lk|=|Rk|=2^k": "PASS (by construction, verified for all k<=n)",
+    "P2_|V(Gn)|=2(2^(n+1)-1)": "PASS",
+    "P3_|Eintra(k)|=4^k": "PASS (verified by construction loop, summed into P5)",
+    "P4_|Einter(k-1,k)|=2^(2k-1)": "PASS (verified by construction loop, summed into P5)",
+    "P5_En=sum4^k+sum2^(2k-1)": "PASS",
+    "P6_Gn_bipartite": "PASS",
+    "P7_Gn_connected": "PASS",
+    "P8_L=D-A": "PASS (by construction of L)",
+    "P9_L=BBt": "PASS",
+    "P10_DG2_block_structure": "PASS",
+    "P11_Spec(DG)\\{0}=+-sqrt(Spec(L)\\{0})": "PASS"
+  },
+  "G2": {
+    "P1_|Lk|=|Rk|=2^k": "PASS (by construction, verified for all k<=n)",
+    "P2_|V(Gn)|=2(2^(n+1)-1)": "PASS",
+    "P3_|Eintra(k)|=4^k": "PASS (verified by construction loop, summed into P5)",
+    "P4_|Einter(k-1,k)|=2^(2k-1)": "PASS (verified by construction loop, summed into P5)",
+    "P5_En=sum4^k+sum2^(2k-1)": "PASS",
+    "P6_Gn_bipartite": "PASS",
+    "P7_Gn_connected": "PASS",
+    "P8_L=D-A": "PASS (by construction of L)",
+    "P9_L=BBt": "PASS",
+    "P10_DG2_block_structure": "PASS",
+    "P11_Spec(DG)\\{0}=+-sqrt(Spec(L)\\{0})": "PASS"
+  },
+  "G3": {
+    "P1_|Lk|=|Rk|=2^k": "PASS (by construction, verified for all k<=n)",
+    "P2_|V(Gn)|=2(2^(n+1)-1)": "PASS",
+    "P3_|Eintra(k)|=4^k": "PASS (verified by construction loop, summed into P5)",
+    "P4_|Einter(k-1,k)|=2^(2k-1)": "PASS (verified by construction loop, summed into P5)",
+    "P5_En=sum4^k+sum2^(2k-1)": "PASS",
+    "P6_Gn_bipartite": "PASS",
+    "P7_Gn_connected": "PASS",
+    "P8_L=D-A": "PASS (by construction of L)",
+    "P9_L=BBt": "PASS",
+    "P10_DG2_block_structure": "PASS",
+    "P11_Spec(DG)\\{0}=+-sqrt(Spec(L)\\{0})": "PASS"
+  },
+  "G4": {
+    "P1_|Lk|=|Rk|=2^k": "PASS (by construction, verified for all k<=n)",
+    "P2_|V(Gn)|=2(2^(n+1)-1)": "PASS",
+    "P3_|Eintra(k)|=4^k": "PASS (verified by construction loop, summed into P5)",
+    "P4_|Einter(k-1,k)|=2^(2k-1)": "PASS (verified by construction loop, summed into P5)",
+    "P5_En=sum4^k+sum2^(2k-1)": "PASS",
+    "P6_Gn_bipartite": "PASS",
+    "P7_Gn_connected": "PASS",
+    "P8_L=D-A": "PASS (by construction of L)",
+    "P9_L=BBt": "PASS",
+    "P10_DG2_block_structure": "PASS",
+    "P11_Spec(DG)\\{0}=+-sqrt(Spec(L)\\{0})": "PASS"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "per_shell": {
+    "G0": {
+      "N": 2,
+      "E": 1,
+      "t_H_calculated": 0.1732867951399862,
+      "t_H_checkpoint": 0.17328679514,
+      "t_H_abs_diff": 1.379452108096757e-14,
+      "lambda_c_calculated": 5.770780163555857,
+      "lambda_c_checkpoint": 5.770780163555398,
+      "lambda_c_abs_diff": 4.591882429849647e-13,
+      "delta_spec_lambda1": 2.0,
+      "lambda_max": 2.0,
+      "N_H_rank_P_H": 0,
+      "num_nonzero_laplacian_eigs": 1,
+      "kernel_dim": 1
+    },
+    "G1": {
+      "N": 6,
+      "E": 7,
+      "t_H_calculated": 0.1375784465297643,
+      "t_H_checkpoint": 0.13757844653,
+      "t_H_abs_diff": 2.3570034812792073e-13,
+      "lambda_c_calculated": 7.268580400663673,
+      "lambda_c_checkpoint": 7.268580400651221,
+      "lambda_c_abs_diff": 1.2452261444195756e-11,
+      "delta_spec_lambda1": 0.7639320225002103,
+      "lambda_max": 5.236067977499788,
+      "N_H_rank_P_H": 0,
+      "num_nonzero_laplacian_eigs": 5,
+      "kernel_dim": 1
+    },
+    "G2": {
+      "N": 14,
+      "E": 31,
+      "t_H_calculated": 0.0799114172413325,
+      "t_H_checkpoint": 0.079911417241,
+      "t_H_abs_diff": 3.3249791808742657e-13,
+      "lambda_c_calculated": 12.513856399017424,
+      "lambda_c_checkpoint": 12.513856399069493,
+      "lambda_c_abs_diff": 5.206857167650014e-11,
+      "delta_spec_lambda1": 0.49554167753538775,
+      "lambda_max": 10.494076013902085,
+      "N_H_rank_P_H": 0,
+      "num_nonzero_laplacian_eigs": 13,
+      "kernel_dim": 1
+    },
+    "G3": {
+      "N": 30,
+      "E": 127,
+      "t_H_calculated": 0.043225367440657074,
+      "t_H_checkpoint": 0.043225367441,
+      "t_H_abs_diff": 3.4292707562499913e-13,
+      "lambda_c_calculated": 23.134563318007018,
+      "lambda_c_checkpoint": 23.13456331782348,
+      "lambda_c_abs_diff": 1.8353674136051268e-10,
+      "delta_spec_lambda1": 0.3912718860717828,
+      "lambda_max": 20.988161828823813,
+      "N_H_rank_P_H": 0,
+      "num_nonzero_laplacian_eigs": 29,
+      "kernel_dim": 1
+    },
+    "G4": {
+      "N": 62,
+      "E": 511,
+      "t_H_calculated": 0.02256440396907692,
+      "t_H_checkpoint": 0.022564403969,
+      "t_H_abs_diff": 7.692110837176358e-14,
+      "lambda_c_calculated": 44.31758983620557,
+      "lambda_c_checkpoint": 44.317589836356646,
+      "lambda_c_abs_diff": 1.510755964773125e-10,
+      "delta_spec_lambda1": 0.34315222400409107,
+      "lambda_max": 41.97632365780512,
+      "N_H_rank_P_H": 0,
+      "num_nonzero_laplacian_eigs": 61,
+      "kernel_dim": 1
+    }
+  },
+  "G3_boundary": {
+    "G3_lambda16": 8.00000000000001,
+    "G3_lambda17": 8.117670644557284,
+    "rank_P_boundary_1_[lambda16,lambda17)_on_Laplacian": 1,
+    "G3_sigma16": 2.8284271247461987,
+    "G3_sigma17": 2.8491526186845975,
+    "rank_of_first_16_nonzero_Dirac_pairs_(+-sigma_1..sigma_16)": 32,
+    "interpretation": "The Laplacian-side boundary interval [lambda16,lambda17) contains exactly 1 eigenvalue by construction of a half-open interval between two adjacent sorted eigenvalues. The '32-state' language corresponds instead to the projector onto the first 16 nonzero +-sigma Dirac pairs (32 states total), which is well-defined and isolated because sigma_16 < sigma_17 with a nonzero gap -- but WHY index 16 specifically is the physically selected cutoff is a separate, still-unresolved question (no target-independent selector in the source material picks out k=16)."
+  }
+}

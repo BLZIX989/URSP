@@ -1,0 +1,13 @@
+{
+  "G3_sigma16_calculated": 2.8284271247461987,
+  "G3_sigma17_calculated": 2.8491526186845975,
+  "G3_sigma16_checkpoint": 2.828427124746192,
+  "G3_sigma17_checkpoint": 2.849152618684595,
+  "G3_sigma16_match": true,
+  "G3_sigma17_match": true,
+  "G4_sigma16_calculated": 3.464101615137752,
+  "G4_sigma17_calculated": 3.464101615137753,
+  "G4_checkpoint": 3.464101615137755,
+  "G4_degenerate_match": true,
+  "G4_value_match": true
+}

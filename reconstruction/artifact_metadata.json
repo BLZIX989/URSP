@@ -1,0 +1,72 @@
+{
+  "G0": {
+    "shell": 0,
+    "n": 0,
+    "vertex_count": 2,
+    "edge_count": 1,
+    "construction_version": "ARBS-CONSTRUCTION-001 (bipartite shell: S_k=L_k|R_k, |L_k|=|R_k|=2^k, intra=K_{2^k,2^k}, inter=R_{k-1}xL_k)",
+    "eigenvalue_tolerance": 1e-08,
+    "rank_tolerance": 1e-08,
+    "degeneracy_tolerance": 1e-06,
+    "numerical_precision": "float64 (numpy.linalg, IEEE 754 double)",
+    "graph_rule": "S_k=L_k sqcup R_k; G[S_k]=K_{2^k,2^k}; E(S_{k-1},S_k)=R_{k-1}xL_k; G_n=union_{k<=n} S_k",
+    "node_ordering": "shells k=0..n in order; within shell, L_k block then R_k block; within block, increasing local index",
+    "status": "DERIVED / VERIFIED"
+  },
+  "G1": {
+    "shell": 1,
+    "n": 1,
+    "vertex_count": 6,
+    "edge_count": 7,
+    "construction_version": "ARBS-CONSTRUCTION-001 (bipartite shell: S_k=L_k|R_k, |L_k|=|R_k|=2^k, intra=K_{2^k,2^k}, inter=R_{k-1}xL_k)",
+    "eigenvalue_tolerance": 1e-08,
+    "rank_tolerance": 1e-08,
+    "degeneracy_tolerance": 1e-06,
+    "numerical_precision": "float64 (numpy.linalg, IEEE 754 double)",
+    "graph_rule": "S_k=L_k sqcup R_k; G[S_k]=K_{2^k,2^k}; E(S_{k-1},S_k)=R_{k-1}xL_k; G_n=union_{k<=n} S_k",
+    "node_ordering": "shells k=0..n in order; within shell, L_k block then R_k block; within block, increasing local index",
+    "status": "DERIVED / VERIFIED"
+  },
+  "G2": {
+    "shell": 2,
+    "n": 2,
+    "vertex_count": 14,
+    "edge_count": 31,
+    "construction_version": "ARBS-CONSTRUCTION-001 (bipartite shell: S_k=L_k|R_k, |L_k|=|R_k|=2^k, intra=K_{2^k,2^k}, inter=R_{k-1}xL_k)",
+    "eigenvalue_tolerance": 1e-08,
+    "rank_tolerance": 1e-08,
+    "degeneracy_tolerance": 1e-06,
+    "numerical_precision": "float64 (numpy.linalg, IEEE 754 double)",
+    "graph_rule": "S_k=L_k sqcup R_k; G[S_k]=K_{2^k,2^k}; E(S_{k-1},S_k)=R_{k-1}xL_k; G_n=union_{k<=n} S_k",
+    "node_ordering": "shells k=0..n in order; within shell, L_k block then R_k block; within block, increasing local index",
+    "status": "DERIVED / VERIFIED"
+  },
+  "G3": {
+    "shell": 3,
+    "n": 3,
+    "vertex_count": 30,
+    "edge_count": 127,
+    "construction_version": "ARBS-CONSTRUCTION-001 (bipartite shell: S_k=L_k|R_k, |L_k|=|R_k|=2^k, intra=K_{2^k,2^k}, inter=R_{k-1}xL_k)",
+    "eigenvalue_tolerance": 1e-08,
+    "rank_tolerance": 1e-08,
+    "degeneracy_tolerance": 1e-06,
+    "numerical_precision": "float64 (numpy.linalg, IEEE 754 double)",
+    "graph_rule": "S_k=L_k sqcup R_k; G[S_k]=K_{2^k,2^k}; E(S_{k-1},S_k)=R_{k-1}xL_k; G_n=union_{k<=n} S_k",
+    "node_ordering": "shells k=0..n in order; within shell, L_k block then R_k block; within block, increasing local index",
+    "status": "DERIVED / VERIFIED"
+  },
+  "G4": {
+    "shell": 4,
+    "n": 4,
+    "vertex_count": 62,
+    "edge_count": 511,
+    "construction_version": "ARBS-CONSTRUCTION-001 (bipartite shell: S_k=L_k|R_k, |L_k|=|R_k|=2^k, intra=K_{2^k,2^k}, inter=R_{k-1}xL_k)",
+    "eigenvalue_tolerance": 1e-08,
+    "rank_tolerance": 1e-08,
+    "degeneracy_tolerance": 1e-06,
+    "numerical_precision": "float64 (numpy.linalg, IEEE 754 double)",
+    "graph_rule": "S_k=L_k sqcup R_k; G[S_k]=K_{2^k,2^k}; E(S_{k-1},S_k)=R_{k-1}xL_k; G_n=union_{k<=n} S_k",
+    "node_ordering": "shells k=0..n in order; within shell, L_k block then R_k block; within block, increasing local index",
+    "status": "DERIVED / VERIFIED"
+  }
+}
