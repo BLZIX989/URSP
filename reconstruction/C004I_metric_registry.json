@@ -1,0 +1,35 @@
+{
+  "task": "C-004I.1-2 -- exact diffusion metric recovery and closed-form analysis",
+  "source_definition": {
+    "formula": "d(i,j) = sqrt( sum_{k: lambda_k>0} (phi_k(i)-phi_k(j))^2 / lambda_k )",
+    "source": "ENG-011 in the original Calculation Engine sheet ('Distance d(i,j)=sqrt(Sum_k((phi_k(i)-phi_k(j))^2/lambda_k)) | lambda,phi | d | EXECUTABLE | Exclude zero mode'); DER-GEO-005 'd(i,j) = diffusion distance', CERTIFIED; cross-referenced as 'Spec(L) -> diffusion distance -> metric' dozens of times across the corpus.",
+    "no_time_parameter": "Confirmed: this is the TIME-INDEPENDENT (commute-time-type) form using bare 1/lambda_k weights, not a time-parameterized family d_t(i,j)^2=sum w_m(t)(...)^2. No alternative time-parameterized formulation was found anywhere in the corpus after re-checking every 'diffusion distance' occurrence.",
+    "normalization": "phi_k orthonormal under the STANDARD (counting-measure) inner product -- consistent with every other certified use of Spec(L) in this project (eigendecomposition via DER-SPC-003, already verified throughout runs 2-8)."
+  },
+  "identity_proof_d2_equals_Reff": {
+    "claim": "d(i,j)^2 = R_eff(i,j) exactly, for ANY graph (not ARBS-specific)",
+    "proof": [
+      "1. L = sum_{k:lambda_k>0} lambda_k phi_k phi_k^T (spectral decomposition, standard).",
+      "2. The Moore-Penrose pseudoinverse of a symmetric PSD matrix acts as the ordinary inverse on range(L)=ker(L)^perp and as zero on ker(L): L^+ = sum_{k:lambda_k>0} (1/lambda_k) phi_k phi_k^T (standard linear-algebra fact).",
+      "3. Effective resistance is defined via the pseudoinverse quadratic form (Klein-Randic / Foster's-theorem-adjacent standard identity in algebraic graph theory): R_eff(i,j) = (e_i-e_j)^T L^+ (e_i-e_j).",
+      "4. Substituting step 2 into step 3: R_eff(i,j) = sum_k (1/lambda_k) (e_i-e_j)^T phi_k phi_k^T (e_i-e_j) = sum_k (1/lambda_k)(phi_k(i)-phi_k(j))^2.",
+      "5. This is EXACTLY ENG-011's stated formula for d(i,j)^2 (same sum, same 'exclude zero mode' convention). QED."
+    ],
+    "status": "PROVEN ANALYTICALLY (general graph-theoretic identity, not merely numerically observed for ARBS)",
+    "numerical_confirmation": "max|d(i,j)^2 - R_eff(i,j)| computed directly for G0-G8: residuals 1.1e-16 to 1.2e-12, consistent with floating-point roundoff of an exact identity, not an approximate coincidence.",
+    "dependence_on_time_or_integration_limit": "NONE -- the equivalence is unconditional given ENG-011's stated (time-independent) formula; there is no time-limit dependence to recover because no time parameter is involved."
+  },
+  "closed_form_analysis": {
+    "vertex_class_symmetry": {
+      "claim": "d(i,j) depends only on the shell-partition CLASS of i and j (L_0,R_0,L_1,R_1,...), not on which specific vertex within a class -- an exact consequence of the ARBS automorphism group.",
+      "proof_sketch": "Any permutation of vertices within a single L_m or R_m (fixing all other vertices) is a graph automorphism of the ARBS construction, because every vertex within L_m (resp. R_m) has an identical neighborhood by the K_{2^m,2^m} intra-shell and R_{m-1}xL_m/R_mxL_{m+1} inter-shell rules. Graph automorphisms commute with L and permute its eigenspaces consistently, so diffusion distance (a function of L's spectral data alone) is automorphism-invariant: d(sigma(i),sigma(j))=d(i,j) for every automorphism sigma. Since any two vertices in the same class are related by such a sigma, d restricted to any class-pair is constant.",
+      "status": "PROVEN (general argument) + numerically confirmed to machine precision (max std-dev within any class-pair: 0 to 2.4e-16 for G0-G5)",
+      "consequence": "This reduces the diffusion-distance matrix to at most 2(k+1) choose 2 + 2(k+1) DISTINCT values for G_k (a large exact dimension reduction from O(N_k^2), though full symbolic diagonalization of the resulting quotient recursion is NOT completed this run -- see 'quotient_matrix_reduction' below)."
+    },
+    "quotient_matrix_reduction": {
+      "description": "The equitable partition {L_0,R_0,...,L_k,R_k} yields a 2(k+1)x2(k+1) quotient (divisor) matrix B_k whose eigenvalues are a SUBSET of Spec(L_k) (standard equitable-partition/graph-quotient theory), with the remaining eigenvalues of L_k coming from 'local' antisymmetric eigenvectors supported within a single class or pair of adjacent classes (easier to characterize individually since they involve fewer degrees of freedom).",
+      "status": "STRUCTURE IDENTIFIED, not fully carried out -- deriving a closed-form symbolic diagonalization of the resulting block-tridiagonal-like recursion is a genuine, well-posed further research question, not attempted here as it would constitute introducing substantial new mathematical machinery beyond straightforward verification.",
+      "diam_D_inf": "NOT derived in closed form. Strong numerical evidence (4 shells, G5-G8, agreeing to 10 decimal places) gives D_inf ~ 1.4288690166..., but no analytic derivation of this constant is given. Recorded as OPEN / numerically characterized only."
+    }
+  }
+}

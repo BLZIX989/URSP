@@ -1,0 +1,25 @@
+{
+  "task": "C-004I.5-6 -- degree measure defect, precise definition, and search for renormalization",
+  "measure_defect_precise_definition": {
+    "definition": "Delta_mu(k) is not a single scalar -- this run computes THREE distinct, standard, mathematically justified norms/distances between (rho_k)_*mu_k and mu_k+1, to avoid the earlier ambiguity of reporting only a bare '0.625':",
+    "TV": "Total variation distance = (1/2)*||push - pi_k+1||_1. This is the STRONGEST of the three (metrizes the strongest reasonable topology on measures).",
+    "L1": "= ||push - pi_k+1||_1 = 2*TV exactly (standard identity for probability measures).",
+    "L2": "= ||push - pi_k+1||_2 (Euclidean norm of the density difference vector).",
+    "Wasserstein1": "= optimal-transport (earth-mover) distance using the CERTIFIED diffusion distance (C004I_metric_registry.json) as ground cost -- the metrically meaningful notion for a METRIC-MEASURE space, unlike TV/L1/L2 which ignore the metric entirely.",
+    "numeric_trend_TV_L1_L2": "TV stabilizes at ~0.625 (unchanged from C-004F/H, recomputed and confirmed to 9 transitions this run: 0.7143, 0.6452, 0.6299, 0.6262, 0.62531, 0.62508, 0.62502, 0.625005, 0.625001, 0.6250004); L1 is exactly 2x TV at every step (verified); L2 also does not vanish (see C004I_measure_defects.csv for full values).",
+    "TV_L1_L2_verdict": "PROVEN NON-CONVERGENT (unchanged from C-004F/H) -- these norms are metric-independent and give the identical, correctly-computed non-convergence result regardless of any subsequent metric finding."
+  },
+  "wasserstein1_result": {
+    "critical_new_finding": "The Wasserstein-1 distance, computed using the CERTIFIED diffusion-distance ground metric, DOES appear to converge to 0 -- decaying geometrically, with ratio APPROACHING sqrt(2) as k increases (1.4086, 1.4554, 1.4728, 1.4668, 1.4520, 1.4381, 1.4282, 1.4220, 1.4184 for transitions G0->G1 through G8->G9, monotonically converging toward 1.41421356... from above after an initial transient).",
+    "numeric_values": "0.82177, 0.58340, 0.40086, 0.27217, 0.18555, 0.12779, 0.08886, 0.06222, 0.04375, 0.03085 for transitions G0->G1 through G9->G10.",
+    "mechanism": "TV/L1/L2 stay bounded away from zero because a persistent ~62.5% of the measure's mass sits on GENUINELY NEW atoms (vertices that did not exist in G_k) at every step -- these norms count that as 'all-or-nothing' disagreement regardless of how close the new atoms are, in the metric, to where the old mass concentrated. Wasserstein distance instead asks how FAR (in the certified diffusion metric) that mass has to move -- and since the diffusion-metric diameter is bounded and the new vertices are not metrically distant from the rest of the (increasingly clustered) point cloud, the transport cost shrinks even though the naive TV disagreement does not.",
+    "relation_to_metric_invariance_finding": "The Wasserstein ratio's convergence toward the SAME sqrt(2) constant found for epsilon_k (C004I_refinement_registry.json) is consistent with both quantities being governed by the same underlying spectral convergence rate of the ARBS Laplacian family, though this run does not derive that connection analytically -- it is a numerical observation, presented as such.",
+    "status": "STRONG NUMERICAL EVIDENCE OF CONVERGENCE (10 transitions, clean and monotonic approach to a sqrt(2) decay rate) -- NOT a formal proof. This is the single most consequential new finding of C-004I: the earlier blanket 'measure does not converge' conclusion (C-004F/H) was correct FOR THE NORM TESTED (total variation) but that norm is not the mathematically appropriate one for testing metric-measure (Gromov-Hausdorff-Prokhorov / measured Gromov-Hausdorff) convergence -- Wasserstein / weak convergence is, and it behaves very differently."
+  },
+  "renormalization_search": {
+    "instruction": "Only if raw degree measure fails, search source for an explicit alternative/renormalization.",
+    "finding": "Given the Wasserstein result above, NO renormalization of pi_k is actually needed to obtain a positive convergence result -- the raw, source-certified degree measure pi_k=d_i/(2|E_k|), used as-is (no Z_k^{-1}w_k construction, no invented rescaling), already shows strong evidence of Wasserstein convergence under the (also raw, unrescaled) diffusion metric.",
+    "search_performed_anyway": "A search for 'renormalization', 'mass scaling', 'packet measure', 'volume measure' terms across the corpus was performed for completeness per the governing instruction; no additional source-defined measure-renormalization law beyond pi_k=d_i/(2|E_k|) (BRIDGE B-005) was found.",
+    "status": "NOT NEEDED. The raw measure suffices for the (Wasserstein) sense in which convergence is found; TV-sense non-convergence is a property of that stronger norm, not a defect correctable by rescaling the measure itself."
+  }
+}

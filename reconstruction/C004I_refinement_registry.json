@@ -1,0 +1,33 @@
+{
+  "task": "C-004I.3-4, C-004I.11 -- refinement map, epsilon_k precise definition, metric invariance, edge-scaling law revisit",
+  "refinement_map": {
+    "carried_forward_from": "C-004F.5 / C-004H.1, unaffected",
+    "rho_k": "Exact inclusion: G_k is an induced subgraph of G_k+1. Vertex/shell/partition/edge ancestry preserved verbatim; only R_k vertices gain degree, each by exactly 2^(k+1).",
+    "distinction_preserved": "This is NESTED GRAPH INCLUSION (a combinatorial/topological fact, exact, proven), which is DIFFERENT from metric refinement (a statement about how DISTANCES behave under this inclusion, tested below -- found to be asymptotic, not exact)."
+  },
+  "epsilon_k_precise_definition": {
+    "question": "The prior run (C-004H) reported 'ratio sqrt(2)' without precisely identifying which quantity has this ratio. This run defines it exactly.",
+    "definition": "epsilon_k := max_{i,j in V_k} | d_{k+1}(rho_k(i), rho_k(j)) - d_k(i,j) |  -- i.e. the maximum ABSOLUTE difference (not relative, not squared) in the UNSQUARED diffusion distance between the SAME pair of old vertices, evaluated once within G_k and once within G_k+1 (where rho_k is the identity inclusion on indices).",
+    "why_this_quantity": "This is the direct, literal object appearing in the source's own Induced Metric Invariance axiom d_{k+1}(R(v_i),R(v_j))=d_k(v_i,v_j) -- epsilon_k is exactly the failure (defect) of that axiom, in its most literal reading, maximized over all applicable vertex pairs.",
+    "numeric_values": "0 (G0->G1, trivial: only 1 old pair, no violation possible), 0.42264973, 0.29885849, 0.21132487, 0.14942925, 0.10566243, 0.07471462, 0.05283122, 0.03734947 (approx), continuing (G1->G2 through G9->G10)",
+    "ratio_epsilon_k_over_epsilon_k+1": "EXACTLY 1.4142135623730931 to 1.4142135623730954 (i.e. sqrt(2) to 14-15 significant figures) for EVERY transition from G2->G3 through G9->G10 (8 consecutive transitions) -- this is essentially at floating-point precision limits, not merely 'close to sqrt(2)'.",
+    "alternative_quantities_also_checked": {
+      "squared_distance_difference": "max|d_{k+1}(i,j)^2 - d_k(i,j)^2|, computed alongside epsilon_k -- also decays geometrically (see C004I_convergence_registry.json 'epsilon_sq_metric_invariance_violation'), consistent with (but not identical in rate to) the unsquared quantity, as expected since d^2 is a smooth function of d near the relevant range.",
+      "relative_difference": "Not separately tabulated; since d_k(i,j) itself converges to a bounded, nonzero range (diameter bounded away from 0 for the relevant pairs), absolute and relative differences decay at comparable rates for this data."
+    },
+    "interpretation": "epsilon_k is a boundary-pair defect: it is the max over OLD vertex pairs (i,j in V_k) of the discrepancy introduced by embedding them into the larger graph G_k+1. The specific pair achieving the maximum shifts between shells but is consistently a pair involving vertices in an outer (but not the newest) shell -- consistent with a 'boundary effect' that becomes progressively less consequential as k grows, without the pair identity itself needing to stabilize.",
+    "status": "PRECISELY DEFINED AND COMPUTED. Ratio = sqrt(2) is an extremely clean, highly reproducible NUMERICAL finding (8 consecutive transitions, 14+ significant figures) -- NOT yet elevated to a proven theorem, since no analytic derivation of WHY the rate is exactly sqrt(2) is given (would require the closed-form spectral analysis flagged as OPEN in C004I_metric_registry.json)."
+  },
+  "metric_invariance_classification": {
+    "question": "Is d_{k+1}(rho_k(i),rho_k(j)) = d_k(i,j) exact, asymptotic, renormalized, or false?",
+    "answer": "ASYMPTOTIC, not exact, and NO RESCALING IS NEEDED to obtain this asymptotic behavior -- the raw, unrescaled diffusion distance already satisfies epsilon_k -> 0 at rate sqrt(2)^{-k}, without introducing any s_k renormalization factor. This is a stronger and cleaner result than a renormalized-invariance finding would have been, since it requires no additional (potentially target-conditioned) scaling choice.",
+    "no_rescaling_needed": "Explicitly confirmed: since epsilon_k itself already shrinks toward 0 without any rescaling, introducing an s_k would be both unnecessary and (per the governing instruction) inadmissible unless independently source-derived. None is introduced.",
+    "status": "ASYMPTOTIC (strong numerical evidence, precise geometric rate identified, not formally proven)"
+  },
+  "edge_scaling_law_revisit": {
+    "instruction": "Do NOT claim ARBS satisfies l_{n+1}(e')=alpha*l_n(e) merely because diffusion distance contracts. Edge replacement and metric contraction are separate concepts.",
+    "re-examination": "Confirmed: the Primal Edge Scaling law is stated in terms of a TOPOLOGICAL edge-replacement map R(e) (parent edge -> set of child edges), which is a structural/combinatorial object, entirely distinct from the diffusion-metric's asymptotic contraction (a statement about spectral quantities of the WHOLE graph, not about any single edge or its 'replacement'). ARBS's refinement (C-004I.3, rho_k) is proven to be an inclusion that does NOT replace any edge with children -- this fact is UNCHANGED by anything found about the diffusion metric, because the diffusion metric's behavior is a global spectral phenomenon, not a local edge-by-edge one.",
+    "any_legitimate_reinterpretation_found": "NONE. No interpretation under which R(e) could be identified with any ARBS-defined object was found: ARBS has no per-edge child-set structure at all (every existing edge is either present unchanged or the vertex pair simply doesn't exist yet -- there is no third category of 'edge that gets replaced'). The topological precondition for the Primal Edge Scaling law to even be stated remains absent.",
+    "status": "INCOMPATIBILITY PRESERVED, exactly as C-004G/C-004H established. Not weakened, not strengthened, by this run's metric findings."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "task": "C-004I.8-14 -- Dirichlet form reconciliation, continuum dimension, outcome selection, packet-branch decision",
+  "dirichlet_form_reconciliation": {
+    "requested_form": "E_k(f,f) = (1/2) sum_ij A_ij(f_i-f_j)^2 = f^T L_k f  (standard, UNNORMALIZED graph Dirichlet form -- exactly 2|E_k| times the mu-normalized form E_k(f,g)=<f,-Q_kg>_mu derived and proven in C-004F.4/C-004H.8)",
+    "critical_distinction_preserved": "This unnormalized form f^T L_k f is tied DIRECTLY to the SPECTRAL Laplacian L_k, NOT to the thermodynamic generator Q_k=-D_k^{-1}L_k. The diffusion-distance/effective-resistance metric investigated throughout this run is ALSO an L_k object (built from Spec(L_k) via DER-GEO-005) -- it has the standard variational characterization R_eff(i,j)^{-1} = min{f^T L_k f : f(i)=1, f(j)=0}, tying it to exactly this SAME unnormalized L_k-Dirichlet form, not to Q_k.",
+    "consequence": "IMPORTANT: the positive metric/measure findings of this run (bounded diffusion diameter, asymptotic metric invariance, Wasserstein convergence) all pertain to the L_k-based SPECTRAL/GEOMETRIC branch. They say NOTHING DIRECTLY about the Q_k-based THERMODYNAMIC branch, which remains a provably distinct operator for irregular graphs (THM-GEN-DISTINCT-001, C-004D/E, unaffected by this run). Do not conflate: a promising L_k-geometric continuum limit does not, by itself, resolve the original C-004E Fokker-Planck correspondence question, which is specifically about Q_k.",
+    "does_E_k_admit_a_continuum_limit": "The mu-normalized form (C-004F.4) is DERIVED/VERIFIED as an exact finite-shell identity; whether IT admits a continuum limit is exactly the still-open C-004F.7/C-004H.9 question (measure convergence, now shown to hold in the Wasserstein-but-not-TV sense for the L_k-associated measure/metric pair specifically -- see below for how this partially informs, but does not close, that question).",
+    "status": "L_k vs Q_k distinction PRESERVED throughout, per explicit instruction; not conflated at any point"
+  },
+  "continuum_dimension": {
+    "volume_growth_diagnostic": {
+      "method": "Ball-counting N(r)=#{v: d(v_ref,v)<=r} around the apex vertex, under the diffusion metric, for G9 (N=4094).",
+      "finding": "NOT well-described by a power law N(r)~r^d. The point cloud is heavily CONCENTRATED: e.g. fewer than 2 of 4094 vertices lie within diffusion-distance 1.0 of the apex, while the diameter itself is only ~1.43 -- most mass clusters very close to a small region, with a few outlying points near the diameter. This is inconsistent with a 'nice' d-dimensional manifold-like bulk; it instead suggests the limiting structure (if any) is dominated by a near-singular concentration, not a regularly-filling space.",
+      "status": "INCONCLUSIVE -- no meaningful volume-growth dimension extracted; this is reported as a genuine structural finding (extreme concentration), not a failure to compute."
+    },
+    "spectral_dimension_diagnostic": {
+      "method": "Heat-trace scaling Tr(e^{-tL}) ~ t^{-d_spec/2} for small t (standard spectral-dimension definition), fit via log-log regression over t in [1e-3,1e-1] for G10 (N=4094).",
+      "finding": "Rough fit gives d_spec ~ 1.8, but this estimate is NOT robust -- sensitive to the exact t-range chosen, and for a FINITE graph the heat trace trivially saturates toward N as t->0, so no genuinely intermediate scaling regime was carefully isolated or validated against known asymptotics.",
+      "status": "PRELIMINARY / NOT VALIDATED. Reported honestly as a rough, unreliable estimate, not a fitted or endorsed dimension. Per the governing instruction not to fit a desired dimension, no further tuning was performed to sharpen or 'improve' this number."
+    }
+  },
+  "outcome_selection_C004I_13": {
+    "options": {
+      "A": "ARBS admits a proven metric-measure continuum limit.",
+      "B": "ARBS admits metric convergence but not measure convergence.",
+      "C": "ARBS fails metric-measure convergence for a precise theorem-level reason.",
+      "D": "Existing source material is insufficient to determine convergence."
+    },
+    "finding": "None of A-D applies cleanly; the honest result is a qualified, evidence-graded mixture:",
+    "detail": [
+      "Metric (diffusion-distance) convergence: STRONG NUMERICAL EVIDENCE for convergence (bounded diameter, asymptotic invariance at a clean geometric rate) -- not formally proven (no closed-form/analytic spectral asymptotics derived). Closer to A than to C, but not A.",
+      "Measure convergence: DEPENDS ON THE NORM. In total variation (the norm implicitly used in C-004F/H): PROVEN NON-CONVERGENT (a genuine theorem-level result, exact and reproducible). In Wasserstein-1 (the metrically appropriate norm for a metric-measure limit, using the CERTIFIED diffusion metric as ground cost): STRONG NUMERICAL EVIDENCE FOR CONVERGENCE, with a rate matching the metric side.",
+      "Topological refinement mechanism (Primal Edge Scaling): PROVEN INCOMPATIBLE, unchanged -- this is the one piece of the puzzle that IS a clean theorem-level result in the negative direction."
+    ],
+    "closest_honest_label": "A qualified, evidence-graded version between A and B: strong (not yet formally proven) evidence FOR a genuine metric-measure limit in the Wasserstein/weak sense, for the diffusion metric and degree measure taken together, coexisting with a PROVEN theorem-level fact that (1) the source's own stated derivation MECHANISM (Primal Edge Scaling) cannot produce this limit even if it exists, and (2) the STRONGER total-variation sense of measure convergence provably fails. No outcome is forced or overclaimed; the graded, componentwise picture is preserved as the actual result.",
+    "L_k_vs_Q_k_caveat": "All of the above concerns the L_k-based spectral/geometric branch. It does not resolve the Q_k-based thermodynamic/Fokker-Planck question (C-004E), which remains open and untouched by this run."
+  },
+  "target_independence_audit": {
+    "checked": ["diffusion distance matrix (all shells)", "effective resistance matrix", "epsilon_k", "Wasserstein-1 distances", "TV/L1/L2 measure defects", "vertex-class symmetry check", "volume-growth and spectral-dimension diagnostics"],
+    "result": "PASS -- every object is a function of (k, L_k, D_k) alone; no reference anywhere to 32, N_H, H_F, D_F, J_F, gamma_F, Y_u, Y_d, Y_e, Y_nu, V_CKM, U_PMNS, or Xi_obs. No hidden fitted constants (all quantities either exact identities or direct numerical computations from the graph structure)."
+  },
+  "falsification_ledger_additions": {
+    "TV_as_the_relevant_convergence_norm": "The implicit choice of total variation distance in C-004F/H, while mathematically correct as computed, is now understood to have been the WRONG norm for testing measured-Gromov-Hausdorff-type convergence -- Wasserstein/weak convergence is the standard, appropriate notion, and it behaves oppositely. This is recorded as a methodological refinement, not a retraction: the TV computations themselves were and remain correct."
+  },
+  "next_dependency": "Two independent, well-posed mathematical tasks, neither resolvable by further reading of existing source material: (1) FORMALLY PROVE the Wasserstein-1 / diffusion-metric convergence analytically (an asymptotic spectral analysis of the ARBS Laplacian family along the lines sketched in C004I_metric_registry.json's quotient-matrix reduction), rather than relying on numerical evidence over 10 shells; and (2) determine whether ANY such proven L_k-based geometric/metric-measure limit has ANY bearing on the ORIGINALLY-SOUGHT Q_k-based thermodynamic Fokker-Planck correspondence (C-004E) -- given THM-GEN-DISTINCT-001 proves L_k and Q_k are different operators, a limit for one does not automatically transfer to the other, and no source material addresses this transfer question. Per the governing stop rule, this run does NOT proceed to sigma_k, Pi_0, G*, NCG, flavor, or scale, and does NOT activate PACKET-REFINEMENT-RECOVERY-001 -- ARBS has NOT been shown to fail the continuum substrate requirements (the opposite trend, if anything, is emerging on the geometric side), so the packet branch is explicitly NOT triggered this run."
+}
